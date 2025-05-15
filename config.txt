@@ -1,0 +1,11 @@
+#The folder where plugins are stored
+plugin_folder=plugins
+
+#The plugin to load scene
+scene_loader=raytracer_scene_loader_libconfig.so
+
+#The plugin for the raytracer interface
+interface=raytracer_interface_sfml.so
+
+#The folder to store the raytracer screenshots
+screenshots_folder=screenshots
