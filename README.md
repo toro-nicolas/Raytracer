@@ -104,14 +104,15 @@ cmake -B build -S . && make clean_all -s -C build -j
 
 ## Documentation 📚
 For plugins, you can find the documentation for each plugin in the `docs` folder.
-- The scene file documentation is accessible [here](docs/scene-file-documentation.md)
-- The interface documentation is accessible [here](docs/interface-plugin-documentation.md)
-- The light documentation is accessible [here](docs/light-plugin-documentation.md)
-- The material documentation is accessible [here](docs/material-plugin-documentation.md)
-- The primitive documentation is accessible [here](docs/primitive-plugin-documentation.md)
-- The scene loader documentation is accessible [here](docs/scene-loader-plugin-documentation.md)
-- The transformation documentation is accessible [here](docs/transformation-plugin-documentation.md)
-The code documentation is accessible [here](https://toro-nicolas.github.io/Raytracer/html/).  
+- The **scene file** documentation is accessible [here](docs/scene-file-documentation.md)
+- The **interface** documentation is accessible [here](docs/interface-plugin-documentation.md)
+- The **light** documentation is accessible [here](docs/light-plugin-documentation.md)
+- The **material** documentation is accessible [here](docs/material-plugin-documentation.md)
+- The **primitive** documentation is accessible [here](docs/primitive-plugin-documentation.md)
+- The **scene loader** documentation is accessible [here](docs/scene-loader-plugin-documentation.md)
+- The **transformation** documentation is accessible [here](docs/transformation-plugin-documentation.md)
+
+The **code** documentation is accessible [here](https://toro-nicolas.github.io/Raytracer/html/).  
 
 You can generate the documentation with this command :
 - via CMake and Makefile:
