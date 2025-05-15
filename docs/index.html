@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#raytracer">Raytracer</a>
+<ul>
+<li><a href="#table-of-contents-📑">Table of contents 📑</a></li>
+<li><a href="#description-📝">Description 📝</a></li>
+<li><a href="#usage-⚔️">Usage ⚔️</a></li>
+<li><a href="#result-🚩">Result 🚩</a></li>
+<li><a href="#compilation-🛠️">Compilation 🛠️</a></li>
+<li><a href="#documentation-📚">Documentation 📚</a></li>
+<li><a href="#code-mandatory-📦">Code mandatory 📦</a></li>
+<li><a href="#contributors-👥">Contributors 👥</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="raytracer">Raytracer</h1>
+<p><img src="screenshots/preview.png" alt="Raytracer"></p>
+<h2 id="table-of-contents-📑">Table of contents 📑</h2>
+<ul>
+<li><a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#description-">Description</a></li>
+<li><a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#usage-%EF%B8%8F">Usage</a></li>
+<li><a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#result-">Result</a></li>
+<li><a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#compilation-%EF%B8%8F">Compilation</a></li>
+<li><a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#documentation-">Documentation</a></li>
+<li><a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#code-mandatory-">Code mandatory</a></li>
+<li><a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#contributors-">Contributors</a></li>
+</ul>
+<h2 id="description-📝">Description 📝</h2>
+<p>The <strong>Raytracer</strong> is a project carried out by <strong>groups of 4</strong> (see <a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#contributors-">Contributors</a>, during our <strong>2nd year</strong> in <a href="https://www.epitech.eu/"><strong>EPITECH</strong></a> Grand Ecole program.<br>
+Its purpose is to recreate in <a href="https://en.wikipedia.org/wiki/C%2B%2B"><strong>C++</strong></a> a <strong>Raytracer</strong>.<br>
+The Raytracer is a <strong>3D scene</strong> generator that uses the <strong>Raytracing</strong> technique to create realistic images.<br>
+It use a scene file to load the scene and generate the image.</p>
+<h2 id="usage-⚔️">Usage ⚔️</h2>
+<p>You can run Raytracer like this :</p>
+<pre class=" language-sh"><code class="prism  language-sh">./raytracer [scene_file]  
+</code></pre>
+<p>For more information, please see the help section.</p>
+<pre class=" language-sh"><code class="prism  language-sh">&gt; ./raytracer --help  
+USAGE:  
+ ./raytracer &lt;scene_file&gt; [options]  
+DESCRIPTION:  
+ The raytracer generates a 3D scene based on the provided scene file.  
+        &lt;scene_file&gt;            The scene file to load  
+OPTIONS:  
+ -h, --help              Display this help message  
+        -v, --version           Display the version of the program  
+        -o, --output &lt;file&gt;     Specify the output file path  
+        -c, --config &lt;file&gt;     Specify the configuration file path  
+</code></pre>
+<p>The Raytracer is designed to be <strong>modular</strong> and <strong>extendable</strong>.<br>
+It uses <strong>plugins</strong> to load different types of <strong>interfaces</strong>, <strong>lights</strong>, <strong>materials</strong>, <strong>primitives</strong>, <strong>scene loaders</strong> and <strong>transformation</strong>.<br>
+You are free to create your own plugins and add them to the Raytracer while respecting the plugins rules (see the <a href="https://github.com/toro-nicolas/Raytracer/blob/main/README.md#documentation-">Documentation</a>).<br>
+The Raytracer will use the <strong>config.txt</strong> file to load the plugins and parameters the Raytracer needs.<br>
+Config file example:</p>
+<pre class=" language-ini"><code class="prism  language-ini">#The folder where plugins are stored  
+<span class="token constant">plugin_folder</span><span class="token attr-value"><span class="token punctuation">=</span>plugins  </span>
+  
+#The plugin to load scene  
+<span class="token constant">scene_loader</span><span class="token attr-value"><span class="token punctuation">=</span>raytracer_scene_loader_libconfig.so  </span>
+  
+#The plugin for the raytracer interface  
+<span class="token constant">interface</span><span class="token attr-value"><span class="token punctuation">=</span>raytracer_interface_sfml.so  </span>
+  
+#The folder to store the raytracer screenshots  
+<span class="token constant">screenshots_folder</span><span class="token attr-value"><span class="token punctuation">=</span>screenshots  </span>
+</code></pre>
+<h2 id="result-🚩">Result 🚩</h2>
+<p>The result of this project is an <strong>almost perfect Raytracer</strong>.<br>
+If you discover a <strong>problem</strong> or an <strong>error</strong>, don’t hesitate to <strong>create an issue</strong> and <strong>report it</strong> to us as soon as possible.</p>
+<h3 id="my.epitech.eu-result"><a href="http://my.epitech.eu">my.epitech.eu</a> result</h3>
+
+<table>
+<thead>
+<tr>
+<th>Test name</th>
+<th align="center">Result</th>
+<th align="center">Crash</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build via Makefile or CMake</td>
+<td align="center">OK</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td><strong>Results</strong></td>
+<td align="center"><strong>100%</strong></td>
+<td align="center"><strong>No</strong></td>
+</tr>
+</tbody>
+</table><h3 id="defense">Defense</h3>
+<p>TODO</p>
+<h2 id="compilation-🛠️">Compilation 🛠️</h2>
+<p>This project is compiled with <strong>CMake</strong> and <strong>Makefile</strong>.<br>
+This project use <strong>C++20</strong> standard, <strong>CMake 3.20</strong> or higher and <strong>libconfig++</strong>.</p>
+<p>You can compile the project with this command :</p>
+<ul>
+<li>via CMake and Makefile :</li>
+</ul>
+<pre class=" language-sh"><code class="prism  language-sh">cmake -B build -S . &amp;&amp; make -s -C build -j  
+</code></pre>
+<p>If you want to debug the program, you can compile the project with this :</p>
+<ul>
+<li>via CMake and Makefile :</li>
+</ul>
+<pre class=" language-sh"><code class="prism  language-sh">cmake -B build -S . -DDEBUG_MODE=ON &amp;&amp; make -s -C build -j  
+</code></pre>
+<p>If you want clean the project, you can run this command :</p>
+<ul>
+<li>via CMake and Makefile :</li>
+</ul>
+<pre class=" language-sh"><code class="prism  language-sh">cmake -B build -S . &amp;&amp; make clean_all -s -C build -j  
+</code></pre>
+<h2 id="documentation-📚">Documentation 📚</h2>
+<p>For plugins, you can find the documentation for each plugin in the <code>docs</code> folder.</p>
+<ul>
+<li>The scene file documentation is accessible <a href="docs/scene-file-documentation.md">here</a></li>
+<li>The interface documentation is accessible <a href="docs/interface-plugin-documentation.md">here</a></li>
+<li>The light documentation is accessible <a href="docs/light-plugin-documentation.md">here</a></li>
+<li>The material documentation is accessible <a href="docs/material-plugin-documentation.md">here</a></li>
+<li>The primitive documentation is accessible <a href="docs/primitive-plugin-documentation.md">here</a></li>
+<li>The scene loader documentation is accessible <a href="docs/scene-loader-plugin-documentation.md">here</a></li>
+<li>The transformation documentation is accessible <a href="docs/transformation-plugin-documentation.md">here</a><br>
+The code documentation is accessible <a href="https://toro-nicolas.github.io/Raytracer/html/">here</a>.</li>
+</ul>
+<p>You can generate the documentation with this command :</p>
+<ul>
+<li>via CMake and Makefile:</li>
+</ul>
+<pre class=" language-sh"><code class="prism  language-sh">cmake -B build -S . &amp;&amp; make doc -s -C build -j  
+</code></pre>
+<p>You need multiple package for generate them :</p>
+<ul>
+<li>doxygen</li>
+<li>doxygen-latex</li>
+<li>doxygen-doxywizard</li>
+<li>graphviz</li>
+</ul>
+<h2 id="code-mandatory-📦">Code mandatory 📦</h2>
+<ul>
+<li>You’ll need to create a branch where you’ll push your code. Once you’ve completed your tasks on this branch, we’ll work together to merge it and check that everything works.</li>
+<li>Every function you add must be code-style and documented.</li>
+<li>If the github actions don’t succeed, then ask yourself some questions</li>
+<li>Each commit will contain <code>[+]</code> or <code>[-]</code> or <code>[~]</code> followed by a message
+<ul>
+<li><code>[+]</code> : Add feature</li>
+<li><code>[-]</code> : Delete feature</li>
+<li><code>[~]</code> : Edit feature</li>
+</ul>
+</li>
+</ul>
+<p><strong>Of course, in exceptional cases, we may depart from these rules.</strong></p>
+<h2 id="contributors-👥">Contributors 👥</h2>
+<p>For this project, we were a group of <strong>4 people</strong>. Here are the people in the group:</p>
+<ul>
+<li><a href="https://github.com/xJundo">Gianni TUERO</a></li>
+<li><a href="https://github.com/DimitriLaPoudre">Lou PELLEGRINO</a></li>
+<li><a href="https://github.com/toro-nicolas">Nicolas TORO</a> : also published the <a href="https://github.com/toro-nicolas/Raytracer">Raytracer</a></li>
+<li><a href="https://github.com/Livoooo">Olivier POUECH</a></li>
+</ul>
+
+    </div>
+  </div>
+</body>
+
+</html>
