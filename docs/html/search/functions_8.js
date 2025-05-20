@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['length_0',['length',['../classLib_1_1Vector3.html#a80401d480f15e1418a3274a2b2b51649',1,'Lib::Vector3']]],
-  ['length_5fsquared_1',['length_squared',['../classLib_1_1Vector3.html#aebdb2f119bcd1783c104977f53799ebc',1,'Lib::Vector3']]],
-  ['libconfig_2',['Libconfig',['../classRaytracer_1_1Libconfig.html#a2c93c9dcb7b4ea9bdff7e2129f831305',1,'Raytracer::Libconfig']]],
-  ['loadscene_3',['loadScene',['../classRaytracer_1_1ISceneLoader.html#a6813ddd60add0997a88b39e3240bdb86',1,'Raytracer::ISceneLoader::loadScene()'],['../classRaytracer_1_1Libconfig.html#ae82fc0104b06e5b6064dc5fac64544e4',1,'Raytracer::Libconfig::loadScene()']]],
-  ['loadtypefrompluginfolder_4',['loadTypeFromPluginFolder',['../classRaytracer_1_1Factory.html#a87aff7e7b712b5cb07421ffcc7af6edd',1,'Raytracer::Factory']]],
-  ['loop_5',['loop',['../classGraphics_1_1Sound.html#a2b182d206d723412d7b9493a453c71c3',1,'Graphics::Sound']]]
+  ['image_0',['Image',['../classRaytracer_1_1Image.html#a1968305ae490ca950f9caf77129d4942',1,'Raytracer::Image']]],
+  ['init_1',['init',['../classRaytracer_1_1BoxPlane.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::BoxPlane::init()'],['../classRaytracer_1_1Box.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::Box::init()'],['../classRaytracer_1_1APrimitive.html#a22af31fbc6f2484ee37233c3d445dcc2',1,'Raytracer::APrimitive::init()'],['../classRaytracer_1_1IPrimitive.html#a4d9730a632c80b02cdde12b57a2099a9',1,'Raytracer::IPrimitive::init()'],['../classRaytracer_1_1Cone.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::Cone::init()'],['../classRaytracer_1_1Cylinder.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::Cylinder::init()'],['../classRaytracer_1_1Plane.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::Plane::init()'],['../classRaytracer_1_1Sphere.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::Sphere::init()'],['../classRaytracer_1_1TangleCube.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::TangleCube::init()'],['../classRaytracer_1_1Torus.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::Torus::init()'],['../classRaytracer_1_1Triangle.html#a3a5d7197107efe016b688561498eeaac',1,'Raytracer::Triangle::init()']]],
+  ['interval_2',['Interval',['../classRaytracer_1_1Interval.html#a34301e26364ca9be13bddd52cf77bb81',1,'Raytracer::Interval::Interval()'],['../classRaytracer_1_1Interval.html#a0d354d4b6d16208610f69bde70ff7368',1,'Raytracer::Interval::Interval(double min, double max)'],['../classRaytracer_1_1Interval.html#a4a37ffd68bba9e2f752fe5d63f092ccb',1,'Raytracer::Interval::Interval(const Interval &amp;a, const Interval &amp;b)']]],
+  ['isinterior_3',['isInterior',['../classRaytracer_1_1BoxPlane.html#a0341494725cadf76b7499690b9e12671',1,'Raytracer::BoxPlane::isInterior()'],['../classRaytracer_1_1Plane.html#a0341494725cadf76b7499690b9e12671',1,'Raytracer::Plane::isInterior()']]],
+  ['ismuted_4',['isMuted',['../classGraphics_1_1Sound.html#a2a02e3c3567aca221fbf307865416457',1,'Graphics::Sound']]],
+  ['isplaying_5',['isPlaying',['../classGraphics_1_1Sound.html#a389ad71786b00ae81f69060f153509d2',1,'Graphics::Sound']]],
+  ['istyperegistered_6',['isTypeRegistered',['../classRaytracer_1_1Factory.html#a1bbf8b7e0186f1d2784456e91434aaba',1,'Raytracer::Factory']]]
 ];

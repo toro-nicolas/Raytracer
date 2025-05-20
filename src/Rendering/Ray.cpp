@@ -1,17 +1,16 @@
 /*
 ** EPITECH PROJECT, 2025
-** Ray.cpp
+** Raytracer
 ** File description:
-** Ray in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Rendering
+** The Ray class implementation
 */
-
 /**
  * @file Ray.cpp
- * @brief Ray class implementation
- * @author Gianni TUERO
+ * @brief The Ray class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
+
 #include "Ray.hpp"
-#include "Lib.hpp"
 
 namespace Raytracer
 {

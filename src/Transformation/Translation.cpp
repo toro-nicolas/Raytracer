@@ -31,9 +31,25 @@ namespace Raytracer {
         return _builder;
     }
 
-    void Translation::display(void)
+    void Translation::display(size_t level)
     {
-        std::cout << "Translation data: No data" << std::endl;
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "Translation data:" << std::endl;
+        std::cout << indent << "- Offset: " << _offset << std::endl;
+    }
+
+    void Translation::compute(Ray &ray)
+    {
+        ray = Ray(ray.origin() - _offset, ray.direction(), ray.getTime());
+    }
+
+    void Translation::decompute(Intersection &rec)
+    {
+        rec.p = rec.p + _offset;
+    }
+    void Translation::newBoundingBox(AABB &bbox)
+    {
+        bbox = bbox + _offset;
     }
 
     TranslationBuilder::TranslationBuilder(Translation &translation) : ATransformationBuilder(translation), _translation(translation)
@@ -49,6 +65,16 @@ namespace Raytracer {
     ITransformationBuilder &TranslationBuilder::set(const std::string &name, UNUSED const std::vector<std::string> &args)
     {
         DEBUG << "TranslationBuilder set " << name;
+        if (name == "offset") {
+            if (args.size() != 3)
+                return *this;
+            float x = std::stof(args[0]);
+            float y = std::stof(args[1]);
+            float z = std::stof(args[2]);
+            _translation.setOffset(Lib::Vector3(x, y, z));
+        } else {
+            DEBUG << "TranslationBuilder set: unknown property " << name;
+        }
         return *this;
     }
 

@@ -27,8 +27,7 @@ namespace Raytracer {
             /**
              * @brief Display the material
              */
-            void display(void) override;
-
+            void display(size_t level) override;
 
 
 
@@ -44,6 +43,15 @@ namespace Raytracer {
              */
             bool scatter(const Ray& r_in, const Intersection& rec, Lib::Vector3 &attenuation, Ray& scattered)
             const override;
+
+            /**
+             * @brief Emit light from the material
+             * @param u The u coordinate
+             * @param v The v coordinate
+             * @param p The point in space
+             * @return The emitted light color
+             */
+            Lib::Vector3 emitted(double u, double v, const Lib::Vector3& p) const override;
 
 
 

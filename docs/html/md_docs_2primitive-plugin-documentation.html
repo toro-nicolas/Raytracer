@@ -102,9 +102,7 @@ $(function(){initNavTree('md_docs_2primitive-plugin-documentation.html',''); ini
 <div class="textblock"><p><a class="anchor" id="autotoc_md49"></a> </p>
 <h1><a class="anchor" id="autotoc_md50"></a>
 Introduction</h1>
-<p>This document explains how to create material plugins for the raytracer. <br  />
- Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, <br  />
- while primitive are dynamically loaded from shared libraries (.so).</p>
+<p>This document explains how to create material plugins for the raytracer. Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, while primitive are dynamically loaded from shared libraries (.so).</p>
 <h1><a class="anchor" id="autotoc_md51"></a>
 Naming Conventions</h1>
 <p>Each primitive plugin must follow this naming convention: </p><div class="fragment"><div class="line">raytrace_primitive_[primitive_name].so</div>
@@ -128,8 +126,7 @@ Class Hierarchy</h2>
 Creating a New Primitive</h1>
 <h2><a class="anchor" id="autotoc_md55"></a>
 1. Primitive Class</h2>
-<p>Your primitive class must inherit from <code>APrimitive</code> and implement all required virtual methods. <br  />
- Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
+<p>Your primitive class must inherit from <code>APrimitive</code> and implement all required virtual methods. Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
 <div class="line">    <span class="keyword">class </span>YourPrimitive final : <span class="keyword">public</span> APrimitive {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
 <div class="line">            <span class="comment">/* Constructors and destructors */</span></div>
@@ -144,7 +141,7 @@ Creating a New Primitive</h1>
 <div class="line"> </div>
 <div class="line">            <span class="comment">/* Display function */</span></div>
 <div class="line"> </div>
-<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">void</span>) final;</div>
+<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">size_t</span> level) final;</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -161,8 +158,7 @@ Creating a New Primitive</h1>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md56"></a>
 2. Builder Class</h2>
-<p>Your builder class must inherit from <code>APrimitiveBuilder</code> and implement the necessary methods to configure your primitive. <br  />
- Example:</p>
+<p>Your builder class must inherit from <code>APrimitiveBuilder</code> and implement the necessary methods to configure your primitive. Example:</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
 <div class="line">    <span class="keyword">class </span>YourPrimitiveBuilder final : <span class="keyword">public</span> APrimitiveBuilder {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
@@ -244,8 +240,7 @@ How to Compile a Plugin</h1>
 <div class="line">    src/Primitive/&lt;name&gt;.cpp</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md64"></a>
 Plugin Loading</h1>
-<p>The raytracer core will automatically search for and load all <code>.so</code> files that follow the naming convention. <br  />
- For each plugin found, it will call the <code>createPrimitive()</code> function to instantiate the primitive.</p>
+<p>The raytracer core will automatically search for and load all <code>.so</code> files that follow the naming convention. For each plugin found, it will call the <code>createPrimitive()</code> function to instantiate the primitive.</p>
 <h1><a class="anchor" id="autotoc_md65"></a>
 Summary of Steps to Create a New Plugin</h1>
 <ol type="1">

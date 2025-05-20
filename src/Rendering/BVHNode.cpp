@@ -1,20 +1,20 @@
 /*
 ** EPITECH PROJECT, 2025
-** BVHNode.cpp
+** Raytracer
 ** File description:
-** BVHNode in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Rendering
+** The BVHNode class implementation
 */
+/**
+ * @file BVHNode.cpp
+ * @brief The BVHNode class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "BVHNode.hpp"
 
 namespace Raytracer {
-    ////////////////////////////////////// BVH //////////////////////////////////////
     BvhNode::BvhNode(HittableList& list) : BvhNode(list.getObjects(), 0, list.getObjects().size())
     {
-            // There's a C++ subtlety here. This constructor (without span indices) creates an
-            // implicit copy of the hittable list, which we will modify. The lifetime of the copied
-            // list only extends until this constructor exits. That's OK, because we only need to
-            // persist the resulting bounding volume hierarchy.
     }
 
     BvhNode::BvhNode(std::vector<std::shared_ptr<Hittable>>& objects, size_t start, size_t end)

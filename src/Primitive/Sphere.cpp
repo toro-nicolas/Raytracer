@@ -36,23 +36,26 @@ namespace Raytracer {
         return _builder;
     }
 
-    void Sphere::display(void)
+    void Sphere::display(size_t level)
     {
+        std::string indent(level * 4, ' ');
         std::cout << "Sphere data:" << std::endl;
-        std::cout << "        - Position: " << _pos << std::endl;
-        std::cout << "        - Materials: (" << _materials.size() << ")" << std::endl;
+        std::cout << indent << "- Position: " << _pos << std::endl;
+        std::cout << indent << "- Materials: (" << _materials.size() << ")" << std::endl;
         for (const auto &pair: _materials) {
-            std::cout << "            - ";// << pair.first << ": ";
-            pair.second->display();
+            std::cout << indent << "    - ";// << pair.first << ": ";
+            pair.second->display(level + 2);
         }
         if (_materials.empty())
-            std::cout << std::endl;
-        std::cout << "        - Transformations: (" << _transformations.size() << ")" << std::endl;
+            std::cout << indent << "    No materials" << std::endl;
+        std::cout << indent << "- Transformations: (" << _transformations.size() << ")" << std::endl;
         for (const auto &pair: _transformations) {
-            std::cout << "            - ";// << pair.first << ": ";
-            pair.second->display();
+            std::cout << indent << "    - ";// << pair.first << ": ";
+            pair.second->display(level + 2);
         }
-        std::cout << "        - Radius: " << _radius << std::endl;
+        if (_transformations.empty())
+            std::cout << indent << "    No transformations" << std::endl;
+        std::cout << indent << "- Radius: " << _radius << std::endl;
     }
 
     float& Sphere::getRadius(void)
@@ -87,10 +90,17 @@ namespace Raytracer {
     ////////////////////////////////////// INTERSECTION //////////////////////////////////////
     bool Sphere::hit(const Ray& ray, Interval rayT, Intersection& rec) const
     {
-        Vector3 current_center = _center.pointAt(ray.getTime());
-        Vector3 oc = current_center - ray.origin();
-        auto a = ray.direction().length_squared();
-        auto h = dot(ray.direction(), oc);
+        // Apply transformations to the ray (same as in BoxPlane::hit)
+        Ray transformed_ray = ray;
+        for (const auto &[type, transfo] : _transformations) {
+            transfo->compute(transformed_ray);
+        }
+
+        // Original hit calculation with the transformed ray
+        Vector3 current_center = _center.pointAt(transformed_ray.getTime());
+        Vector3 oc = current_center - transformed_ray.origin();
+        auto a = transformed_ray.direction().length_squared();
+        auto h = dot(transformed_ray.direction(), oc);
         auto c = oc.length_squared() - _radius*_radius;
 
         auto discriminant = h*h - a*c;
@@ -107,13 +117,19 @@ namespace Raytracer {
                 return false;
         }
 
+        // Calculate intersection properties
         rec.t = root;
-        rec.p = ray.pointAt(rec.t);
+        rec.p = transformed_ray.pointAt(rec.t);
         Vector3 outward_normal = (rec.p - current_center) / _radius;
-        rec.setFaceNormal(ray, outward_normal);
-        // Only one material
+        rec.setFaceNormal(transformed_ray, outward_normal);
         getSphereUV(outward_normal, rec.u, rec.v);
         rec.material = _materials;
+
+        // Transform the intersection point and normal back to world space
+        for (auto it = _transformations.rbegin(); it != _transformations.rend(); ++it) {
+            const auto& [type, transfo] = *it;
+            transfo->decompute(rec);
+        }
         return true;
     }
 
@@ -133,9 +149,20 @@ namespace Raytracer {
             v = theta / M_PI;
     }
 
-}
+    void Sphere::init(void)
+    {
+        if (!centerSet) {
+            _center = Ray(_pos, Vector3(0, 0, 0));
+            auto vrad = Lib::Vector3(_radius, _radius, _radius);
+            _bbox = AABB(_pos - vrad, _pos + vrad);
 
-namespace Raytracer {
+            // Apply transformations to the bounding box (same as in BoxPlane::setBoundingBox)
+            for (auto it = _transformations.rbegin(); it != _transformations.rend(); ++it) {
+                const auto& [type, transfo] = *it;
+                transfo->newBoundingBox(_bbox);
+            }
+        }
+    }
 
     SphereBuilder::SphereBuilder(Sphere &sphere) : APrimitiveBuilder(sphere), _sphere(sphere)
     {
@@ -150,17 +177,13 @@ namespace Raytracer {
     IPrimitiveBuilder &SphereBuilder::set(const std::string &name, const std::vector<std::string> &args)
     {
         DEBUG << "SphereBuilder set " << name;
-        if (!_sphere.centerSet) {
-            _sphere.setCenter(Ray(_sphere.getPos(), Vector3(0, 0, 0)));
-            auto vrad = Lib::Vector3(_sphere.getRadius(), _sphere.getRadius(), _sphere.getRadius());
-            _sphere.boundingBox() = AABB(_sphere.getPos() - vrad, _sphere.getPos() + vrad);
-        }
+
         if (name == "radius" || name == "r") {
             if (args.size() != 1)
                 return *this;
             float radius = std::stof(args[0]);
             _sphere.setRadius(radius);
-        } else if (name == "translation") {
+        } /* else if (name == "translation") {
             if (args.size() != 3)
                 return *this;
             float x = std::stof(args[0]);
@@ -170,20 +193,17 @@ namespace Raytracer {
             // for the center
             auto center = Ray(_sphere.getPos(), Vector3(x, y, z) - _sphere.getPos());
             _sphere.setCenter(center);
-
             // for the bounding box
             auto rvec = Vector3(_sphere.getRadius(), _sphere.getRadius(), _sphere.getRadius());
             AABB box1(_sphere.getCenter().pointAt(0) - rvec, _sphere.getCenter().pointAt(0) + rvec);
             AABB box2(_sphere.getCenter().pointAt(1) - rvec, _sphere.getCenter().pointAt(1) + rvec);
             _sphere.boundingBox() = AABB(box1, box2);
-            _sphere.centerSet = true;
-        } else {
+            _sphere.centerSet = true; */
+         else {
             DEBUG << "SphereBuilder set: unknown property " << name;
         }
         return *this;
     }
-
-
 
     extern "C" std::shared_ptr<Sphere> createPrimitive(void)
     {

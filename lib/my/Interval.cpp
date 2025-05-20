@@ -1,15 +1,18 @@
 /*
 ** EPITECH PROJECT, 2025
-** Interval.cpp
+** Raytracer
 ** File description:
-** Interval in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/lib/my
+** The Interval class implementation
 */
+/**
+ * @file Interval.cpp
+ * @brief The Interval class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "Interval.hpp"
-#include <algorithm>
 
 namespace Raytracer {
-
     Interval::Interval() : min(+infinity), max(-infinity) {}
     Interval::Interval(double min, double max) : min(min), max(max) {}
 
@@ -41,4 +44,11 @@ namespace Raytracer {
         return Interval(min - padding, max + padding);
     }
 
+    Interval operator+(const Interval& ival, double displacement) {
+        return Interval(ival.min + displacement, ival.max + displacement);
+    }
+
+    Interval operator+(double displacement, const Interval& ival) {
+        return ival + displacement;
+    }
 }

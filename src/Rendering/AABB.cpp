@@ -1,9 +1,14 @@
 /*
 ** EPITECH PROJECT, 2025
-** AABB.cpp
+** Raytracer
 ** File description:
-** AABB in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Rendering
+** The AABB class implementation
 */
+/**
+ * @file AABB.cpp
+ * @brief The AABB class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "Ray.hpp"
 
@@ -85,5 +90,13 @@ namespace Raytracer {
         if (y.size() < delta) y = y.expand(delta);
         if (z.size() < delta) z = z.expand(delta);
     }
+    AABB operator+(const AABB& bbox, const Lib::Vector3& offset) {
+    return AABB(bbox.x + offset.x, bbox.y + offset.y, bbox.z + offset.z);
+    }
+
+    AABB operator+(const Lib::Vector3& offset, const AABB& bbox) {
+        return bbox + offset;
+    }
+
 }
 

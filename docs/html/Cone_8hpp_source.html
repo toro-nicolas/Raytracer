@@ -105,85 +105,131 @@ $(function(){initNavTree('Cone_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">** File description:</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">** The Cone class declaration</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef CONE_HPP</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">    #define CONE_HPP</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    #include &quot;<a class="code" href="APrimitive_8hpp.html">APrimitive.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">    #include &quot;<a class="code" href="APrimitiveBuilder_8hpp.html">APrimitiveBuilder.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>Raytracer {</div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classRaytracer_1_1Cone.html">   25</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classRaytracer_1_1Cone.html">Cone</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classRaytracer_1_1APrimitive.html">APrimitive</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="comment">/* Constructors and destructors */</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <a class="code hl_function" href="classRaytracer_1_1Cone.html#a1624e1ad616a5ba7d2a64de5678706f6">Cone</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_function" href="classRaytracer_1_1Cone.html#a96627d3a4e10fe13ad4b47895425a22d">~Cone</a>() <span class="keyword">final</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            std::unique_ptr&lt;IPrimitiveBuilder&gt; &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a101ba4a0e4147f5e25f34f25c53a965b">getBuilder</a>(<span class="keywordtype">void</span>) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef CONE_HPP</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    #define CONE_HPP</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    #include &quot;<a class="code" href="APrimitive_8hpp.html">APrimitive.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    #include &quot;<a class="code" href="APrimitiveBuilder_8hpp.html">APrimitiveBuilder.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>Raytracer {</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classRaytracer_1_1Cone.html">   24</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classRaytracer_1_1Cone.html">Cone</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classRaytracer_1_1APrimitive.html">APrimitive</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="comment">/* Constructors and destructors */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_function" href="classRaytracer_1_1Cone.html#a1624e1ad616a5ba7d2a64de5678706f6">Cone</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_function" href="classRaytracer_1_1Cone.html#a96627d3a4e10fe13ad4b47895425a22d">~Cone</a>() <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            std::unique_ptr&lt;IPrimitiveBuilder&gt; &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a101ba4a0e4147f5e25f34f25c53a965b">getBuilder</a>(<span class="keywordtype">void</span>) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="comment">/* Display function */</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classRaytracer_1_1Cone.html#a8f45be05262bbe31383e9af13efc0751">display</a>(<span class="keywordtype">void</span>) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="comment">/* Display function */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classRaytracer_1_1Cone.html#aa263105a99fa02a3cd6d40049b78df36">display</a>(<span class="keywordtype">size_t</span> level) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">/* Getters and setters */</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };</div>
-</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordtype">float</span> &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a920e6c0a827095f3de37edc57f87f479">getRadius</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classRaytracer_1_1ConeBuilder.html">   68</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classRaytracer_1_1ConeBuilder.html">ConeBuilder</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classRaytracer_1_1APrimitiveBuilder.html">APrimitiveBuilder</a> {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="comment">/* Constructors and destructors */</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_function" href="classRaytracer_1_1ConeBuilder.html#a5ed4f5491f70cdfcd2658ac897572e92">ConeBuilder</a>(<a class="code hl_class" href="classRaytracer_1_1Cone.html">Cone</a> &amp;cone);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_function" href="classRaytracer_1_1ConeBuilder.html#adfe90c2f4e3742fdc4bb783a8d020882">~ConeBuilder</a>() <span class="keyword">final</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="comment">/* Setters of the specific properties */</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a920e6c0a827095f3de37edc57f87f479">getRadius</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classRaytracer_1_1Cone.html#a4cbac0b5050a16c7c11301e19d0cd849">setRadius</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> &amp;radius);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordtype">float</span> &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a8d34e5f2131a9815b289b0b078bbbf17">getHeight</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a8d34e5f2131a9815b289b0b078bbbf17">getHeight</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <a class="code hl_class" href="classRaytracer_1_1IPrimitiveBuilder.html">IPrimitiveBuilder</a> &amp;<a class="code hl_function" href="classRaytracer_1_1ConeBuilder.html#ad26e31f597ea8f40043a537146bc2a0a">set</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;args) <span class="keyword">final</span>;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classRaytracer_1_1ConeBuilder.html#a2603d03ec28dc586ffc66aa0ec97bc80">   98</a></span>            <a class="code hl_class" href="classRaytracer_1_1Cone.html">Cone</a> &amp;<a class="code hl_variable" href="classRaytracer_1_1ConeBuilder.html#a2603d03ec28dc586ffc66aa0ec97bc80">_cone</a>; </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    };</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classRaytracer_1_1Cone.html#a7365f2958201e024fd7cba5e7a2f20bc">setHeight</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> &amp;height);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classRaytracer_1_1Cone.html#aa2cd6150dccf2cee7e76a605a5d8a7b3">setAxis</a>(<span class="keyword">const</span> <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;axis);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a7b198d1bcb1900da6dadbaf43c355408">getAxis</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keyword">const</span> <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="code hl_function" href="classRaytracer_1_1Cone.html#a7b198d1bcb1900da6dadbaf43c355408">getAxis</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="comment">/* Rendering function */</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="classRaytracer_1_1Cone.html#ae88b7aa35e2eb39f081ce654dc57ae49">hit</a>(<span class="keyword">const</span> <a class="code hl_class" href="classRaytracer_1_1Ray.html">Ray</a>&amp; ray, <a class="code hl_class" href="classRaytracer_1_1Interval.html">Interval</a> rayT, <a class="code hl_class" href="classRaytracer_1_1Intersection.html">Intersection</a>&amp; rec) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="comment">/* Initialization function */</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classRaytracer_1_1Cone.html#a3a5d7197107efe016b688561498eeaac">init</a>(<span class="keywordtype">void</span>) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordtype">float</span> _radius; </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="keywordtype">float</span> _height; </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a> _axis; </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordtype">void</span> getConeUV(<span class="keyword">const</span> <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a>&amp; p, <span class="keywordtype">double</span>&amp; u, <span class="keywordtype">double</span>&amp; v) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordtype">void</span> setBoundingBox();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    };</div>
 </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> std::shared_ptr&lt;Cone&gt; <a class="code hl_function" href="Cone_8hpp.html#a9122d857fb70271dd95fad692df6b0c5">createPrimitive</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif </span><span class="comment">// CONE_HPP</span></div>
-<div class="ttc" id="aAPrimitiveBuilder_8hpp_html"><div class="ttname"><a href="APrimitiveBuilder_8hpp.html">APrimitiveBuilder.hpp</a></div><div class="ttdoc">The APrimitiveBuilder.hpp.</div></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="};">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classRaytracer_1_1ConeBuilder.html">  162</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classRaytracer_1_1ConeBuilder.html">ConeBuilder</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classRaytracer_1_1APrimitiveBuilder.html">APrimitiveBuilder</a> {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <a class="code hl_function" href="classRaytracer_1_1ConeBuilder.html#a5ed4f5491f70cdfcd2658ac897572e92">ConeBuilder</a>(<a class="code hl_class" href="classRaytracer_1_1Cone.html">Cone</a> &amp;cone);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <a class="code hl_function" href="classRaytracer_1_1ConeBuilder.html#adfe90c2f4e3742fdc4bb783a8d020882">~ConeBuilder</a>() <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <a class="code hl_class" href="classRaytracer_1_1IPrimitiveBuilder.html">IPrimitiveBuilder</a> &amp;<a class="code hl_function" href="classRaytracer_1_1ConeBuilder.html#ad26e31f597ea8f40043a537146bc2a0a">set</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;args) <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classRaytracer_1_1ConeBuilder.html#a2603d03ec28dc586ffc66aa0ec97bc80">  186</a></span>            <a class="code hl_class" href="classRaytracer_1_1Cone.html">Cone</a> &amp;<a class="code hl_variable" href="classRaytracer_1_1ConeBuilder.html#a2603d03ec28dc586ffc66aa0ec97bc80">_cone</a>; </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    };</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> std::shared_ptr&lt;Cone&gt; <a class="code hl_function" href="Box_8hpp.html#accc182d6d547bcd2bf561ddb7ac33bec">createPrimitive</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">#endif </span><span class="comment">// CONE_HPP</span></div>
+<div class="ttc" id="aAPrimitiveBuilder_8hpp_html"><div class="ttname"><a href="APrimitiveBuilder_8hpp.html">APrimitiveBuilder.hpp</a></div><div class="ttdoc">The APrimitiveBuilder class declaration.</div></div>
 <div class="ttc" id="aAPrimitive_8hpp_html"><div class="ttname"><a href="APrimitive_8hpp.html">APrimitive.hpp</a></div><div class="ttdoc">The APrimitive class declaration.</div></div>
-<div class="ttc" id="aCone_8hpp_html_a9122d857fb70271dd95fad692df6b0c5"><div class="ttname"><a href="Cone_8hpp.html#a9122d857fb70271dd95fad692df6b0c5">Raytracer::createPrimitive</a></div><div class="ttdeci">std::shared_ptr&lt; Cone &gt; createPrimitive(void)</div><div class="ttdoc">Create a new Cone object.</div><div class="ttdef"><b>Definition</b> Cone.cpp:68</div></div>
+<div class="ttc" id="aBox_8hpp_html_accc182d6d547bcd2bf561ddb7ac33bec"><div class="ttname"><a href="Box_8hpp.html#accc182d6d547bcd2bf561ddb7ac33bec">Raytracer::createPrimitive</a></div><div class="ttdeci">std::shared_ptr&lt; Box &gt; createPrimitive(void)</div><div class="ttdoc">Create a Box object.</div><div class="ttdef"><b>Definition</b> Box.cpp:315</div></div>
+<div class="ttc" id="aclassLib_1_1Vector3_html"><div class="ttname"><a href="classLib_1_1Vector3.html">Lib::Vector3</a></div><div class="ttdoc">A class representing a 3D vector.</div><div class="ttdef"><b>Definition</b> Vector3.hpp:26</div></div>
 <div class="ttc" id="aclassRaytracer_1_1APrimitiveBuilder_html"><div class="ttname"><a href="classRaytracer_1_1APrimitiveBuilder.html">Raytracer::APrimitiveBuilder</a></div><div class="ttdoc">Abstract base class for building primitive shapes in the raytracer.</div><div class="ttdef"><b>Definition</b> APrimitiveBuilder.hpp:24</div></div>
-<div class="ttc" id="aclassRaytracer_1_1APrimitive_html"><div class="ttname"><a href="classRaytracer_1_1APrimitive.html">Raytracer::APrimitive</a></div><div class="ttdoc">Abstract base class for all primitives in the raytracer.</div><div class="ttdef"><b>Definition</b> APrimitive.hpp:24</div></div>
-<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html">Raytracer::ConeBuilder</a></div><div class="ttdoc">Builder for the Cone primitive.</div><div class="ttdef"><b>Definition</b> Cone.hpp:68</div></div>
-<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_a2603d03ec28dc586ffc66aa0ec97bc80"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#a2603d03ec28dc586ffc66aa0ec97bc80">Raytracer::ConeBuilder::_cone</a></div><div class="ttdeci">Cone &amp; _cone</div><div class="ttdoc">Reference to the cone being configured.</div><div class="ttdef"><b>Definition</b> Cone.hpp:98</div></div>
-<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_a5ed4f5491f70cdfcd2658ac897572e92"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#a5ed4f5491f70cdfcd2658ac897572e92">Raytracer::ConeBuilder::ConeBuilder</a></div><div class="ttdeci">ConeBuilder(Cone &amp;cone)</div><div class="ttdoc">Constructor of the ConeBuilder.</div><div class="ttdef"><b>Definition</b> Cone.cpp:52</div></div>
-<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_ad26e31f597ea8f40043a537146bc2a0a"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#ad26e31f597ea8f40043a537146bc2a0a">Raytracer::ConeBuilder::set</a></div><div class="ttdeci">IPrimitiveBuilder &amp; set(const std::string &amp;name, const std::vector&lt; std::string &gt; &amp;args) final</div><div class="ttdoc">Set the specific property of the primitive.</div><div class="ttdef"><b>Definition</b> Cone.cpp:62</div></div>
-<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_adfe90c2f4e3742fdc4bb783a8d020882"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#adfe90c2f4e3742fdc4bb783a8d020882">Raytracer::ConeBuilder::~ConeBuilder</a></div><div class="ttdeci">~ConeBuilder() final</div><div class="ttdoc">Destructor of the ConeBuilder.</div><div class="ttdef"><b>Definition</b> Cone.cpp:57</div></div>
-<div class="ttc" id="aclassRaytracer_1_1Cone_html"><div class="ttname"><a href="classRaytracer_1_1Cone.html">Raytracer::Cone</a></div><div class="ttdoc">Represents a cone primitive in 3D space.</div><div class="ttdef"><b>Definition</b> Cone.hpp:25</div></div>
-<div class="ttc" id="aclassRaytracer_1_1Cone_html_a101ba4a0e4147f5e25f34f25c53a965b"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a101ba4a0e4147f5e25f34f25c53a965b">Raytracer::Cone::getBuilder</a></div><div class="ttdeci">std::unique_ptr&lt; IPrimitiveBuilder &gt; &amp; getBuilder(void) final</div><div class="ttdoc">Get the builder of the primitive.</div><div class="ttdef"><b>Definition</b> Cone.cpp:26</div></div>
-<div class="ttc" id="aclassRaytracer_1_1Cone_html_a1624e1ad616a5ba7d2a64de5678706f6"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a1624e1ad616a5ba7d2a64de5678706f6">Raytracer::Cone::Cone</a></div><div class="ttdeci">Cone()</div><div class="ttdoc">Construct a new Cone object.</div><div class="ttdef"><b>Definition</b> Cone.cpp:16</div></div>
-<div class="ttc" id="aclassRaytracer_1_1Cone_html_a8f45be05262bbe31383e9af13efc0751"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a8f45be05262bbe31383e9af13efc0751">Raytracer::Cone::display</a></div><div class="ttdeci">void display(void) final</div><div class="ttdoc">Display the primitive.</div><div class="ttdef"><b>Definition</b> Cone.cpp:34</div></div>
-<div class="ttc" id="aclassRaytracer_1_1Cone_html_a96627d3a4e10fe13ad4b47895425a22d"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a96627d3a4e10fe13ad4b47895425a22d">Raytracer::Cone::~Cone</a></div><div class="ttdeci">~Cone() final</div><div class="ttdoc">Destroy the Cone object.</div><div class="ttdef"><b>Definition</b> Cone.cpp:21</div></div>
+<div class="ttc" id="aclassRaytracer_1_1APrimitive_html"><div class="ttname"><a href="classRaytracer_1_1APrimitive.html">Raytracer::APrimitive</a></div><div class="ttdoc">Abstract base class for all primitives in the raytracer.</div><div class="ttdef"><b>Definition</b> APrimitive.hpp:23</div></div>
+<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html">Raytracer::ConeBuilder</a></div><div class="ttdoc">Builder for the Cone primitive.</div><div class="ttdef"><b>Definition</b> Cone.hpp:162</div></div>
+<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_a2603d03ec28dc586ffc66aa0ec97bc80"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#a2603d03ec28dc586ffc66aa0ec97bc80">Raytracer::ConeBuilder::_cone</a></div><div class="ttdeci">Cone &amp; _cone</div><div class="ttdoc">Reference to the cone being configured.</div><div class="ttdef"><b>Definition</b> Cone.hpp:186</div></div>
+<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_a5ed4f5491f70cdfcd2658ac897572e92"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#a5ed4f5491f70cdfcd2658ac897572e92">Raytracer::ConeBuilder::ConeBuilder</a></div><div class="ttdeci">ConeBuilder(Cone &amp;cone)</div><div class="ttdoc">Constructor of the ConeBuilder.</div><div class="ttdef"><b>Definition</b> Cone.cpp:363</div></div>
+<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_ad26e31f597ea8f40043a537146bc2a0a"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#ad26e31f597ea8f40043a537146bc2a0a">Raytracer::ConeBuilder::set</a></div><div class="ttdeci">IPrimitiveBuilder &amp; set(const std::string &amp;name, const std::vector&lt; std::string &gt; &amp;args) final</div><div class="ttdoc">Set the specific property of the primitive.</div><div class="ttdef"><b>Definition</b> Cone.cpp:373</div></div>
+<div class="ttc" id="aclassRaytracer_1_1ConeBuilder_html_adfe90c2f4e3742fdc4bb783a8d020882"><div class="ttname"><a href="classRaytracer_1_1ConeBuilder.html#adfe90c2f4e3742fdc4bb783a8d020882">Raytracer::ConeBuilder::~ConeBuilder</a></div><div class="ttdeci">~ConeBuilder() final</div><div class="ttdoc">Destructor of the ConeBuilder.</div><div class="ttdef"><b>Definition</b> Cone.cpp:368</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html"><div class="ttname"><a href="classRaytracer_1_1Cone.html">Raytracer::Cone</a></div><div class="ttdoc">Represents a cone primitive in 3D space.</div><div class="ttdef"><b>Definition</b> Cone.hpp:24</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a101ba4a0e4147f5e25f34f25c53a965b"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a101ba4a0e4147f5e25f34f25c53a965b">Raytracer::Cone::getBuilder</a></div><div class="ttdeci">std::unique_ptr&lt; IPrimitiveBuilder &gt; &amp; getBuilder(void) final</div><div class="ttdoc">Get the builder of the cone.</div><div class="ttdef"><b>Definition</b> Cone.cpp:30</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a1624e1ad616a5ba7d2a64de5678706f6"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a1624e1ad616a5ba7d2a64de5678706f6">Raytracer::Cone::Cone</a></div><div class="ttdeci">Cone()</div><div class="ttdoc">Construct a new Cone object.</div><div class="ttdef"><b>Definition</b> Cone.cpp:17</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a3a5d7197107efe016b688561498eeaac"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a3a5d7197107efe016b688561498eeaac">Raytracer::Cone::init</a></div><div class="ttdeci">void init(void) final</div><div class="ttdoc">Initialize the cone.</div><div class="ttdef"><b>Definition</b> Cone.cpp:357</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a4cbac0b5050a16c7c11301e19d0cd849"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a4cbac0b5050a16c7c11301e19d0cd849">Raytracer::Cone::setRadius</a></div><div class="ttdeci">void setRadius(const float &amp;radius)</div><div class="ttdoc">Set the radius of the cone base.</div><div class="ttdef"><b>Definition</b> Cone.cpp:72</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a7365f2958201e024fd7cba5e7a2f20bc"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a7365f2958201e024fd7cba5e7a2f20bc">Raytracer::Cone::setHeight</a></div><div class="ttdeci">void setHeight(const float &amp;height)</div><div class="ttdoc">Set the height of the cone.</div><div class="ttdef"><b>Definition</b> Cone.cpp:87</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a7b198d1bcb1900da6dadbaf43c355408"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a7b198d1bcb1900da6dadbaf43c355408">Raytracer::Cone::getAxis</a></div><div class="ttdeci">Lib::Vector3 &amp; getAxis(void)</div><div class="ttdoc">Get the axis of the cone.</div><div class="ttdef"><b>Definition</b> Cone.cpp:97</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a8d34e5f2131a9815b289b0b078bbbf17"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a8d34e5f2131a9815b289b0b078bbbf17">Raytracer::Cone::getHeight</a></div><div class="ttdeci">float &amp; getHeight(void)</div><div class="ttdoc">Get the height of the cone.</div><div class="ttdef"><b>Definition</b> Cone.cpp:77</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a920e6c0a827095f3de37edc57f87f479"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a920e6c0a827095f3de37edc57f87f479">Raytracer::Cone::getRadius</a></div><div class="ttdeci">float &amp; getRadius(void)</div><div class="ttdoc">Get the radius of the cone base.</div><div class="ttdef"><b>Definition</b> Cone.cpp:62</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_a96627d3a4e10fe13ad4b47895425a22d"><div class="ttname"><a href="classRaytracer_1_1Cone.html#a96627d3a4e10fe13ad4b47895425a22d">Raytracer::Cone::~Cone</a></div><div class="ttdeci">~Cone() final</div><div class="ttdoc">Destroy the Cone object.</div><div class="ttdef"><b>Definition</b> Cone.cpp:25</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_aa263105a99fa02a3cd6d40049b78df36"><div class="ttname"><a href="classRaytracer_1_1Cone.html#aa263105a99fa02a3cd6d40049b78df36">Raytracer::Cone::display</a></div><div class="ttdeci">void display(size_t level) final</div><div class="ttdoc">Display the primitive.</div><div class="ttdef"><b>Definition</b> Cone.cpp:38</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_aa2cd6150dccf2cee7e76a605a5d8a7b3"><div class="ttname"><a href="classRaytracer_1_1Cone.html#aa2cd6150dccf2cee7e76a605a5d8a7b3">Raytracer::Cone::setAxis</a></div><div class="ttdeci">void setAxis(const Lib::Vector3 &amp;axis)</div><div class="ttdoc">Set the axis of the cone.</div><div class="ttdef"><b>Definition</b> Cone.cpp:92</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Cone_html_ae88b7aa35e2eb39f081ce654dc57ae49"><div class="ttname"><a href="classRaytracer_1_1Cone.html#ae88b7aa35e2eb39f081ce654dc57ae49">Raytracer::Cone::hit</a></div><div class="ttdeci">bool hit(const Ray &amp;ray, Interval rayT, Intersection &amp;rec) const override</div><div class="ttdoc">Check if the ray intersects with the cone.</div><div class="ttdef"><b>Definition</b> Cone.cpp:132</div></div>
 <div class="ttc" id="aclassRaytracer_1_1IPrimitiveBuilder_html"><div class="ttname"><a href="classRaytracer_1_1IPrimitiveBuilder.html">Raytracer::IPrimitiveBuilder</a></div><div class="ttdoc">Interface for building primitive shapes in the raytracer.</div><div class="ttdef"><b>Definition</b> IPrimitiveBuilder.hpp:25</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Intersection_html"><div class="ttname"><a href="classRaytracer_1_1Intersection.html">Raytracer::Intersection</a></div><div class="ttdoc">Represents an intersection between a ray and a primitive.</div><div class="ttdef"><b>Definition</b> Ray.hpp:123</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Interval_html"><div class="ttname"><a href="classRaytracer_1_1Interval.html">Raytracer::Interval</a></div><div class="ttdoc">A class representing a range between two values.</div><div class="ttdef"><b>Definition</b> Interval.hpp:30</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Ray_html"><div class="ttname"><a href="classRaytracer_1_1Ray.html">Raytracer::Ray</a></div><div class="ttdoc">Forward declaration of the IMaterial class.</div><div class="ttdef"><b>Definition</b> Ray.hpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

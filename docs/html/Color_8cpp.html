@@ -104,13 +104,11 @@ $(function(){initNavTree('Color_8cpp.html',''); initResizable(true); });
 
 <p>The Color class implementation.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="IMaterialBuilder_8hpp_source.html">IMaterialBuilder.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Color_8hpp_source.html">Color.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Lib_8hpp_source.html">Lib.hpp</a>&quot;</code><br />
-<code>#include &quot;Checker.hpp&quot;</code><br />
-<code>#include &quot;Image.hpp&quot;</code><br />
-<code>#include &quot;Noise.hpp&quot;</code><br />
-<code>#include &quot;SolidColor.hpp&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Color_8hpp_source.html">Color.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Checker_8hpp_source.html">Checker.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Image_8hpp_source.html">Image.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Noise_8hpp_source.html">Noise.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SolidColor_8hpp_source.html">SolidColor.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -138,13 +136,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Create a Color object. </p>
+<p>Create a DiffuseLight material.</p>
 <p>Create a Refraction object.</p>
 <p>Create a Reflection object.</p>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;Color&gt; A shared pointer to the created Color object</dd>
 <dd>
 std::shared_ptr&lt;Reflection&gt; A shared pointer to the created Reflection object</dd>
 <dd>
-std::shared_ptr&lt;Refraction&gt; A shared pointer to the created Refraction object </dd></dl>
+std::shared_ptr&lt;Refraction&gt; A shared pointer to the created Refraction object</dd>
+<dd>
+std::shared_ptr&lt;DiffuseLight&gt; A shared pointer to the created material </dd></dl>
 
 </div>
 </div>

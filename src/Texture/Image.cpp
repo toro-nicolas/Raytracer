@@ -1,9 +1,14 @@
 /*
 ** EPITECH PROJECT, 2025
-** Image.cpp
+** Raytracer
 ** File description:
-** Image in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Texture
+** The Image class implementation
 */
+/**
+ * @file Image.cpp
+ * @brief The Image class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "Image.hpp"
 
@@ -28,7 +33,9 @@ namespace Raytracer {
         return Lib::Vector3(color_scale*pixel[0], color_scale*pixel[1], color_scale*pixel[2]);
     }
 
-    void Image::display() const {
-        std::cout << "Image texture: " << _image.width() << "x" << _image.height() << std::endl;
+    void Image::display(size_t level) const {
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "Image texture: " << std::endl;
+        std::cout << indent << "- Resolution: " << _image.width() << "x" << _image.height() << std::endl;
     }
 }

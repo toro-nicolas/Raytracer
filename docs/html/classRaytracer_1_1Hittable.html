@@ -102,7 +102,7 @@ $(function(){initNavTree('classRaytracer_1_1Hittable.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract class for hittable objects.  
+<p>Abstract class for objects that can be hit by rays.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Ray_8hpp_source.html">Ray.hpp</a>&gt;</code></p>
@@ -112,31 +112,101 @@ Inheritance diagram for Hittable:</div>
  <div class="center">
   <img src="classRaytracer_1_1Hittable.png" usemap="#Hittable_map" alt=""/>
   <map id="Hittable_map" name="Hittable_map">
-<area href="classRaytracer_1_1BvhNode.html" alt="BvhNode" shape="rect" coords="0,56,73,80"/>
-<area href="classRaytracer_1_1HittableList.html" alt="HittableList" shape="rect" coords="83,56,156,80"/>
-<area href="classRaytracer_1_1IPrimitive.html" title="Forward declaration of the IPrimitiveBuilder class." alt="IPrimitive" shape="rect" coords="166,56,239,80"/>
-<area href="classRaytracer_1_1APrimitive.html" title="Abstract base class for all primitives in the raytracer." alt="APrimitive" shape="rect" coords="166,112,239,136"/>
-<area href="classRaytracer_1_1Cone.html" title="Represents a cone primitive in 3D space." alt="Cone" shape="rect" coords="41,168,114,192"/>
-<area href="classRaytracer_1_1Cylinder.html" title="Represents a cylinder primitive in 3D space." alt="Cylinder" shape="rect" coords="124,168,197,192"/>
-<area href="classRaytracer_1_1Plane.html" title="Represents a plane primitive in 3D space." alt="Plane" shape="rect" coords="207,168,280,192"/>
-<area href="classRaytracer_1_1Sphere.html" title="Represents a sphere primitive in 3D space." alt="Sphere" shape="rect" coords="290,168,363,192"/>
+<area href="classRaytracer_1_1BvhNode.html" alt="BvhNode" shape="rect" coords="0,56,80,80"/>
+<area href="classRaytracer_1_1HittableList.html" title="A collection of hittable objects that can be ray-traced as a group." alt="HittableList" shape="rect" coords="90,56,170,80"/>
+<area href="classRaytracer_1_1IPrimitive.html" title="Forward declaration of the IPrimitiveBuilder class." alt="IPrimitive" shape="rect" coords="180,56,260,80"/>
+<area href="classRaytracer_1_1APrimitive.html" title="Abstract base class for all primitives in the raytracer." alt="APrimitive" shape="rect" coords="180,112,260,136"/>
+<area href="classRaytracer_1_1Box.html" title="Represents a box primitive in 3D space." alt="Box" shape="rect" coords="270,168,350,192"/>
+<area href="classRaytracer_1_1BoxPlane.html" title="Represents a box primitive in 3D space." alt="BoxPlane" shape="rect" coords="270,224,350,248"/>
+<area href="classRaytracer_1_1Cone.html" title="Represents a cone primitive in 3D space." alt="Cone" shape="rect" coords="270,280,350,304"/>
+<area href="classRaytracer_1_1Cylinder.html" title="Represents a cylinder primitive in 3D space." alt="Cylinder" shape="rect" coords="270,336,350,360"/>
+<area href="classRaytracer_1_1Plane.html" title="Represents a plane primitive in 3D space." alt="Plane" shape="rect" coords="270,392,350,416"/>
+<area href="classRaytracer_1_1Sphere.html" title="Represents a sphere primitive in 3D space." alt="Sphere" shape="rect" coords="270,448,350,472"/>
+<area href="classRaytracer_1_1TangleCube.html" title="Represents a tangle cube primitive (Steiner surface) in 3D space." alt="TangleCube" shape="rect" coords="270,504,350,528"/>
+<area href="classRaytracer_1_1Torus.html" title="Represents a torus primitive in 3D space." alt="Torus" shape="rect" coords="270,560,350,584"/>
+<area href="classRaytracer_1_1Triangle.html" title="Represents a triangle primitive in 3D space." alt="Triangle" shape="rect" coords="270,616,350,640"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a475fe3253fec2cdb2bf1f48c35f01850" id="r_a475fe3253fec2cdb2bf1f48c35f01850"><td class="memItemLeft" align="right" valign="top"><a id="a475fe3253fec2cdb2bf1f48c35f01850" name="a475fe3253fec2cdb2bf1f48c35f01850"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Hittable</b> ()=default</td></tr>
+<tr class="memdesc:a475fe3253fec2cdb2bf1f48c35f01850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
+<tr class="separator:a475fe3253fec2cdb2bf1f48c35f01850"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84a91a41b7ae878ccdd65df89ae26815" id="r_a84a91a41b7ae878ccdd65df89ae26815"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84a91a41b7ae878ccdd65df89ae26815">hit</a> (const <a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;ray, <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> ray_t, <a class="el" href="classRaytracer_1_1Intersection.html">Intersection</a> &amp;rec) const =0</td></tr>
+<tr class="memdesc:a84a91a41b7ae878ccdd65df89ae26815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if a ray hits this object.  <br /></td></tr>
 <tr class="separator:a84a91a41b7ae878ccdd65df89ae26815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5d3a0851d440c2237dc58d090ac0af5" id="r_ae5d3a0851d440c2237dc58d090ac0af5"><td class="memItemLeft" align="right" valign="top"><a id="ae5d3a0851d440c2237dc58d090ac0af5" name="ae5d3a0851d440c2237dc58d090ac0af5"></a>
-virtual const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>boundingBox</b> () const =0</td></tr>
+<tr class="memitem:ae5d3a0851d440c2237dc58d090ac0af5" id="r_ae5d3a0851d440c2237dc58d090ac0af5"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5d3a0851d440c2237dc58d090ac0af5">boundingBox</a> () const =0</td></tr>
+<tr class="memdesc:ae5d3a0851d440c2237dc58d090ac0af5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bounding box of this object (const version)  <br /></td></tr>
 <tr class="separator:ae5d3a0851d440c2237dc58d090ac0af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb2ffbba7c1caaaba342114a91a6032c" id="r_acb2ffbba7c1caaaba342114a91a6032c"><td class="memItemLeft" align="right" valign="top"><a id="acb2ffbba7c1caaaba342114a91a6032c" name="acb2ffbba7c1caaaba342114a91a6032c"></a>
-virtual <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>boundingBox</b> ()=0</td></tr>
+<tr class="memitem:acb2ffbba7c1caaaba342114a91a6032c" id="r_acb2ffbba7c1caaaba342114a91a6032c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb2ffbba7c1caaaba342114a91a6032c">boundingBox</a> ()=0</td></tr>
+<tr class="memdesc:acb2ffbba7c1caaaba342114a91a6032c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bounding box of this object.  <br /></td></tr>
 <tr class="separator:acb2ffbba7c1caaaba342114a91a6032c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract class for hittable objects. </p>
+<div class="textblock"><p>Abstract class for objects that can be hit by rays. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae5d3a0851d440c2237dc58d090ac0af5" name="ae5d3a0851d440c2237dc58d090ac0af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d3a0851d440c2237dc58d090ac0af5">&#9670;&#160;</a></span>boundingBox() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp; boundingBox </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the bounding box of this object (const version) </p>
+<dl class="section return"><dt>Returns</dt><dd>The axis-aligned bounding box containing this object </dd></dl>
+
+<p>Implemented in <a class="el" href="classRaytracer_1_1APrimitive.html#ab1a42640c0bbafa01fc13eeafe6ec557">APrimitive</a>, <a class="el" href="classRaytracer_1_1BvhNode.html#ab1a42640c0bbafa01fc13eeafe6ec557">BvhNode</a>, and <a class="el" href="classRaytracer_1_1HittableList.html#ab1a42640c0bbafa01fc13eeafe6ec557">HittableList</a>.</p>
+
+</div>
+</div>
+<a id="acb2ffbba7c1caaaba342114a91a6032c" name="acb2ffbba7c1caaaba342114a91a6032c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb2ffbba7c1caaaba342114a91a6032c">&#9670;&#160;</a></span>boundingBox() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp; boundingBox </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the bounding box of this object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The axis-aligned bounding box containing this object </dd></dl>
+
+<p>Implemented in <a class="el" href="classRaytracer_1_1APrimitive.html#a42b8ada234d28a6c74b59f80634297fc">APrimitive</a>, <a class="el" href="classRaytracer_1_1BvhNode.html#a42b8ada234d28a6c74b59f80634297fc">BvhNode</a>, and <a class="el" href="classRaytracer_1_1HittableList.html#a42b8ada234d28a6c74b59f80634297fc">HittableList</a>.</p>
+
+</div>
+</div>
 <a id="a84a91a41b7ae878ccdd65df89ae26815" name="a84a91a41b7ae878ccdd65df89ae26815"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84a91a41b7ae878ccdd65df89ae26815">&#9670;&#160;</a></span>hit()</h2>
 
@@ -169,7 +239,18 @@ virtual <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;&#160;</t
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRaytracer_1_1Sphere.html#a6170def4cf3c7e9f39e8580d47bdd4ea">Sphere</a>.</p>
+<p>Test if a ray hits this object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>The ray to test </td></tr>
+    <tr><td class="paramname">ray_t</td><td><a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> of valid hit distances </td></tr>
+    <tr><td class="paramname">rec</td><td><a class="el" href="classRaytracer_1_1Intersection.html" title="Represents an intersection between a ray and a primitive.">Intersection</a> record to be filled if hit occurs </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the ray hits this object </dd></dl>
+
+<p>Implemented in <a class="el" href="classRaytracer_1_1BoxPlane.html#a308439a9300e74dcd62c6402f9ab4bf1">BoxPlane</a>, <a class="el" href="classRaytracer_1_1Box.html#a308439a9300e74dcd62c6402f9ab4bf1">Box</a>, <a class="el" href="classRaytracer_1_1Plane.html#a308439a9300e74dcd62c6402f9ab4bf1">Plane</a>, <a class="el" href="classRaytracer_1_1BvhNode.html#a308439a9300e74dcd62c6402f9ab4bf1">BvhNode</a>, <a class="el" href="classRaytracer_1_1IPrimitive.html#a84a91a41b7ae878ccdd65df89ae26815">IPrimitive</a>, <a class="el" href="classRaytracer_1_1APrimitive.html#a6170def4cf3c7e9f39e8580d47bdd4ea">APrimitive</a>, <a class="el" href="classRaytracer_1_1Sphere.html#a6170def4cf3c7e9f39e8580d47bdd4ea">Sphere</a>, <a class="el" href="classRaytracer_1_1HittableList.html#a6170def4cf3c7e9f39e8580d47bdd4ea">HittableList</a>, <a class="el" href="classRaytracer_1_1Cone.html#ae88b7aa35e2eb39f081ce654dc57ae49">Cone</a>, <a class="el" href="classRaytracer_1_1Cylinder.html#ae88b7aa35e2eb39f081ce654dc57ae49">Cylinder</a>, <a class="el" href="classRaytracer_1_1TangleCube.html#ae88b7aa35e2eb39f081ce654dc57ae49">TangleCube</a>, <a class="el" href="classRaytracer_1_1Torus.html#ae88b7aa35e2eb39f081ce654dc57ae49">Torus</a>, and <a class="el" href="classRaytracer_1_1Triangle.html#ae88b7aa35e2eb39f081ce654dc57ae49">Triangle</a>.</p>
 
 </div>
 </div>

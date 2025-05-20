@@ -2,8 +2,8 @@
 
 ## Introduction
 
-This document explains how to create material plugins for the raytracer.  
-Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,  
+This document explains how to create material plugins for the raytracer.
+Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,
 while primitive are dynamically loaded from shared libraries (.so).
 
 
@@ -40,7 +40,7 @@ IPrimitiveBuilder (Interface)
 
 ### 1. Primitive Class
 
-Your primitive class must inherit from `APrimitive` and implement all required virtual methods.  
+Your primitive class must inherit from `APrimitive` and implement all required virtual methods.
 Example:
 ```cpp
 namespace Raytracer {
@@ -75,7 +75,7 @@ namespace Raytracer {
             /**
              * @brief Display the primitive
              */
-            void display(void) final;
+            void display(size_t level) final;
 
 
 
@@ -100,7 +100,7 @@ namespace Raytracer {
 
 ### 2. Builder Class
 
-Your builder class must inherit from `APrimitiveBuilder` and implement the necessary methods to configure your primitive.  
+Your builder class must inherit from `APrimitiveBuilder` and implement the necessary methods to configure your primitive.
 Example:
 
 ```cpp
@@ -225,7 +225,7 @@ g++ -std=c++20 -Wall -Wextra -Werror -fPIC -shared \
 
 ## Plugin Loading
 
-The raytracer core will automatically search for and load all `.so` files that follow the naming convention.  
+The raytracer core will automatically search for and load all `.so` files that follow the naming convention.
 For each plugin found, it will call the `createPrimitive()` function to instantiate the primitive.
 
 

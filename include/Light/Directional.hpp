@@ -48,12 +48,7 @@ namespace Raytracer {
             /**
              * @brief Display the light
              */
-            void display(void) final;
-
-            // TODO: par ici
-            LightType getType() const override {
-                return LightType::DIRECTIONAL;
-            }
+            void display(size_t level) final;
 
 
 
@@ -77,12 +72,45 @@ namespace Raytracer {
              */
             void setDirection(const Lib::Vector3 &direction);
 
+            /**
+             * @brief Get the color of the directional light
+             * @return Reference to the color vector
+             */
+            Lib::Vector3 &getColor(void);
+
+            /**
+             * @brief Get the color of the directional light (const version)
+             * @return Const reference to the color vector
+             */
+            const Lib::Vector3 &getColor(void) const;
+
+            /**
+             * @brief Set the color of the directional light
+             * @param color_ New color vector
+             */
+            void setColor(const Lib::Vector3 &color_);
+
+
+
+            /* Compute function */
+
+            /**
+             * @brief Compute the light contribution at a given point
+             * @param point The point to compute the light contribution for
+             * @param normal The normal vector at the point
+             * @param view_dir The view direction vector
+             * @return The computed light contribution
+             */
+            Lib::Vector3 compute(const Lib::Vector3& point, const Lib::Vector3& normal,
+                                 const Lib::Vector3& view_dir) const final;
+
 
 
         protected:
 
         private:
             Lib::Vector3 _direction; ///< The direction of the directional light
+            Lib::Vector3 _color; ///< The color of the directional light
     };
 
 
@@ -117,6 +145,13 @@ namespace Raytracer {
              * @return Reference to the directional builder being configured
              */
             ILightBuilder &set(const std::string &name, const std::vector<std::string> &args) final;
+
+            /**
+             * @brief Set the direction of the directional light
+             * @param direction The new direction vector
+             * @return Reference to the directional builder being configured
+             */
+            ILightBuilder &setDirection(const Lib::Vector3 &direction);
 
 
 

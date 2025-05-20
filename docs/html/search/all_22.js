@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚩_0',['Result 🚩',['../md_README.html#autotoc_md131',1,'']]]
+  ['📑_0',['Table of contents 📑',['../md_README.html#autotoc_md135',1,'']]]
 ];

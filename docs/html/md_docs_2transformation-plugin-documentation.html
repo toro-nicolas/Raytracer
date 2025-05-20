@@ -99,23 +99,21 @@ $(function(){initNavTree('md_docs_2transformation-plugin-documentation.html','')
   <div class="headertitle"><div class="title">Transformation Plugins Documentation for Raytracer</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md109"></a> </p>
-<h1><a class="anchor" id="autotoc_md110"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md116"></a> </p>
+<h1><a class="anchor" id="autotoc_md117"></a>
 Introduction</h1>
-<p>This document explains how to create material plugins for the raytracer. <br  />
- Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, <br  />
- while transformations are dynamically loaded from shared libraries (.so).</p>
-<h1><a class="anchor" id="autotoc_md111"></a>
+<p>This document explains how to create material plugins for the raytracer. Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, while transformations are dynamically loaded from shared libraries (.so).</p>
+<h1><a class="anchor" id="autotoc_md118"></a>
 Naming Conventions</h1>
 <p>Each transformation plugin must follow this naming convention: </p><div class="fragment"><div class="line">raytrace_transformation_[transformation_name].so</div>
 </div><!-- fragment --><p> For example, for a translation: <code>raytrace_transformation_translation.so</code></p>
-<h1><a class="anchor" id="autotoc_md112"></a>
+<h1><a class="anchor" id="autotoc_md119"></a>
 Plugin Architecture</h1>
 <p>To create a new transformation plugin, you need to implement two main classes:</p><ol type="1">
 <li>A transformation class that inherits from <code>ATransformation</code></li>
 <li>A builder class for this transformation that inherits from <code>ATransformationBuilder</code></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md113"></a>
+<h2><a class="anchor" id="autotoc_md120"></a>
 Class Hierarchy</h2>
 <div class="fragment"><div class="line">ITransformation (Interface)</div>
 <div class="line">└── ATransformation (Abstract class)</div>
@@ -124,12 +122,11 @@ Class Hierarchy</h2>
 <div class="line">ITransformationBuilder (Interface)</div>
 <div class="line">└── ATransformationBuilder (Abstract class)</div>
 <div class="line">    └── YourTransformationBuilder (Concrete implementation)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md114"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md121"></a>
 Creating a New Transformation</h1>
-<h2><a class="anchor" id="autotoc_md115"></a>
+<h2><a class="anchor" id="autotoc_md122"></a>
 1. Transformation Class</h2>
-<p>Your transformation class must inherit from <code>ATransformation</code> and implement all required virtual methods. <br  />
- Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
+<p>Your transformation class must inherit from <code>ATransformation</code> and implement all required virtual methods. Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
 <div class="line">    <span class="keyword">class </span>YourTransformation final : <span class="keyword">public</span> ATransformation {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
 <div class="line">            <span class="comment">/* Constructors and destructors */</span></div>
@@ -144,7 +141,7 @@ Creating a New Transformation</h1>
 <div class="line"> </div>
 <div class="line">            <span class="comment">/* Display function */</span></div>
 <div class="line"> </div>
-<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">void</span>) final;</div>
+<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">size_t</span> level) final;</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -153,44 +150,43 @@ Creating a New Transformation</h1>
 <div class="line">        private:</div>
 <div class="line">    };</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md116"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md123"></a>
 2. Builder Class</h2>
-<p>Your builder class must inherit from <code>ATransformationBuilder</code> and implement the necessary methods to configure your transformation. <br  />
- Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
+<p>Your builder class must inherit from <code>ATransformationBuilder</code> and implement the necessary methods to configure your transformation. Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
 <div class="line">    <span class="keyword">class </span>YourTransformationBuilder final : <span class="keyword">public</span> ATransformationBuilder {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
 <div class="line">            <span class="comment">/* Constructors and destructors */</span></div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            YourTransformationBuilder(YourTransformation &amp;YourTransformation);</div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            ~YourTransformationBuilder() final;</div>
-<div class="line">            </div>
-<div class="line">            </div>
-<div class="line">            </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">            <span class="comment">/* Setters of the specific properties */</span></div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            ITransformationBuilder &amp;set(const std::<span class="keywordtype">string</span> &amp;name, const std::vector&lt;std::<span class="keywordtype">string</span>&gt; &amp;args) final;</div>
-<div class="line">        </div>
-<div class="line">        </div>
-<div class="line">        </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">        protected:</div>
 <div class="line">            YourTransformation &amp;_yourTransformation; </div>
 <div class="line">    };</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md117"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md124"></a>
 3. Export Function</h2>
 <p>Each plugin must export a creation function named <code>createTransformation</code> with the following signature: </p><div class="fragment"><div class="line"> </div>
 <div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> std::shared_ptr&lt;YourTransformation&gt; createTransformation(<span class="keywordtype">void</span>);</div>
 </div><!-- fragment --><p> This function will be called by the raytracer core to instantiate your transformation.</p>
-<h1><a class="anchor" id="autotoc_md118"></a>
+<h1><a class="anchor" id="autotoc_md125"></a>
 Implementation Details</h1>
-<h2><a class="anchor" id="autotoc_md119"></a>
+<h2><a class="anchor" id="autotoc_md126"></a>
 The ITransformation Class</h2>
 <p>This interface defines the basic functionalities that any transformation must implement:</p><ul>
 <li>Access to the builder (<code>getBuilder</code>)</li>
 <li>Information display (<code>display</code>)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md120"></a>
+<h2><a class="anchor" id="autotoc_md127"></a>
 The ATransformation Class</h2>
 <p>This abstract class implements common functionalities shared by all transformations:</p><ul>
 <li>Base implementation of the <code>display</code> method</li>
@@ -199,12 +195,12 @@ The ATransformation Class</h2>
 <li>The <code>getBuilder()</code> method</li>
 <li>Properties and methods specific to your transformation</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md121"></a>
+<h2><a class="anchor" id="autotoc_md128"></a>
 The ITransformationBuilder Class</h2>
 <p>This interface defines the behavior of transformation builders:</p><ul>
 <li>Configuration of properties specific to the transformation (<code>set</code>)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md122"></a>
+<h2><a class="anchor" id="autotoc_md129"></a>
 The ATransformationBuilder Class</h2>
 <p>This abstract class implements functionalities common to builders:</p><ul>
 <li>Storage of a reference to the transformation being configured</li>
@@ -212,7 +208,7 @@ The ATransformationBuilder Class</h2>
 <p>You must implement in your derived builder class:</p><ul>
 <li>The <code>set()</code> method to handle properties specific to your transformation</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md123"></a>
+<h1><a class="anchor" id="autotoc_md130"></a>
 How to Compile a Plugin</h1>
 <p>To compile your transformation plugin as a shared library (.so), use this command: </p><div class="fragment"><div class="line">g++ -std=c++20 -Wall -Wextra -Werror -fPIC -shared \</div>
 <div class="line">    -I./include/Transformation/common \</div>
@@ -221,10 +217,10 @@ How to Compile a Plugin</h1>
 <div class="line">    -L./plugins -l:raytracer_transformation.so \</div>
 <div class="line">    -o plugins/raytracer_transformation_&lt;name&gt;.so \</div>
 <div class="line">    src/Transformation/&lt;name&gt;.cpp</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md124"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md131"></a>
 Plugin Loading</h1>
 <p>The raytracer core will automatically search for and load all <code>.so</code> files that follow the naming convention. For each plugin found, it will call the <code>createTransformation()</code> function to instantiate the transformation.</p>
-<h1><a class="anchor" id="autotoc_md125"></a>
+<h1><a class="anchor" id="autotoc_md132"></a>
 Summary of Steps to Create a New Plugin</h1>
 <ol type="1">
 <li>Create a class that inherits from <code>ATransformation</code></li>
@@ -234,7 +230,7 @@ Summary of Steps to Create a New Plugin</h1>
 <li>Export the <code>createTransformation()</code> function</li>
 <li>Compile as a shared library (.so) following the naming convention</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md126"></a>
+<h1><a class="anchor" id="autotoc_md133"></a>
 Integrating with Primitives</h1>
 <p>Materials can be assigned to primitives using the primitive's <code>setMaterial()</code> method. This allows for reusable materials across different primitives. When creating complex scenes, consider creating a library of commonly used materials. </p>
 </div></div><!-- contents -->

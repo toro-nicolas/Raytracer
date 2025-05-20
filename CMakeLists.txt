@@ -139,11 +139,15 @@ endforeach()
 
 ############################ TRANSFORMATION ###################################
 # For common transformation needs
-file(GLOB COMMON "src/Transformation/common/*.cpp")
+file(GLOB COMMON "src/Transformation/common/*.cpp"
+    "src/Rendering/Ray.cpp"
+    "src/Rendering/AABB.cpp"
+    )
 add_library(raytracer_transformation SHARED ${COMMON})
 set_target_properties(raytracer_transformation PROPERTIES PREFIX "")
 target_include_directories(raytracer_transformation PUBLIC
         ${CMAKE_SOURCE_DIR}/include/Transformation/common
+        ${CMAKE_SOURCE_DIR}/include/Rendering
 )
 target_compile_options(raytracer_transformation PUBLIC -Wall -Wextra -Werror -O3)
 set_target_properties(raytracer_transformation PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/plugins)

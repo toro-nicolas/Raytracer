@@ -107,10 +107,11 @@ Inheritance diagram for IMaterial:</div>
  <div class="center">
   <img src="classRaytracer_1_1IMaterial.png" usemap="#IMaterial_map" alt=""/>
   <map id="IMaterial_map" name="IMaterial_map">
-<area href="classRaytracer_1_1AMaterial.html" title="Abstract base class for transformations in the raytracer." alt="AMaterial" shape="rect" coords="80,56,150,80"/>
-<area href="classRaytracer_1_1Color.html" title="Represents a color material for primitives." alt="Color" shape="rect" coords="0,112,70,136"/>
-<area href="classRaytracer_1_1Reflection.html" title="Represents a color material for primitives." alt="Reflection" shape="rect" coords="80,112,150,136"/>
-<area href="classRaytracer_1_1Refraction.html" title="Represents a color material for primitives." alt="Refraction" shape="rect" coords="160,112,230,136"/>
+<area href="classRaytracer_1_1AMaterial.html" title="Abstract base class for transformations in the raytracer." alt="AMaterial" shape="rect" coords="133,56,212,80"/>
+<area href="classRaytracer_1_1Color.html" title="Represents a color material for primitives." alt="Color" shape="rect" coords="0,112,79,136"/>
+<area href="classRaytracer_1_1DiffuseLight.html" title="Material that emits light." alt="DiffuseLight" shape="rect" coords="89,112,168,136"/>
+<area href="classRaytracer_1_1Reflection.html" title="Represents a color material for primitives." alt="Reflection" shape="rect" coords="178,112,257,136"/>
+<area href="classRaytracer_1_1Refraction.html" title="Represents a color material for primitives." alt="Refraction" shape="rect" coords="267,112,346,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -123,16 +124,19 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IMaterial</b> ()=
 <tr class="memitem:a4a4f037e72badba55b977b393bc7c50f" id="r_a4a4f037e72badba55b977b393bc7c50f"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1IMaterialBuilder.html">IMaterialBuilder</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a4f037e72badba55b977b393bc7c50f">getBuilder</a> (void)=0</td></tr>
 <tr class="memdesc:a4a4f037e72badba55b977b393bc7c50f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the builder of the material.  <br /></td></tr>
 <tr class="separator:a4a4f037e72badba55b977b393bc7c50f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a843628a7aa0280bb966fd8950aab55a1" id="r_a843628a7aa0280bb966fd8950aab55a1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a843628a7aa0280bb966fd8950aab55a1">display</a> (void)=0</td></tr>
-<tr class="memdesc:a843628a7aa0280bb966fd8950aab55a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the material.  <br /></td></tr>
-<tr class="separator:a843628a7aa0280bb966fd8950aab55a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e37e1b79e77c950492168639185096" id="r_a24e37e1b79e77c950492168639185096"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24e37e1b79e77c950492168639185096">display</a> (size_t level)=0</td></tr>
+<tr class="memdesc:a24e37e1b79e77c950492168639185096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the material.  <br /></td></tr>
+<tr class="separator:a24e37e1b79e77c950492168639185096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae705f3d96bbdcd2384cdca9a46adecb4" id="r_ae705f3d96bbdcd2384cdca9a46adecb4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae705f3d96bbdcd2384cdca9a46adecb4">scatter</a> (const <a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;r_in, const <a class="el" href="classRaytracer_1_1Intersection.html">Intersection</a> &amp;rec, <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;attenuation, <a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;scattered) const =0</td></tr>
 <tr class="memdesc:ae705f3d96bbdcd2384cdca9a46adecb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatter the ray based on the material properties.  <br /></td></tr>
 <tr class="separator:ae705f3d96bbdcd2384cdca9a46adecb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e35c538374e1d18529e513fc6cd048" id="r_a12e35c538374e1d18529e513fc6cd048"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12e35c538374e1d18529e513fc6cd048">emitted</a> (double u, double v, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;p) const =0</td></tr>
+<tr class="memdesc:a12e35c538374e1d18529e513fc6cd048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the emitted light at a specific point.  <br /></td></tr>
+<tr class="separator:a12e35c538374e1d18529e513fc6cd048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a843628a7aa0280bb966fd8950aab55a1" name="a843628a7aa0280bb966fd8950aab55a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a843628a7aa0280bb966fd8950aab55a1">&#9670;&#160;</a></span>display()</h2>
+<a id="a24e37e1b79e77c950492168639185096" name="a24e37e1b79e77c950492168639185096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e37e1b79e77c950492168639185096">&#9670;&#160;</a></span>display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,7 +147,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IMaterial</b> ()=
         <tr>
           <td class="memname">virtual void display </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -156,7 +160,54 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IMaterial</b> ()=
 
 <p>Display the material. </p>
 
-<p>Implemented in <a class="el" href="classRaytracer_1_1Color.html#a8f45be05262bbe31383e9af13efc0751">Color</a>, <a class="el" href="classRaytracer_1_1AMaterial.html#a472a1181a582bdddb9ff224a37ad95ac">AMaterial</a>, <a class="el" href="classRaytracer_1_1Reflection.html#a472a1181a582bdddb9ff224a37ad95ac">Reflection</a>, and <a class="el" href="classRaytracer_1_1Refraction.html#a472a1181a582bdddb9ff224a37ad95ac">Refraction</a>.</p>
+<p>Implemented in <a class="el" href="classRaytracer_1_1Color.html#aa263105a99fa02a3cd6d40049b78df36">Color</a>, <a class="el" href="classRaytracer_1_1DiffuseLight.html#aa263105a99fa02a3cd6d40049b78df36">DiffuseLight</a>, <a class="el" href="classRaytracer_1_1AMaterial.html#ab221007634f5fb7777414d6aff27a817">AMaterial</a>, <a class="el" href="classRaytracer_1_1Reflection.html#ab221007634f5fb7777414d6aff27a817">Reflection</a>, and <a class="el" href="classRaytracer_1_1Refraction.html#ab221007634f5fb7777414d6aff27a817">Refraction</a>.</p>
+
+</div>
+</div>
+<a id="a12e35c538374e1d18529e513fc6cd048" name="a12e35c538374e1d18529e513fc6cd048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e35c538374e1d18529e513fc6cd048">&#9670;&#160;</a></span>emitted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> emitted </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the emitted light at a specific point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>The u texture coordinate </td></tr>
+    <tr><td class="paramname">v</td><td>The v texture coordinate </td></tr>
+    <tr><td class="paramname">p</td><td>The point in 3D space where to compute emission </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classLib_1_1Vector3.html" title="A class representing a 3D vector.">Lib::Vector3</a> The emitted color/light at the point </dd></dl>
+
+<p>Implemented in <a class="el" href="classRaytracer_1_1AMaterial.html#ab25c6324f899acd9f696ed0d4fa9c264">AMaterial</a>, and <a class="el" href="classRaytracer_1_1DiffuseLight.html#ab25c6324f899acd9f696ed0d4fa9c264">DiffuseLight</a>.</p>
 
 </div>
 </div>
@@ -186,7 +237,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~IMaterial</b> ()=
 <p>Get the builder of the material. </p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to a unique pointer to the material builder </dd></dl>
 
-<p>Implemented in <a class="el" href="classRaytracer_1_1Color.html#a42efac48033a094cc242939862a30c30">Color</a>, <a class="el" href="classRaytracer_1_1Reflection.html#a42efac48033a094cc242939862a30c30">Reflection</a>, and <a class="el" href="classRaytracer_1_1Refraction.html#a42efac48033a094cc242939862a30c30">Refraction</a>.</p>
+<p>Implemented in <a class="el" href="classRaytracer_1_1DiffuseLight.html#a59cb2334a766149b601b46a55b2cbac8">DiffuseLight</a>, <a class="el" href="classRaytracer_1_1Color.html#a42efac48033a094cc242939862a30c30">Color</a>, <a class="el" href="classRaytracer_1_1Reflection.html#a42efac48033a094cc242939862a30c30">Reflection</a>, and <a class="el" href="classRaytracer_1_1Refraction.html#a42efac48033a094cc242939862a30c30">Refraction</a>.</p>
 
 </div>
 </div>

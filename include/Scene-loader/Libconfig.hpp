@@ -126,8 +126,10 @@ namespace Raytracer {
             /**
              * @brief Set the light from the libconfig setting
              * @param setting The libconfig setting for the light
+             * @param imported If the light is imported from another scene
              */
-            void _setLight(const libconfig::Setting &setting);
+            void _setLight(const libconfig::Setting &setting, bool imported);
+
 
 
             std::vector<std::string> _scenesLoaded; ///< The list of scenes loaded

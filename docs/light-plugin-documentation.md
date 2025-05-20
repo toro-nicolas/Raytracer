@@ -2,8 +2,8 @@
 
 ## Introduction
 
-This document explains how to create light plugins for the raytracer.  
-Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,  
+This document explains how to create light plugins for the raytracer.
+Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,
 while lights are dynamically loaded from shared libraries (.so).
 
 
@@ -78,13 +78,13 @@ namespace Raytracer {
             /**
              * @brief Display the light
              */
-            void display(void) final;
+            void display(size_t level) final;
 
-            
+
 
             /* Methods specific to your light */
 
-            
+
 
         protected:
 
@@ -97,7 +97,7 @@ namespace Raytracer {
 
 ### 2. Builder Class
 
-Your builder class must inherit from `ALightBuilder` and implement the necessary methods to configure your light.  
+Your builder class must inherit from `ALightBuilder` and implement the necessary methods to configure your light.
 Example:
 ```cpp
 namespace Raytracer {
@@ -108,22 +108,22 @@ namespace Raytracer {
     class YourLightBuilder final : public ALightBuilder {
         public:
             /* Constructors and destructors */
-            
+
             /**
              * @brief Constructor of the YourLightBuilder
              * @param yourLight Reference to a YourLight to be configured
              */
             YourLightBuilder(YourLight &yourLight);
-            
+
             /**
              * @brief Destructor of the YourLightBuilder
              */
             ~YourLightBuilder() final;
-            
-            
-            
+
+
+
             /* Setters of the specific properties */
-            
+
             /**
              * @brief Set the specific property of the light
              * @param name The name of the property
@@ -131,9 +131,9 @@ namespace Raytracer {
              * @return Reference to the YourLight builder being configured
              */
             ILightBuilder &set(const std::string &name, const std::vector<std::string> &args) final;
-        
-        
-        
+
+
+
         protected:
             YourLight &_yourLight; ///< Reference to the YourLight being configured
     };
@@ -214,7 +214,7 @@ g++ -std=c++20 -Wall -Wextra -Werror -fPIC -shared \
 
 ## Plugin Loading
 
-The raytracer core will automatically search for and load all `.so` files that follow the naming convention.  
+The raytracer core will automatically search for and load all `.so` files that follow the naming convention.
 For each plugin found, it will call the `createLight()` function to instantiate the light.
 
 

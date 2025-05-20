@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../classLib_1_1Vector3.html#af88b946fb90d5f08b5fb740c70e98c10',1,'Lib::Vector3']]]
+  ['normal_0',['normal',['../classRaytracer_1_1Intersection.html#ac195757f149b518d7f5436aa9c5c293d',1,'Raytracer::Intersection']]]
 ];

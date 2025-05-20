@@ -14,11 +14,12 @@
 using namespace Lib;
 
 namespace Raytracer {
-    void ALight::display(void)
+    void ALight::display(size_t level)
     {
+        std::string indent(level * 4, ' ');
         std::cout << "Light data:" << std::endl;
-        std::cout << "        - Position: " << _pos << std::endl;
-        std::cout << "        - Intensity: " << _intensity << std::endl;
+        std::cout << indent << "- Position: " << _pos << std::endl;
+        std::cout << indent << "- Intensity: " << _intensity * 100 << "%" << std::endl;
     }
 
     Lib::Vector3 &ALight::getPos()
@@ -49,5 +50,12 @@ namespace Raytracer {
     void ALight::setIntensity(double intensity)
     {
         _intensity = intensity;
+    }
+
+    Lib::Vector3 ALight::compute(UNUSED const Lib::Vector3& point, UNUSED const Lib::Vector3& normal,
+                           UNUSED const Lib::Vector3& view_dir) const
+    {
+        // Default implementation does nothing
+        return Lib::Vector3(0,0,0);
     }
 }

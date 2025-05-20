@@ -48,17 +48,17 @@ namespace Raytracer {
             /**
              * @brief Display the light
              */
-            void display(void) final;
+            void display(size_t level) final;
 
-            LightType getType() const override {
-                return LightType::POINT_LIGHT;
-            }
+            /**
+             * @brief Compute the light contribution at a given point
+             * @param point The point in space
+             * @param normal The normal vector at the point
+             * @param view_dir The view direction vector
+             * @return The light contribution as a Vector3
+             */
+            Lib::Vector3 compute(const Lib::Vector3& point, const Lib::Vector3& normal, const Lib::Vector3& view_dir) const override;
 
-
-
-        protected:
-
-        private:
     };
 
 

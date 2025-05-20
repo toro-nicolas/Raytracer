@@ -50,7 +50,7 @@ namespace Raytracer {
         }*/
         for (const auto &primitive: _primitives) {
             std::cout << "    - ";
-            primitive->display();
+            primitive->display(2);
         }
 
         std::cout << std::endl << UNDERLINE << "LIGHTS:" << RESET << std::endl;
@@ -63,7 +63,7 @@ namespace Raytracer {
         }*/
         for (const auto &light: _lights) {
             std::cout << "    - ";
-            light->display();
+            light->display(2);
         }
     }
 }

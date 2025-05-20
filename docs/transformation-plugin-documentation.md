@@ -2,8 +2,8 @@
 
 ## Introduction
 
-This document explains how to create material plugins for the raytracer.  
-Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,  
+This document explains how to create material plugins for the raytracer.
+Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,
 while transformations are dynamically loaded from shared libraries (.so).
 
 
@@ -44,7 +44,7 @@ ITransformationBuilder (Interface)
 
 ### 1. Transformation Class
 
-Your transformation class must inherit from `ATransformation` and implement all required virtual methods.  
+Your transformation class must inherit from `ATransformation` and implement all required virtual methods.
 Example:
 ```cpp
 namespace Raytracer {
@@ -79,7 +79,7 @@ namespace Raytracer {
             /**
              * @brief Display the transformation
              */
-            void display(void) final;
+            void display(size_t level) final;
 
 
 
@@ -93,7 +93,7 @@ namespace Raytracer {
 
 ### 2. Builder Class
 
-Your builder class must inherit from `ATransformationBuilder` and implement the necessary methods to configure your transformation.  
+Your builder class must inherit from `ATransformationBuilder` and implement the necessary methods to configure your transformation.
 Example:
 ```cpp
 namespace Raytracer {
@@ -104,22 +104,22 @@ namespace Raytracer {
     class YourTransformationBuilder final : public ATransformationBuilder {
         public:
             /* Constructors and destructors */
-            
+
             /**
              * @brief Constructor of the YourTransformationBuilder
              * @param YourTransformation Reference to a YourTransformation to be configured
              */
             YourTransformationBuilder(YourTransformation &YourTransformation);
-            
+
             /**
              * @brief Destructor of the YourTransformationBuilder
              */
             ~YourTransformationBuilder() final;
-            
-            
-            
+
+
+
             /* Setters of the specific properties */
-            
+
             /**
              * @brief Set the specific property of the transformation
              * @param name The name of the property
@@ -127,9 +127,9 @@ namespace Raytracer {
              * @return Reference to the transformation builder being configured
              */
             ITransformationBuilder &set(const std::string &name, const std::vector<std::string> &args) final;
-        
-        
-        
+
+
+
         protected:
             YourTransformation &_yourTransformation; ///< Reference to the YourTransformation being configured
     };

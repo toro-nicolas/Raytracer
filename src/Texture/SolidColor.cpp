@@ -1,9 +1,14 @@
 /*
 ** EPITECH PROJECT, 2025
-** SolidColor.cpp
+** Raytracer
 ** File description:
-** SolidColor in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Texture
+** The SolidColor class implementation
 */
+/**
+ * @file SolidColor.cpp
+ * @brief The SolidColor class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "SolidColor.hpp"
 
@@ -16,15 +21,18 @@ namespace Raytracer {
 
     SolidColor::SolidColor(double red, double green, double blue)
         : SolidColor(Lib::Vector3(red, green, blue))
-        {
-        }
+    {
+    }
+
     Lib::Vector3 SolidColor::value(UNUSED double u, UNUSED double v, UNUSED const Lib::Vector3& p) const
     {
         return _color;
     }
 
-    void SolidColor::display() const
+    void SolidColor::display(size_t level) const
     {
-        std::cout << "\t\t\tSolidColor: (" << _color.x << ", " << _color.y << ", " << _color.z << ")" << std::endl;
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "SolidColor texture: " << std::endl;
+        std::cout << indent << "- Color: " << _color << std::endl;
     }
 }

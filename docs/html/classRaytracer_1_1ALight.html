@@ -122,9 +122,9 @@ Inheritance diagram for ALight:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a472a1181a582bdddb9ff224a37ad95ac" id="r_a472a1181a582bdddb9ff224a37ad95ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a472a1181a582bdddb9ff224a37ad95ac">display</a> (void) override</td></tr>
-<tr class="memdesc:a472a1181a582bdddb9ff224a37ad95ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the light.  <br /></td></tr>
-<tr class="separator:a472a1181a582bdddb9ff224a37ad95ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab221007634f5fb7777414d6aff27a817" id="r_ab221007634f5fb7777414d6aff27a817"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab221007634f5fb7777414d6aff27a817">display</a> (size_t level) override</td></tr>
+<tr class="memdesc:ab221007634f5fb7777414d6aff27a817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the light.  <br /></td></tr>
+<tr class="separator:ab221007634f5fb7777414d6aff27a817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac944da8220792c8b41d2d1d0e506cff8" id="r_ac944da8220792c8b41d2d1d0e506cff8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac944da8220792c8b41d2d1d0e506cff8">getPos</a> (void) override</td></tr>
 <tr class="memdesc:ac944da8220792c8b41d2d1d0e506cff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the builder of the light.  <br /></td></tr>
 <tr class="separator:ac944da8220792c8b41d2d1d0e506cff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +143,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a197dbfdfe82702f7cc3d310d5e294b9b" id="r_a197dbfdfe82702f7cc3d310d5e294b9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a197dbfdfe82702f7cc3d310d5e294b9b">setIntensity</a> (double intensity) override</td></tr>
 <tr class="memdesc:a197dbfdfe82702f7cc3d310d5e294b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the intensity of the light.  <br /></td></tr>
 <tr class="separator:a197dbfdfe82702f7cc3d310d5e294b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522c41081e561c5f9b2ab5586f785c2e" id="r_a522c41081e561c5f9b2ab5586f785c2e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a522c41081e561c5f9b2ab5586f785c2e">compute</a> (const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;point, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;normal, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;view_dir) const override</td></tr>
+<tr class="memdesc:a522c41081e561c5f9b2ab5586f785c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default implementation of compute for lights.  <br /></td></tr>
+<tr class="separator:a522c41081e561c5f9b2ab5586f785c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classRaytracer_1_1ILight"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classRaytracer_1_1ILight')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classRaytracer_1_1ILight.html">ILight</a></td></tr>
 <tr class="memitem:a35a717bae5c8d49837342ea0f449b9d3 inherit pub_methods_classRaytracer_1_1ILight" id="r_a35a717bae5c8d49837342ea0f449b9d3"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ILight</b> ()=default</td></tr>
@@ -151,9 +154,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ILight</b> ()=def
 <tr class="memitem:a2e6a4852dc01da79a4e1c5bc9ac998f1 inherit pub_methods_classRaytracer_1_1ILight" id="r_a2e6a4852dc01da79a4e1c5bc9ac998f1"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1ILightBuilder.html">ILightBuilder</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRaytracer_1_1ILight.html#a2e6a4852dc01da79a4e1c5bc9ac998f1">getBuilder</a> (void)=0</td></tr>
 <tr class="memdesc:a2e6a4852dc01da79a4e1c5bc9ac998f1 inherit pub_methods_classRaytracer_1_1ILight"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the builder of the light.  <br /></td></tr>
 <tr class="separator:a2e6a4852dc01da79a4e1c5bc9ac998f1 inherit pub_methods_classRaytracer_1_1ILight"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cd0a91300f50a79d69a6c3fa0a1ceb6 inherit pub_methods_classRaytracer_1_1ILight" id="r_a9cd0a91300f50a79d69a6c3fa0a1ceb6"><td class="memItemLeft" align="right" valign="top">
-virtual <a class="el" href="ILight_8hpp.html#adc3ec8293e6a97ebe43f0196b9a7f638">LightType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const =0</td></tr>
-<tr class="separator:a9cd0a91300f50a79d69a6c3fa0a1ceb6 inherit pub_methods_classRaytracer_1_1ILight"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -173,8 +173,48 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>_intensity</b></td>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class for all lights in the raytracer. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a472a1181a582bdddb9ff224a37ad95ac" name="a472a1181a582bdddb9ff224a37ad95ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a472a1181a582bdddb9ff224a37ad95ac">&#9670;&#160;</a></span>display()</h2>
+<a id="a522c41081e561c5f9b2ab5586f785c2e" name="a522c41081e561c5f9b2ab5586f785c2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a522c41081e561c5f9b2ab5586f785c2e">&#9670;&#160;</a></span>compute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> compute </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>normal</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>view_dir</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default implementation of compute for lights. </p>
+
+<p>Implements <a class="el" href="classRaytracer_1_1ILight.html#a0acbc59d29a9ccf0f41ef7f0b1c47ebd">ILight</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classRaytracer_1_1Ambient.html#a3a764aea9cc257fed185dadc5d783707">Ambient</a>, <a class="el" href="classRaytracer_1_1Directional.html#a3a764aea9cc257fed185dadc5d783707">Directional</a>, and <a class="el" href="classRaytracer_1_1Point.html#a522c41081e561c5f9b2ab5586f785c2e">Point</a>.</p>
+
+</div>
+</div>
+<a id="ab221007634f5fb7777414d6aff27a817" name="ab221007634f5fb7777414d6aff27a817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab221007634f5fb7777414d6aff27a817">&#9670;&#160;</a></span>display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -185,7 +225,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>_intensity</b></td>
         <tr>
           <td class="memname">void display </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -198,9 +238,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>_intensity</b></td>
 
 <p>Display the light. </p>
 
-<p>Implements <a class="el" href="classRaytracer_1_1ILight.html#a843628a7aa0280bb966fd8950aab55a1">ILight</a>.</p>
+<p>Implements <a class="el" href="classRaytracer_1_1ILight.html#a24e37e1b79e77c950492168639185096">ILight</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classRaytracer_1_1Ambient.html#a8f45be05262bbe31383e9af13efc0751">Ambient</a>, <a class="el" href="classRaytracer_1_1Directional.html#a8f45be05262bbe31383e9af13efc0751">Directional</a>, and <a class="el" href="classRaytracer_1_1Point.html#a8f45be05262bbe31383e9af13efc0751">Point</a>.</p>
+<p>Reimplemented in <a class="el" href="classRaytracer_1_1Ambient.html#aa263105a99fa02a3cd6d40049b78df36">Ambient</a>, <a class="el" href="classRaytracer_1_1Directional.html#aa263105a99fa02a3cd6d40049b78df36">Directional</a>, and <a class="el" href="classRaytracer_1_1Point.html#aa263105a99fa02a3cd6d40049b78df36">Point</a>.</p>
 
 </div>
 </div>

@@ -37,7 +37,7 @@ namespace Raytracer {
 
 
 
-            /* Getter and Setter functions (for config file) */
+            /* Getter and Setter functions */
 
             /**
              * @brief Get the resolution of the camera
@@ -111,9 +111,23 @@ namespace Raytracer {
              */
             void setFov(const double &fov);
 
+            /**
+             * @brief Get the background color of the camera
+             * @return <b>const Lib::Vector3 &</b> The background color of the camera
+             */
+            const Lib::Vector3 &getBackgroundColor() const;
 
+            /**
+             * @brief Get the background color of the camera
+             * @return <b>Lib::Vector3 &</b> The background color of the camera
+             */
+            Lib::Vector3 &getBackgroundColor();
 
-            ////////////////////////////////////// depth of field / DEFOCUS //////////////////////////////////////
+            /**
+             * @brief Set the background color of the camera
+             * @param color The new background color of the camera
+             */
+            void setBackgroundColor(const Lib::Vector3 &color);
 
             /**
              * @brief Get the defocus angle of the camera
@@ -150,8 +164,6 @@ namespace Raytracer {
              * @param focusDistance The new focus distance of the camera
              */
             void setFocusDistance(const double &focusDistance);
-
-
 
             /**
              * @brief Get the maximum depth of the camera
@@ -227,7 +239,8 @@ namespace Raytracer {
 
 
 
-            ////////////////////////////////////// INIT //////////////////////////////////////
+            /* Initialization functions */
+
             /**
              * @brief Set the Viewport object
              * @details This function sets the viewport object of the camera
@@ -236,6 +249,8 @@ namespace Raytracer {
             void createViewport(void);
 
 
+
+            /* Rendering variables */
 
             Lib::Vector3 firstPixel; ///< The first pixel of the camera
             Lib::Vector3 pixelDeltaU; ///< The delta U of the pixel
@@ -249,6 +264,8 @@ namespace Raytracer {
 
 
         private:
+            /* Camera settings */
+
             std::array<int, 2> _resolution = {1920, 1080}; ///< The resolution of the camera
             Lib::Vector3 _position; ///< The position of the camera
             Lib::Vector3 _rotation; ///< The rotation of the camera
@@ -258,6 +275,7 @@ namespace Raytracer {
             int _maxDepth = 10; ///< The maximum depth of the camera
             int _samplesPerPixels = 10; ///< The number of samples per pixel
             double _pixelsSampleScale = 0.1; ///< The scale of the pixel samples
+            Lib::Vector3 _backgroundColor; ///< The background color of the camera
             Lib::Vector3 _initialLookAt; ///< The initial look at vector of the camera
     };
 

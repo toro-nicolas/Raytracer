@@ -10,8 +10,8 @@
  * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
 
-#ifndef PLANE_HPP
-    #define PLANE_HPP
+#ifndef TRANSLATION_HPP
+    #define TRANSLATION_HPP
 
     #include "ATransformation.hpp"
     #include "ATransformationBuilder.hpp"
@@ -48,7 +48,29 @@ namespace Raytracer {
             /**
              * @brief Display the transformation
              */
-            void display(void) final;
+            void display(size_t level) final;
+
+
+
+            /* Rendering function */
+
+            /**
+             * @brief Compute the transformation on a ray
+             * @param ray The ray to transform
+             */
+            void compute(Ray &ray) final;
+
+            /**
+             * @brief Reverse the transformation computation on an intersection
+             * @param rec The intersection record to modify
+             */
+            void decompute(Intersection &rec) final;
+
+            /**
+             * @brief Apply transformation to a bounding box
+             * @param bbox The bounding box to transform
+             */
+            void newBoundingBox(AABB &bbox) final;
 
 
 
@@ -105,4 +127,4 @@ namespace Raytracer {
     extern "C" std::shared_ptr<Translation> createTransformation(void);
 }
 
-#endif // PLANE_HPP
+#endif // TRANSLATION_HPP

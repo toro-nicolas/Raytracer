@@ -15,13 +15,18 @@
 
     #include "Lib.hpp"
     #include "Vector3.hpp"
-    #include <vector>
 
 namespace Raytracer {
 
 class IInterface {
 public:
+    /* Constructor and Destructor */
+
+    /**
+     * @brief Destructor of the IInterface class
+     */
     virtual ~IInterface() = default;
+
 
 
     /* Configuration functions */
@@ -49,6 +54,7 @@ public:
      * @param filename The name of the output file
      */
     virtual void setupOutputFile(const std::string &filename) = 0;
+
 
 
     /* Rendering functions */

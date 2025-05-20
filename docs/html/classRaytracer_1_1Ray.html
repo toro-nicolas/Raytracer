@@ -102,18 +102,22 @@ $(function(){initNavTree('classRaytracer_1_1Ray.html',''); initResizable(true); 
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a ray with origin and direction.  
+<p>Forward declaration of the <a class="el" href="classRaytracer_1_1IMaterial.html">IMaterial</a> class.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Ray_8hpp_source.html">Ray.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a1ef790cb46c8646949f018afdcdc5468" id="r_a1ef790cb46c8646949f018afdcdc5468"><td class="memItemLeft" align="right" valign="top"><a id="a1ef790cb46c8646949f018afdcdc5468" name="a1ef790cb46c8646949f018afdcdc5468"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Ray</b> ()=default</td></tr>
+<tr class="memdesc:a1ef790cb46c8646949f018afdcdc5468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classRaytracer_1_1Ray.html" title="Forward declaration of the IMaterial class.">Ray</a>. <br /></td></tr>
+<tr class="separator:a1ef790cb46c8646949f018afdcdc5468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaba01e3891425193109e5b1da616302" id="r_afaba01e3891425193109e5b1da616302"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaba01e3891425193109e5b1da616302">Ray</a> (const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="el" href="#a9be2a18492803b84acb2d69586a2000d">origin</a>, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="el" href="#af00e687ea24a8df04b42f2c863a339bd">direction</a>, double t)</td></tr>
-<tr class="memdesc:afaba01e3891425193109e5b1da616302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classRaytracer_1_1Ray.html" title="Represents a ray with origin and direction.">Ray</a> object.  <br /></td></tr>
+<tr class="memdesc:afaba01e3891425193109e5b1da616302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classRaytracer_1_1Ray.html" title="Forward declaration of the IMaterial class.">Ray</a> object.  <br /></td></tr>
 <tr class="separator:afaba01e3891425193109e5b1da616302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46f5a3478e9a92c0a818f6f17ba08efa" id="r_a46f5a3478e9a92c0a818f6f17ba08efa"><td class="memItemLeft" align="right" valign="top"><a id="a46f5a3478e9a92c0a818f6f17ba08efa" name="a46f5a3478e9a92c0a818f6f17ba08efa"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ray</b> (const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="el" href="#a9be2a18492803b84acb2d69586a2000d">origin</a>, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="el" href="#af00e687ea24a8df04b42f2c863a339bd">direction</a>)</td></tr>
+<tr class="memitem:a46f5a3478e9a92c0a818f6f17ba08efa" id="r_a46f5a3478e9a92c0a818f6f17ba08efa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46f5a3478e9a92c0a818f6f17ba08efa">Ray</a> (const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="el" href="#a9be2a18492803b84acb2d69586a2000d">origin</a>, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;<a class="el" href="#af00e687ea24a8df04b42f2c863a339bd">direction</a>)</td></tr>
+<tr class="memdesc:a46f5a3478e9a92c0a818f6f17ba08efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classRaytracer_1_1Ray.html" title="Forward declaration of the IMaterial class.">Ray</a> object.  <br /></td></tr>
 <tr class="separator:a46f5a3478e9a92c0a818f6f17ba08efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfbb7f265de396389fa9b25e0fba4c49" id="r_adfbb7f265de396389fa9b25e0fba4c49"><td class="memItemLeft" align="right" valign="top"><a id="adfbb7f265de396389fa9b25e0fba4c49" name="adfbb7f265de396389fa9b25e0fba4c49"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Ray</b> ()</td></tr>
@@ -137,18 +141,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b69b18f0de47dc31f71143cabc41eb6" id="r_a9b69b18f0de47dc31f71143cabc41eb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLib_1_1Vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b69b18f0de47dc31f71143cabc41eb6">getColor</a> (void) const</td></tr>
 <tr class="memdesc:a9b69b18f0de47dc31f71143cabc41eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color of the ray.  <br /></td></tr>
 <tr class="separator:a9b69b18f0de47dc31f71143cabc41eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a347241f652f2422b2d4c0f56bde45375" id="r_a347241f652f2422b2d4c0f56bde45375"><td class="memItemLeft" align="right" valign="top"><a id="a347241f652f2422b2d4c0f56bde45375" name="a347241f652f2422b2d4c0f56bde45375"></a>
-double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTime</b> (void)</td></tr>
+<tr class="memitem:a347241f652f2422b2d4c0f56bde45375" id="r_a347241f652f2422b2d4c0f56bde45375"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a347241f652f2422b2d4c0f56bde45375">getTime</a> (void)</td></tr>
+<tr class="memdesc:a347241f652f2422b2d4c0f56bde45375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time parameter of the ray (non-const version)  <br /></td></tr>
 <tr class="separator:a347241f652f2422b2d4c0f56bde45375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a6a4e955ea8e5a8c806179448238967" id="r_a1a6a4e955ea8e5a8c806179448238967"><td class="memItemLeft" align="right" valign="top"><a id="a1a6a4e955ea8e5a8c806179448238967" name="a1a6a4e955ea8e5a8c806179448238967"></a>
-const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTime</b> (void) const</td></tr>
+<tr class="memitem:a1a6a4e955ea8e5a8c806179448238967" id="r_a1a6a4e955ea8e5a8c806179448238967"><td class="memItemLeft" align="right" valign="top">const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a6a4e955ea8e5a8c806179448238967">getTime</a> (void) const</td></tr>
+<tr class="memdesc:a1a6a4e955ea8e5a8c806179448238967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the time parameter of the ray (const version)  <br /></td></tr>
 <tr class="separator:a1a6a4e955ea8e5a8c806179448238967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a ray with origin and direction. </p>
+<div class="textblock"><p>Forward declaration of the <a class="el" href="classRaytracer_1_1IMaterial.html">IMaterial</a> class. </p>
+<p>Represents a ray with origin and direction </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afaba01e3891425193109e5b1da616302" name="afaba01e3891425193109e5b1da616302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaba01e3891425193109e5b1da616302">&#9670;&#160;</a></span>Ray() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afaba01e3891425193109e5b1da616302">&#9670;&#160;</a></span>Ray() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +176,38 @@ const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTime
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classRaytracer_1_1Ray.html" title="Represents a ray with origin and direction.">Ray</a> object. </p>
+<p>Construct a new <a class="el" href="classRaytracer_1_1Ray.html" title="Forward declaration of the IMaterial class.">Ray</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">origin</td><td>The origin point of the ray </td></tr>
+    <tr><td class="paramname">direction</td><td>The direction vector of the ray (will be normalized) </td></tr>
+    <tr><td class="paramname">t</td><td>The ray parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a46f5a3478e9a92c0a818f6f17ba08efa" name="a46f5a3478e9a92c0a818f6f17ba08efa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f5a3478e9a92c0a818f6f17ba08efa">&#9670;&#160;</a></span>Ray() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1Ray.html">Ray</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>origin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>direction</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classRaytracer_1_1Ray.html" title="Forward declaration of the IMaterial class.">Ray</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">origin</td><td>The origin point of the ray </td></tr>
@@ -183,7 +219,7 @@ const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTime
 </div>
 </div>
 <a id="a266f4cb31e4f30c1835194cd64d2429c" name="a266f4cb31e4f30c1835194cd64d2429c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a266f4cb31e4f30c1835194cd64d2429c">&#9670;&#160;</a></span>Ray() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a266f4cb31e4f30c1835194cd64d2429c">&#9670;&#160;</a></span>Ray() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,6 +281,46 @@ const double &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTime
 
 <p>Get the color of the ray. </p>
 <dl class="section return"><dt>Returns</dt><dd>The color vector of the ray </dd></dl>
+
+</div>
+</div>
+<a id="a347241f652f2422b2d4c0f56bde45375" name="a347241f652f2422b2d4c0f56bde45375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347241f652f2422b2d4c0f56bde45375">&#9670;&#160;</a></span>getTime() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double &amp; getTime </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the time parameter of the ray (non-const version) </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the time parameter </dd></dl>
+
+</div>
+</div>
+<a id="a1a6a4e955ea8e5a8c806179448238967" name="a1a6a4e955ea8e5a8c806179448238967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6a4e955ea8e5a8c806179448238967">&#9670;&#160;</a></span>getTime() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double &amp; getTime </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the time parameter of the ray (const version) </p>
+<dl class="section return"><dt>Returns</dt><dd>Const reference to the time parameter </dd></dl>
 
 </div>
 </div>

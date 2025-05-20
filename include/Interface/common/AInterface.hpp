@@ -45,6 +45,8 @@ namespace Raytracer {
              */
             void writeColor(const int x, const int y, Lib::Vector3 pixel) final;
 
+
+
         protected:
             std::array<int, 2> _resolution; ///< Resolution of the output image
             std::vector<std::vector<Lib::Vector3>> _pixels; ///< 2D vector to store pixel colors

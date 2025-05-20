@@ -2,8 +2,8 @@
 
 ## Introduction
 
-This document explains how to create material plugins for the raytracer.  
-Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,  
+This document explains how to create material plugins for the raytracer.
+Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary,
 while materials are dynamically loaded from shared libraries (.so).
 
 
@@ -44,7 +44,7 @@ IMaterialBuilder (Interface)
 
 ### 1. Material Class
 
-Your material class must inherit from `AMaterial` and implement all required virtual methods.  
+Your material class must inherit from `AMaterial` and implement all required virtual methods.
 Example:
 ```cpp
 namespace Raytracer {
@@ -55,38 +55,38 @@ namespace Raytracer {
     class YourMaterial final : public AMaterial {
         public:
             /* Constructors and destructors */
-            
+
             /**
              * @brief Construct a new YourMaterial object
              */
             YourMaterial();
-            
+
             /**
              * @brief Destroy the YourMaterial object
              */
             ~YourMaterial() final;
-            
+
             /**
              * @brief Get the builder of the material
              * @return A reference to a unique pointer to the material builder
              */
             std::unique_ptr<IMaterialBuilder> &getBuilder(void) final;
-            
-            
-            
+
+
+
             /* Display function */
-            
+
             /**
              * @brief Display the material
              */
-            void display(void) final;
+            void display(size_t level) final;
 
 
-            
+
 
             /* Methods specific to your material */
 
-            
+
 
         protected:
 
@@ -99,7 +99,7 @@ namespace Raytracer {
 
 ### 2. Builder Class
 
-Your builder class must inherit from `AMaterialBuilder` and implement the necessary methods to configure your material.  
+Your builder class must inherit from `AMaterialBuilder` and implement the necessary methods to configure your material.
 Example:
 ```cpp
 namespace Raytracer {
@@ -110,22 +110,22 @@ namespace Raytracer {
     class YourMaterialBuilder final : public AMaterialBuilder {
         public:
             /* Constructors and destructors */
-            
+
             /**
              * @brief Constructor of the YourMaterialBuilder
              * @param yourMaterial Reference to a YourMaterial to be configured
              */
             YourMaterialBuilder(YourMaterial &yourMaterial);
-            
+
             /**
              * @brief Destructor of the YourMaterialBuilder
              */
             ~YourMaterialBuilder() final;
-            
-            
-            
+
+
+
             /* Setters of the specific properties */
-            
+
             /**
              * @brief Set the specific property of the material
              * @param name The name of the property
@@ -133,9 +133,9 @@ namespace Raytracer {
              * @return Reference to the YourMaterial builder being configured
              */
             IMaterialBuilder &set(const std::string &name, const std::vector<std::string> &args) final;
-        
-        
-        
+
+
+
         protected:
             YourMaterial &_yourMaterial; ///< Reference to the material being configured
     };

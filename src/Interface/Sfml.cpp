@@ -11,8 +11,6 @@
  */
 
 #include "Sfml.hpp"
-#include "Lib.hpp"
-#include <ios>
 
 namespace Raytracer {
     Sfml::Sfml(void)

@@ -49,7 +49,7 @@ namespace Raytracer {
              * @brief Display the refraction
              * @return <b>void</b>
              */
-            void display(void) override;
+            void display(size_t level) override;
 
 
 

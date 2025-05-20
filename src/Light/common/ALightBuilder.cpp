@@ -25,6 +25,7 @@ namespace Raytracer {
 
     ILightBuilder &ALightBuilder::setIntensity(double intensity)
     {
+        DEBUG << "ALightBuilder::setIntensity: " << intensity;
         _light.setIntensity(intensity);
         return *this;
     }

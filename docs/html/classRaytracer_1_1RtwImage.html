@@ -101,25 +101,146 @@ $(function(){initNavTree('classRaytracer_1_1RtwImage.html',''); initResizable(tr
   <div class="headertitle"><div class="title">RtwImage Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for loading and managing image data for texture mapping.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="RtwImage_8hpp_source.html">RtwImage.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa69e86edb4a0b0ebc0da971359cfc3b2" id="r_aa69e86edb4a0b0ebc0da971359cfc3b2"><td class="memItemLeft" align="right" valign="top"><a id="aa69e86edb4a0b0ebc0da971359cfc3b2" name="aa69e86edb4a0b0ebc0da971359cfc3b2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RtwImage</b> (const std::string &amp;filename)</td></tr>
+<tr class="memitem:a8ebac827280d92ac78923c2451678be8" id="r_a8ebac827280d92ac78923c2451678be8"><td class="memItemLeft" align="right" valign="top"><a id="a8ebac827280d92ac78923c2451678be8" name="a8ebac827280d92ac78923c2451678be8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RtwImage</b> ()=default</td></tr>
+<tr class="memdesc:a8ebac827280d92ac78923c2451678be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classRaytracer_1_1RtwImage.html" title="Class for loading and managing image data for texture mapping.">RtwImage</a>. <br /></td></tr>
+<tr class="separator:a8ebac827280d92ac78923c2451678be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa69e86edb4a0b0ebc0da971359cfc3b2" id="r_aa69e86edb4a0b0ebc0da971359cfc3b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa69e86edb4a0b0ebc0da971359cfc3b2">RtwImage</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:aa69e86edb4a0b0ebc0da971359cfc3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classRaytracer_1_1RtwImage.html" title="Class for loading and managing image data for texture mapping.">RtwImage</a> from a file.  <br /></td></tr>
 <tr class="separator:aa69e86edb4a0b0ebc0da971359cfc3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad72663daf610f2a0833a2fc3d78e4fdf" id="r_ad72663daf610f2a0833a2fc3d78e4fdf"><td class="memItemLeft" align="right" valign="top"><a id="ad72663daf610f2a0833a2fc3d78e4fdf" name="ad72663daf610f2a0833a2fc3d78e4fdf"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>width</b> () const</td></tr>
+<tr class="memitem:a91db37d5a754208419527d9529c645b0" id="r_a91db37d5a754208419527d9529c645b0"><td class="memItemLeft" align="right" valign="top"><a id="a91db37d5a754208419527d9529c645b0" name="a91db37d5a754208419527d9529c645b0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~RtwImage</b> ()</td></tr>
+<tr class="memdesc:a91db37d5a754208419527d9529c645b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classRaytracer_1_1RtwImage.html" title="Class for loading and managing image data for texture mapping.">RtwImage</a> and free memory. <br /></td></tr>
+<tr class="separator:a91db37d5a754208419527d9529c645b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72663daf610f2a0833a2fc3d78e4fdf" id="r_ad72663daf610f2a0833a2fc3d78e4fdf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad72663daf610f2a0833a2fc3d78e4fdf">width</a> () const</td></tr>
+<tr class="memdesc:ad72663daf610f2a0833a2fc3d78e4fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the image.  <br /></td></tr>
 <tr class="separator:ad72663daf610f2a0833a2fc3d78e4fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3774f6419003470f54fd495124ef51f" id="r_ad3774f6419003470f54fd495124ef51f"><td class="memItemLeft" align="right" valign="top"><a id="ad3774f6419003470f54fd495124ef51f" name="ad3774f6419003470f54fd495124ef51f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>height</b> () const</td></tr>
+<tr class="memitem:ad3774f6419003470f54fd495124ef51f" id="r_ad3774f6419003470f54fd495124ef51f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3774f6419003470f54fd495124ef51f">height</a> () const</td></tr>
+<tr class="memdesc:ad3774f6419003470f54fd495124ef51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the image.  <br /></td></tr>
 <tr class="separator:ad3774f6419003470f54fd495124ef51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba578749a8eeccbcdd8ae4942d2b031f" id="r_aba578749a8eeccbcdd8ae4942d2b031f"><td class="memItemLeft" align="right" valign="top"><a id="aba578749a8eeccbcdd8ae4942d2b031f" name="aba578749a8eeccbcdd8ae4942d2b031f"></a>
-const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><b>pixelData</b> (int x, int y) const</td></tr>
+<tr class="memitem:aba578749a8eeccbcdd8ae4942d2b031f" id="r_aba578749a8eeccbcdd8ae4942d2b031f"><td class="memItemLeft" align="right" valign="top">const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba578749a8eeccbcdd8ae4942d2b031f">pixelData</a> (int x, int y) const</td></tr>
+<tr class="memdesc:aba578749a8eeccbcdd8ae4942d2b031f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the pixel data at a specific coordinate.  <br /></td></tr>
 <tr class="separator:aba578749a8eeccbcdd8ae4942d2b031f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for loading and managing image data for texture mapping. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa69e86edb4a0b0ebc0da971359cfc3b2" name="aa69e86edb4a0b0ebc0da971359cfc3b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa69e86edb4a0b0ebc0da971359cfc3b2">&#9670;&#160;</a></span>RtwImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1RtwImage.html">RtwImage</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classRaytracer_1_1RtwImage.html" title="Class for loading and managing image data for texture mapping.">RtwImage</a> from a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Path to the image file to load </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad3774f6419003470f54fd495124ef51f" name="ad3774f6419003470f54fd495124ef51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3774f6419003470f54fd495124ef51f">&#9670;&#160;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int height </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the height of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>int The height in pixels </dd></dl>
+
+</div>
+</div>
+<a id="aba578749a8eeccbcdd8ae4942d2b031f" name="aba578749a8eeccbcdd8ae4942d2b031f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba578749a8eeccbcdd8ae4942d2b031f">&#9670;&#160;</a></span>pixelData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned char * pixelData </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the pixel data at a specific coordinate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const unsigned char* Pointer to the RGB data for the pixel </dd></dl>
+
+</div>
+</div>
+<a id="ad72663daf610f2a0833a2fc3d78e4fdf" name="ad72663daf610f2a0833a2fc3d78e4fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72663daf610f2a0833a2fc3d78e4fdf">&#9670;&#160;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int width </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the width of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>int The width in pixels </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/Texture/common/<a class="el" href="RtwImage_8hpp_source.html">RtwImage.hpp</a></li>
-<li>src/Texture/common/<b>RtwImage.cpp</b></li>
+<li>src/Texture/common/<a class="el" href="RtwImage_8cpp.html">RtwImage.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

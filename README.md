@@ -1,6 +1,6 @@
 # Raytracer
 
-![Raytracer](screenshots/preview.png)
+![Raytracer](screenshots/showcase.png)
 
 ## Table of contents 📑
 - [Description](https://github.com/toro-nicolas/Raytracer/blob/main/README.md#description-)

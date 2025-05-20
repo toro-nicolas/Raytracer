@@ -153,9 +153,33 @@ namespace Lib {
              */
             Vector3 &operator/=(const Vector3 &other);
 
+            /**
+             * @brief Index operator for Vector3
+             * @param index The index of the coordinate (0, 1, or 2)
+             * @return Reference to the coordinate at the specified index
+             */
             double &operator[](int index);
+
+            /**
+             * @brief Index operator for Vector3 (const version)
+             * @param index The index of the coordinate (0, 1, or 2)
+             * @return Reference to the coordinate at the specified index
+             */
             const double &operator[](int index) const;
 
+            /**
+             * @brief Less than operator for Vector3
+             * @param other The Vector3 object to compare
+             * @return True if the current object is less than the other, false otherwise
+             */
+            bool operator==(const Vector3 &other) const;
+
+            /**
+             * @brief Greater than operator for Vector3
+             * @param other The Vector3 object to compare
+             * @return True if the current object is greater than the other, false otherwise
+             */
+            bool operator!=(const Vector3 &other) const;
 
 
             /* Vector functions */
@@ -207,9 +231,24 @@ namespace Lib {
              */
             Vector3 clamp(double min, double max) const;
 
+            /**
+             * @brief Generate a random vector with components in the range [min, max]
+             * @param min The minimum value for each component
+             * @param max The maximum value for each component
+             * @return A new Vector3 object with the random vector
+             */
             static Vector3 random(double min, double max);
+
+            /**
+             * @brief Generate a random vector with components in the range [0, 1]
+             * @return A new Vector3 object with the random vector
+             */
             static Vector3 random();
 
+            /**
+             * @brief Generate a random vector with components in the range [0, 1]
+             * @return A new Vector3 object with the random vector
+             */
             bool nearZero() const;
     };
 
@@ -237,7 +276,17 @@ namespace Lib {
      * @return A new Vector3 object with the normalized vector
      */
     Vector3 unit_vector(const Vector3 &v);
+
+    /**
+     * @brief Generate a random vector with components in the range [0, 1]
+     * @return A new Vector3 object with the random vector
+     */
     Vector3 random_unit_vector();
+
+    /**
+     * @brief Generate a random vector in a unit disk
+     * @return A new Vector3 object with the random vector
+     */
     Vector3 random_in_unit_disk();
 
     /**
@@ -247,6 +296,14 @@ namespace Lib {
      * @return A new Vector3 object with the reflected vector
      */
     Vector3 reflect(const Vector3 &v, const Vector3 &normal);
+
+    /**
+     * @brief Refract a vector through a surface
+     * @param uv The incident vector
+     * @param n The normal vector at the surface
+     * @param etai_over_etat The ratio of indices of refraction
+     * @return A new Vector3 object with the refracted vector
+     */
     Vector3 refract(const Vector3& uv, const Vector3& n, double etai_over_etat);
 
     /**
@@ -256,8 +313,28 @@ namespace Lib {
      * @return <b>std::ostream &</b> The output stream
      */
     std::ostream &operator<<(std::ostream &os, const Vector3 &vec);
+
+    /**
+     * @brief Overload the operator * for scalar multiplication
+     * @param scalar The scalar value
+     * @param v The vector to multiply
+     * @return A new Vector3 object with the result of the multiplication
+     */
     Vector3 operator*(double scalar, const Vector3& v);
+
+    /**
+     * @brief Overload the operator / for scalar division
+     * @param scalar The scalar value
+     * @param v The vector to divide
+     * @return A new Vector3 object with the result of the division
+     */
     Vector3 sampleSquare();
+
+    /**
+     * @brief Generate a random point on a sphere
+     * @param radius The radius of the sphere
+     * @return A new Vector3 object with the random point on the sphere
+     */
     Vector3 randomOn(const Vector3 &normal);
 }
 

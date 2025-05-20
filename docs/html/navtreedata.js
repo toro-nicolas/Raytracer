@@ -108,97 +108,96 @@ var NAVTREE =
       [ "Summary of Steps to Create a New Plugin", "md_docs_2primitive-plugin-documentation.html#autotoc_md65", null ]
     ] ],
     [ "Scene File Documentation for Raytracer", "md_docs_2scene-file-documentation.html", [
-      [ "Table of Contents", "md_docs_2scene-file-documentation.html#autotoc_md67", null ],
-      [ "General Structure", "md_docs_2scene-file-documentation.html#autotoc_md68", null ],
-      [ "File Imports", "md_docs_2scene-file-documentation.html#autotoc_md69", null ],
-      [ "Camera Configuration", "md_docs_2scene-file-documentation.html#autotoc_md70", [
-        [ "Camera Parameters", "md_docs_2scene-file-documentation.html#autotoc_md71", null ]
+      [ "📚 Table of Contents", "md_docs_2scene-file-documentation.html#autotoc_md68", null ],
+      [ "🧱 General Structure", "md_docs_2scene-file-documentation.html#autotoc_md70", null ],
+      [ "📁 File Imports", "md_docs_2scene-file-documentation.html#autotoc_md72", null ],
+      [ "Camera Configuration", "md_docs_2scene-file-documentation.html#autotoc_md74", [
+        [ "🎥 Camera Parameters", "md_docs_2scene-file-documentation.html#autotoc_md75", null ]
       ] ],
-      [ "Primitives", "md_docs_2scene-file-documentation.html#autotoc_md72", [
-        [ "Set builders function", "md_docs_2scene-file-documentation.html#autotoc_md73", null ],
-        [ "Default Materials", "md_docs_2scene-file-documentation.html#autotoc_md74", [
-          [ "Color", "md_docs_2scene-file-documentation.html#autotoc_md75", null ],
-          [ "Reflection", "md_docs_2scene-file-documentation.html#autotoc_md76", null ],
-          [ "Refraction", "md_docs_2scene-file-documentation.html#autotoc_md77", null ]
+      [ "🧩 Primitives", "md_docs_2scene-file-documentation.html#autotoc_md77", [
+        [ "Set builders function", "md_docs_2scene-file-documentation.html#autotoc_md78", null ],
+        [ "🎨 Default Materials", "md_docs_2scene-file-documentation.html#autotoc_md79", [
+          [ "Color", "md_docs_2scene-file-documentation.html#autotoc_md80", [
+            [ "Texture", "md_docs_2scene-file-documentation.html#autotoc_md81", null ]
+          ] ],
+          [ "Reflection", "md_docs_2scene-file-documentation.html#autotoc_md82", null ],
+          [ "Refraction", "md_docs_2scene-file-documentation.html#autotoc_md83", null ],
+          [ "Diffuse Light", "md_docs_2scene-file-documentation.html#autotoc_md84", null ]
         ] ],
-        [ "Default Transformations", "md_docs_2scene-file-documentation.html#autotoc_md78", [
-          [ "Translation", "md_docs_2scene-file-documentation.html#autotoc_md79", null ],
-          [ "Rotation", "md_docs_2scene-file-documentation.html#autotoc_md80", null ]
+        [ "🔁 Default Transformations", "md_docs_2scene-file-documentation.html#autotoc_md85", [
+          [ "Translation", "md_docs_2scene-file-documentation.html#autotoc_md86", null ],
+          [ "Rotation", "md_docs_2scene-file-documentation.html#autotoc_md87", null ]
         ] ],
-        [ "Default Primitives", "md_docs_2scene-file-documentation.html#autotoc_md81", null ],
-        [ "Spheres", "md_docs_2scene-file-documentation.html#autotoc_md82", null ],
-        [ "Planes", "md_docs_2scene-file-documentation.html#autotoc_md83", null ]
+        [ "🧩 Default Primitives", "md_docs_2scene-file-documentation.html#autotoc_md88", [
+          [ "Planes", "md_docs_2scene-file-documentation.html#autotoc_md89", null ],
+          [ "Spheres", "md_docs_2scene-file-documentation.html#autotoc_md90", null ]
+        ] ],
+        [ "Boxes", "md_docs_2scene-file-documentation.html#autotoc_md91", null ],
+        [ "Cylinders", "md_docs_2scene-file-documentation.html#autotoc_md92", null ],
+        [ "Cones", "md_docs_2scene-file-documentation.html#autotoc_md93", null ],
+        [ "Torus", "md_docs_2scene-file-documentation.html#autotoc_md94", null ],
+        [ "Tanglecube", "md_docs_2scene-file-documentation.html#autotoc_md95", null ],
+        [ "Triangle", "md_docs_2scene-file-documentation.html#autotoc_md96", null ]
       ] ],
-      [ "Lights", "md_docs_2scene-file-documentation.html#autotoc_md84", [
-        [ "Default Lights", "md_docs_2scene-file-documentation.html#autotoc_md85", [
-          [ "Point Lights", "md_docs_2scene-file-documentation.html#autotoc_md86", null ],
-          [ "Directional Lights", "md_docs_2scene-file-documentation.html#autotoc_md87", null ]
-        ] ]
-      ] ],
-      [ "Textures (to rework)", "md_docs_2scene-file-documentation.html#autotoc_md88", [
-        [ "Checker Texture", "md_docs_2scene-file-documentation.html#autotoc_md89", [
-          [ "Texture Parameters", "md_docs_2scene-file-documentation.html#autotoc_md90", null ]
-        ] ],
-        [ "File Texture", "md_docs_2scene-file-documentation.html#autotoc_md91", [
-          [ "Texture Parameters", "md_docs_2scene-file-documentation.html#autotoc_md92", null ]
-        ] ],
-        [ "Perlin Noise Texture", "md_docs_2scene-file-documentation.html#autotoc_md93", [
-          [ "Texture Parameters", "md_docs_2scene-file-documentation.html#autotoc_md94", null ]
+      [ "💡 Lights", "md_docs_2scene-file-documentation.html#autotoc_md98", [
+        [ "💡 Default Lights", "md_docs_2scene-file-documentation.html#autotoc_md99", [
+          [ "Point Lights", "md_docs_2scene-file-documentation.html#autotoc_md100", null ],
+          [ "Directional Lights", "md_docs_2scene-file-documentation.html#autotoc_md101", null ]
         ] ]
       ] ]
     ] ],
     [ "Scene Loader Plugins Documentation for Raytracer", "md_docs_2scene-loader-plugin-documentation.html", [
-      [ "Introduction", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md96", null ],
-      [ "Naming Conventions", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md97", null ],
-      [ "Plugin Architecture", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md98", [
-        [ "Class Hierarchy", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md99", null ]
+      [ "Introduction", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md103", null ],
+      [ "Naming Conventions", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md104", null ],
+      [ "Plugin Architecture", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md105", [
+        [ "Class Hierarchy", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md106", null ]
       ] ],
-      [ "Creating a New Scene Loader", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md100", [
-        [ "Scene Loader Class", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md101", null ],
-        [ "Export Function", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md102", null ]
+      [ "Creating a New Scene Loader", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md107", [
+        [ "Scene Loader Class", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md108", null ],
+        [ "Export Function", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md109", null ]
       ] ],
-      [ "Implementation Details", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md103", [
-        [ "The ISceneLoader Class", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md104", null ],
-        [ "The ASceneLoader Class", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md105", null ]
+      [ "Implementation Details", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md110", [
+        [ "The ISceneLoader Class", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md111", null ],
+        [ "The ASceneLoader Class", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md112", null ]
       ] ],
-      [ "How to Compile a Scene Loader Plugin", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md106", null ],
-      [ "Plugin Loading", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md107", null ],
-      [ "Summary of Steps to Create a New Scene Loader Plugin", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md108", null ]
+      [ "How to Compile a Scene Loader Plugin", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md113", null ],
+      [ "Plugin Loading", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md114", null ],
+      [ "Summary of Steps to Create a New Scene Loader Plugin", "md_docs_2scene-loader-plugin-documentation.html#autotoc_md115", null ]
     ] ],
     [ "Transformation Plugins Documentation for Raytracer", "md_docs_2transformation-plugin-documentation.html", [
-      [ "Introduction", "md_docs_2transformation-plugin-documentation.html#autotoc_md110", null ],
-      [ "Naming Conventions", "md_docs_2transformation-plugin-documentation.html#autotoc_md111", null ],
-      [ "Plugin Architecture", "md_docs_2transformation-plugin-documentation.html#autotoc_md112", [
-        [ "Class Hierarchy", "md_docs_2transformation-plugin-documentation.html#autotoc_md113", null ]
+      [ "Introduction", "md_docs_2transformation-plugin-documentation.html#autotoc_md117", null ],
+      [ "Naming Conventions", "md_docs_2transformation-plugin-documentation.html#autotoc_md118", null ],
+      [ "Plugin Architecture", "md_docs_2transformation-plugin-documentation.html#autotoc_md119", [
+        [ "Class Hierarchy", "md_docs_2transformation-plugin-documentation.html#autotoc_md120", null ]
       ] ],
-      [ "Creating a New Transformation", "md_docs_2transformation-plugin-documentation.html#autotoc_md114", [
-        [ "Transformation Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md115", null ],
-        [ "Builder Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md116", null ],
-        [ "Export Function", "md_docs_2transformation-plugin-documentation.html#autotoc_md117", null ]
+      [ "Creating a New Transformation", "md_docs_2transformation-plugin-documentation.html#autotoc_md121", [
+        [ "Transformation Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md122", null ],
+        [ "Builder Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md123", null ],
+        [ "Export Function", "md_docs_2transformation-plugin-documentation.html#autotoc_md124", null ]
       ] ],
-      [ "Implementation Details", "md_docs_2transformation-plugin-documentation.html#autotoc_md118", [
-        [ "The ITransformation Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md119", null ],
-        [ "The ATransformation Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md120", null ],
-        [ "The ITransformationBuilder Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md121", null ],
-        [ "The ATransformationBuilder Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md122", null ]
+      [ "Implementation Details", "md_docs_2transformation-plugin-documentation.html#autotoc_md125", [
+        [ "The ITransformation Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md126", null ],
+        [ "The ATransformation Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md127", null ],
+        [ "The ITransformationBuilder Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md128", null ],
+        [ "The ATransformationBuilder Class", "md_docs_2transformation-plugin-documentation.html#autotoc_md129", null ]
       ] ],
-      [ "How to Compile a Plugin", "md_docs_2transformation-plugin-documentation.html#autotoc_md123", null ],
-      [ "Plugin Loading", "md_docs_2transformation-plugin-documentation.html#autotoc_md124", null ],
-      [ "Summary of Steps to Create a New Plugin", "md_docs_2transformation-plugin-documentation.html#autotoc_md125", null ],
-      [ "Integrating with Primitives", "md_docs_2transformation-plugin-documentation.html#autotoc_md126", null ]
+      [ "How to Compile a Plugin", "md_docs_2transformation-plugin-documentation.html#autotoc_md130", null ],
+      [ "Plugin Loading", "md_docs_2transformation-plugin-documentation.html#autotoc_md131", null ],
+      [ "Summary of Steps to Create a New Plugin", "md_docs_2transformation-plugin-documentation.html#autotoc_md132", null ],
+      [ "Integrating with Primitives", "md_docs_2transformation-plugin-documentation.html#autotoc_md133", null ]
     ] ],
     [ "Raytracer", "md_README.html", [
-      [ "Table of contents 📑", "md_README.html#autotoc_md128", null ],
-      [ "Description 📝", "md_README.html#autotoc_md129", null ],
-      [ "Usage ⚔️", "md_README.html#autotoc_md130", null ],
-      [ "Result 🚩", "md_README.html#autotoc_md131", [
-        [ "my.epitech.eu result", "md_README.html#autotoc_md132", null ],
-        [ "Defense", "md_README.html#autotoc_md133", null ]
+      [ "Table of contents 📑", "md_README.html#autotoc_md135", null ],
+      [ "Description 📝", "md_README.html#autotoc_md136", null ],
+      [ "Usage ⚔️", "md_README.html#autotoc_md137", null ],
+      [ "Result 🚩", "md_README.html#autotoc_md138", [
+        [ "my.epitech.eu result", "md_README.html#autotoc_md139", null ],
+        [ "Defense", "md_README.html#autotoc_md140", null ]
       ] ],
-      [ "Compilation 🛠️", "md_README.html#autotoc_md134", null ],
-      [ "Documentation 📚", "md_README.html#autotoc_md135", null ],
-      [ "Code mandatory 📦", "md_README.html#autotoc_md136", null ],
-      [ "Contributors 👥", "md_README.html#autotoc_md137", null ]
+      [ "Compilation 🛠️", "md_README.html#autotoc_md141", null ],
+      [ "Documentation 📚", "md_README.html#autotoc_md142", null ],
+      [ "Code mandatory 📦", "md_README.html#autotoc_md143", null ],
+      [ "Contributors 👥", "md_README.html#autotoc_md144", null ]
     ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -220,10 +219,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"AInterface_8cpp.html",
-"classLib_1_1Vector3.html#a3c925df7685248a22ea1b03c5eb3c05f",
-"classRaytracer_1_1IPrimitiveBuilder.html#a4e91369408d1aab3bf1bb02b36878916",
-"md_docs_2interface-plugin-documentation.html#autotoc_md1"
+"AABB_8cpp.html",
+"Vector3_8hpp.html#ae9461e8d141960709c7fbd36e991171f",
+"classRaytracer_1_1Camera.html#a2dea7a8716d46779a8db1851000f03f7",
+"classRaytracer_1_1Interval.html",
+"classlights_1_1Lights_1_1LightChoice.html",
+"md_docs_2transformation-plugin-documentation.html#autotoc_md119"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2025
 ** Raytracer
 ** File description:
-** Lib declaration
+** The Lib declaration
 */
 /**
  * @file Lib.hpp
- * @brief Lib declaration
+ * @brief The Lib declaration
  * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
 */
 

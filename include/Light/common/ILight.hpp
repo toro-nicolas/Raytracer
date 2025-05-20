@@ -6,7 +6,7 @@
 */
 /**
  * @file ILight.hpp
- * @brief ILight class declaration
+ * @brief The ILight class declaration
  * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
 
@@ -30,7 +30,7 @@ namespace Raytracer {
      * @brief Interface for all light in the raytracer
      */
     class ILight {
-        
+
         public:
             /**
              * @brief Destructor of the ILight
@@ -50,7 +50,7 @@ namespace Raytracer {
             /**
              * @brief Display the light
              */
-            virtual void display(void) = 0;
+            virtual void display(size_t level) = 0;
 
 
 
@@ -96,10 +96,14 @@ namespace Raytracer {
              */
             virtual void setIntensity(double intensity) = 0;
 
-
-
-            // TODO: Je crois livo ta pas capté le but des interfaces là
-            virtual LightType getType() const = 0;
+            /**
+            * @brief Compute the light contribution at a specific point
+            * @param point The point to compute the light for
+            * @param normal The surface normal at the point
+            * @param view_dir The viewing direction
+            * @return The computed light contribution as a Vector3
+            */
+            virtual Lib::Vector3 compute(const Lib::Vector3& point, const Lib::Vector3& normal, const Lib::Vector3& view_dir) const = 0;
     };
 
 }

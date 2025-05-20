@@ -1,9 +1,14 @@
 /*
 ** EPITECH PROJECT, 2025
-** HittableList.cpp
+** Raytracer
 ** File description:
-** HittableList in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Rendering
+** The HittableList class implementation
 */
+/**
+ * @file HittableList.cpp
+ * @brief The HittableList class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "HittableList.hpp"
 

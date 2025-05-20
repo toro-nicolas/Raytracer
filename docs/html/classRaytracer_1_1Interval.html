@@ -103,14 +103,23 @@ $(function(){initNavTree('classRaytracer_1_1Interval.html',''); initResizable(tr
   <div class="headertitle"><div class="title">Interval Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class representing a range between two values.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Interval_8hpp_source.html">Interval.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0d354d4b6d16208610f69bde70ff7368" id="r_a0d354d4b6d16208610f69bde70ff7368"><td class="memItemLeft" align="right" valign="top"><a id="a0d354d4b6d16208610f69bde70ff7368" name="a0d354d4b6d16208610f69bde70ff7368"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Interval</b> (double min, double max)</td></tr>
+<tr class="memitem:a34301e26364ca9be13bddd52cf77bb81" id="r_a34301e26364ca9be13bddd52cf77bb81"><td class="memItemLeft" align="right" valign="top"><a id="a34301e26364ca9be13bddd52cf77bb81" name="a34301e26364ca9be13bddd52cf77bb81"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Interval</b> ()</td></tr>
+<tr class="memdesc:a34301e26364ca9be13bddd52cf77bb81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a>. <br /></td></tr>
+<tr class="separator:a34301e26364ca9be13bddd52cf77bb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d354d4b6d16208610f69bde70ff7368" id="r_a0d354d4b6d16208610f69bde70ff7368"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d354d4b6d16208610f69bde70ff7368">Interval</a> (double <a class="el" href="#aad36546e8175d2922bee165fe028fedc">min</a>, double <a class="el" href="#a0b0ede69e8156eb97acc579b88e883de">max</a>)</td></tr>
+<tr class="memdesc:a0d354d4b6d16208610f69bde70ff7368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> with specific min and max values.  <br /></td></tr>
 <tr class="separator:a0d354d4b6d16208610f69bde70ff7368"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a37ffd68bba9e2f752fe5d63f092ccb" id="r_a4a37ffd68bba9e2f752fe5d63f092ccb"><td class="memItemLeft" align="right" valign="top"><a id="a4a37ffd68bba9e2f752fe5d63f092ccb" name="a4a37ffd68bba9e2f752fe5d63f092ccb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Interval</b> (const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;a, const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;b)</td></tr>
+<tr class="memitem:a4a37ffd68bba9e2f752fe5d63f092ccb" id="r_a4a37ffd68bba9e2f752fe5d63f092ccb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a37ffd68bba9e2f752fe5d63f092ccb">Interval</a> (const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;a, const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;b)</td></tr>
+<tr class="memdesc:a4a37ffd68bba9e2f752fe5d63f092ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> from two other intervals.  <br /></td></tr>
 <tr class="separator:a4a37ffd68bba9e2f752fe5d63f092ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3fe9e82d5f4f1d55a5c104a2a5d37a6" id="r_ac3fe9e82d5f4f1d55a5c104a2a5d37a6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3fe9e82d5f4f1d55a5c104a2a5d37a6">size</a> () const</td></tr>
 <tr class="memdesc:ac3fe9e82d5f4f1d55a5c104a2a5d37a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the interval.  <br /></td></tr>
@@ -124,28 +133,95 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf17dc624110d933cbdb62b6ce0c3738" id="r_abf17dc624110d933cbdb62b6ce0c3738"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf17dc624110d933cbdb62b6ce0c3738">clamp</a> (double x) const</td></tr>
 <tr class="memdesc:abf17dc624110d933cbdb62b6ce0c3738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clamps a value to the interval.  <br /></td></tr>
 <tr class="separator:abf17dc624110d933cbdb62b6ce0c3738"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe68775d5fa4bab341bea1a9b1f8c524" id="r_afe68775d5fa4bab341bea1a9b1f8c524"><td class="memItemLeft" align="right" valign="top"><a id="afe68775d5fa4bab341bea1a9b1f8c524" name="afe68775d5fa4bab341bea1a9b1f8c524"></a>
-<a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#160;</td><td class="memItemRight" valign="bottom"><b>expand</b> (double delta) const</td></tr>
+<tr class="memitem:afe68775d5fa4bab341bea1a9b1f8c524" id="r_afe68775d5fa4bab341bea1a9b1f8c524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe68775d5fa4bab341bea1a9b1f8c524">expand</a> (double delta) const</td></tr>
+<tr class="memdesc:afe68775d5fa4bab341bea1a9b1f8c524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands the interval by a delta amount.  <br /></td></tr>
 <tr class="separator:afe68775d5fa4bab341bea1a9b1f8c524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:aad36546e8175d2922bee165fe028fedc" id="r_aad36546e8175d2922bee165fe028fedc"><td class="memItemLeft" align="right" valign="top"><a id="aad36546e8175d2922bee165fe028fedc" name="aad36546e8175d2922bee165fe028fedc"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>min</b></td></tr>
+<tr class="memdesc:aad36546e8175d2922bee165fe028fedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum value of the interval. <br /></td></tr>
 <tr class="separator:aad36546e8175d2922bee165fe028fedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0ede69e8156eb97acc579b88e883de" id="r_a0b0ede69e8156eb97acc579b88e883de"><td class="memItemLeft" align="right" valign="top"><a id="a0b0ede69e8156eb97acc579b88e883de" name="a0b0ede69e8156eb97acc579b88e883de"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>max</b></td></tr>
+<tr class="memdesc:a0b0ede69e8156eb97acc579b88e883de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum value of the interval. <br /></td></tr>
 <tr class="separator:a0b0ede69e8156eb97acc579b88e883de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ac03b5ef6e05201cc95e74231136a3783" id="r_ac03b5ef6e05201cc95e74231136a3783"><td class="memItemLeft" align="right" valign="top"><a id="ac03b5ef6e05201cc95e74231136a3783" name="ac03b5ef6e05201cc95e74231136a3783"></a>
-static const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> = <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>(infinity, -infinity)</td></tr>
+static const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> = <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>(<a class="el" href="Interval_8hpp.html#af9434aea82baf2f6a5d9b6f9e36db08e">infinity</a>, -<a class="el" href="Interval_8hpp.html#af9434aea82baf2f6a5d9b6f9e36db08e">infinity</a>)</td></tr>
+<tr class="memdesc:ac03b5ef6e05201cc95e74231136a3783"><td class="mdescLeft">&#160;</td><td class="mdescRight">An empty interval (min &gt; max) <br /></td></tr>
 <tr class="separator:ac03b5ef6e05201cc95e74231136a3783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a891cfd512c8bc6ebb26901105c0804" id="r_a9a891cfd512c8bc6ebb26901105c0804"><td class="memItemLeft" align="right" valign="top"><a id="a9a891cfd512c8bc6ebb26901105c0804" name="a9a891cfd512c8bc6ebb26901105c0804"></a>
-static const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#160;</td><td class="memItemRight" valign="bottom"><b>universe</b> = <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>(-infinity, infinity)</td></tr>
+static const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#160;</td><td class="memItemRight" valign="bottom"><b>universe</b> = <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>(-<a class="el" href="Interval_8hpp.html#af9434aea82baf2f6a5d9b6f9e36db08e">infinity</a>, <a class="el" href="Interval_8hpp.html#af9434aea82baf2f6a5d9b6f9e36db08e">infinity</a>)</td></tr>
+<tr class="memdesc:a9a891cfd512c8bc6ebb26901105c0804"><td class="mdescLeft">&#160;</td><td class="mdescRight">An interval covering all possible values. <br /></td></tr>
 <tr class="separator:a9a891cfd512c8bc6ebb26901105c0804"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class representing a range between two values. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0d354d4b6d16208610f69bde70ff7368" name="a0d354d4b6d16208610f69bde70ff7368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d354d4b6d16208610f69bde70ff7368">&#9670;&#160;</a></span>Interval() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1Interval.html">Interval</a> </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> with specific min and max values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>The minimum value of the interval </td></tr>
+    <tr><td class="paramname">max</td><td>The maximum value of the interval </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4a37ffd68bba9e2f752fe5d63f092ccb" name="a4a37ffd68bba9e2f752fe5d63f092ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a37ffd68bba9e2f752fe5d63f092ccb">&#9670;&#160;</a></span>Interval() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1Interval.html">Interval</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> from two other intervals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first interval </td></tr>
+    <tr><td class="paramname">b</td><td>The second interval </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="abf17dc624110d933cbdb62b6ce0c3738" name="abf17dc624110d933cbdb62b6ce0c3738"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf17dc624110d933cbdb62b6ce0c3738">&#9670;&#160;</a></span>clamp()</h2>
@@ -199,6 +275,32 @@ static const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#
 
 </div>
 </div>
+<a id="afe68775d5fa4bab341bea1a9b1f8c524" name="afe68775d5fa4bab341bea1a9b1f8c524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe68775d5fa4bab341bea1a9b1f8c524">&#9670;&#160;</a></span>expand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1Interval.html">Interval</a> expand </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>delta</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expands the interval by a delta amount. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>The amount to expand the interval by </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> The expanded interval </dd></dl>
+
+</div>
+</div>
 <a id="ac3fe9e82d5f4f1d55a5c104a2a5d37a6" name="ac3fe9e82d5f4f1d55a5c104a2a5d37a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac3fe9e82d5f4f1d55a5c104a2a5d37a6">&#9670;&#160;</a></span>size()</h2>
 
@@ -247,7 +349,7 @@ static const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/lib/my/<a class="el" href="Interval_8hpp_source.html">Interval.hpp</a></li>
-<li>lib/my/<b>Interval.cpp</b></li>
+<li>lib/my/<a class="el" href="Interval_8cpp.html">Interval.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

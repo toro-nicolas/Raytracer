@@ -1,13 +1,17 @@
 /*
 ** EPITECH PROJECT, 2025
-** Checker.cpp
+** Raytracer
 ** File description:
-** Checker in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Texture/common
+** The Checker class implementation
 */
+/**
+ * @file Checker.cpp
+ * @brief The Checker class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "Checker.hpp"
 #include "SolidColor.hpp"
-
 
 namespace Raytracer
 {
@@ -30,13 +34,16 @@ namespace Raytracer
         return isEven ? even->value(u, v, p) : odd->value(u, v, p);
     }
 
-    void Checker::display() const
+    void Checker::display(size_t level) const
     {
-        std::cout << "\t\tChecker: scale = " << 1.0 / inv_scale << std::endl;
-        std::cout << "\t\tChecker: even color =" << std::endl;
-        even->display();
-        std::cout << "\t\tChecker: odd color =" << std::endl;
-        odd->display();
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "Checker texture:" << std::endl;
+        std::cout << indent << "- Scale: " << 1.0 / inv_scale << std::endl;
+        std::cout << indent << "- Even color:" << std::endl;
+        std::cout << indent << "    - ";
+        even->display(level + 2);
+        std::cout << indent << "- Odd color:" << std::endl;
+        std::cout << indent << "    - ";
+        odd->display(level + 2);
     }
-} // namespace Raytracer
-
+}

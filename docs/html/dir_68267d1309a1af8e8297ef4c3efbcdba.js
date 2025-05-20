@@ -9,5 +9,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "Primitive", "dir_9424f11138aac57f735512f45baa5333.html", "dir_9424f11138aac57f735512f45baa5333" ],
     [ "Rendering", "dir_d4e015951b263415729819c1a4b61808.html", "dir_d4e015951b263415729819c1a4b61808" ],
     [ "Scene-loader", "dir_7903e9f17d999aea51d106e3dfcfc481.html", "dir_7903e9f17d999aea51d106e3dfcfc481" ],
+    [ "Texture", "dir_64cece8721923da8192b70f373152c4b.html", "dir_64cece8721923da8192b70f373152c4b" ],
     [ "Transformation", "dir_9557fbf93eaaa40ea59d740721210761.html", "dir_9557fbf93eaaa40ea59d740721210761" ]
 ];

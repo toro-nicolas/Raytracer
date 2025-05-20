@@ -102,9 +102,7 @@ $(function(){initNavTree('md_docs_2light-plugin-documentation.html',''); initRes
 <div class="textblock"><p><a class="anchor" id="autotoc_md14"></a> </p>
 <h1><a class="anchor" id="autotoc_md15"></a>
 Introduction</h1>
-<p>This document explains how to create light plugins for the raytracer. <br  />
- Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, <br  />
- while lights are dynamically loaded from shared libraries (.so).</p>
+<p>This document explains how to create light plugins for the raytracer. Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, while lights are dynamically loaded from shared libraries (.so).</p>
 <h1><a class="anchor" id="autotoc_md16"></a>
 Naming Conventions</h1>
 <p>Each light plugin must follow this naming convention: </p><div class="fragment"><div class="line">raytrace_light_[light_name].so</div>
@@ -143,13 +141,13 @@ Creating a New Light</h1>
 <div class="line"> </div>
 <div class="line">            <span class="comment">/* Display function */</span></div>
 <div class="line"> </div>
-<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">void</span>) final;</div>
+<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">size_t</span> level) final;</div>
 <div class="line"> </div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">/* Methods specific to your light */</span></div>
 <div class="line"> </div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line">        protected:</div>
 <div class="line"> </div>
@@ -159,24 +157,23 @@ Creating a New Light</h1>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md21"></a>
 2. Builder Class</h2>
-<p>Your builder class must inherit from <code>ALightBuilder</code> and implement the necessary methods to configure your light. <br  />
- Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
+<p>Your builder class must inherit from <code>ALightBuilder</code> and implement the necessary methods to configure your light. Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
 <div class="line">    <span class="keyword">class </span>YourLightBuilder final : <span class="keyword">public</span> ALightBuilder {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
 <div class="line">            <span class="comment">/* Constructors and destructors */</span></div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            YourLightBuilder(YourLight &amp;yourLight);</div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            ~YourLightBuilder() final;</div>
-<div class="line">            </div>
-<div class="line">            </div>
-<div class="line">            </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">            <span class="comment">/* Setters of the specific properties */</span></div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            ILightBuilder &amp;set(const std::<span class="keywordtype">string</span> &amp;name, const std::vector&lt;std::<span class="keywordtype">string</span>&gt; &amp;args) final;</div>
-<div class="line">        </div>
-<div class="line">        </div>
-<div class="line">        </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">        protected:</div>
 <div class="line">            YourLight &amp;_yourLight; </div>
 <div class="line">    };</div>
@@ -234,8 +231,7 @@ How to Compile a Plugin</h1>
 <div class="line">    src/Light/&lt;name&gt;.cpp</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md29"></a>
 Plugin Loading</h1>
-<p>The raytracer core will automatically search for and load all <code>.so</code> files that follow the naming convention. <br  />
- For each plugin found, it will call the <code>createLight()</code> function to instantiate the light.</p>
+<p>The raytracer core will automatically search for and load all <code>.so</code> files that follow the naming convention. For each plugin found, it will call the <code>createLight()</code> function to instantiate the light.</p>
 <h1><a class="anchor" id="autotoc_md30"></a>
 Summary of Steps to Create a New Plugin</h1>
 <ol type="1">

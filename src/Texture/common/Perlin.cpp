@@ -1,14 +1,16 @@
 /*
 ** EPITECH PROJECT, 2025
-** Perlin.cpp
+** Raytracer
 ** File description:
-** Perlin noise generator implementation
+** The Perlin noise generator implementation
 */
+/**
+ * @file Perlin.cpp
+ * @brief The Perlin noise generator implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "Perlin.hpp"
-#include "Vector3.hpp"
-#include <algorithm>
-#include <random>
 
 namespace Raytracer {
 

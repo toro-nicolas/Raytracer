@@ -5,18 +5,25 @@ This documentation is based on the libconfig scene loader plugin, which allows f
 The objects in the scene depend on plugins, which are loaded at runtime.  
 The plugin name must follow the convention `raytracer_[type]_[plugin_name].so` to be recognized by the engine.
 
-## Table of Contents
-1. [General Structure](#general-structure)
-2. [File Imports](#file-imports)
-3. [Camera Configuration](#camera-configuration)
-4. [Primitives](#primitives)
-5. [Lights](#lights)
+---
 
+## 📚 Table of Contents
+1. [General Structure](#-general-structure)
+2. [File Imports](#-file-imports)
+3. [Camera Configuration](#-camera-configuration)
+4. [Primitives](#-primitives)
+   - [Set builders function](#set-builders-function)
+   - [Default Materials](#-default-materials)
+   - [Default Transformations](#-default-transformations)
+   - [Default Primitives](#-default-primitives)
+5. [Lights](#-lights)
+   - [Default Lights](#-default-lights)
 
+---
 
-## General Structure
+## 🧱 General Structure
 
-Scene files use a ligconfig syntax.  
+Scene files use a libconfig syntax.  
 You can use the `#` and `\\` characters to add comments in your scene file.  
 The general structure of a scene file is as follows:
 ```c
@@ -39,9 +46,9 @@ lights: {
 Order does not matter, but it is recommended to keep the `camera` block at the top for clarity.
 Please refer to the sections below for detailed descriptions of each block.
 
+---
 
-
-## File Imports
+## 📁 File Imports
 
 External scenes files can be imported to reuse scene elements:
 ```c
@@ -53,9 +60,9 @@ import = (
 Recursive imports doesn't present any problem.  
 If a scene file imports another file, the engine will load all the files in the import chain.  
 An imported file can only be a scene file.  
-Only the primitives and lights defined in the imported file will be added to the current scene.
+Only the primitives and lights (except ambient) defined in the imported file will be added to the current scene.
 
-
+---
 
 ## Camera Configuration
 
@@ -90,7 +97,7 @@ camera: {
 };
 ```
 
-### Camera Parameters
+### 🎥 Camera Parameters
 
 | Parameter          | Description                                                                   |
 |--------------------|-------------------------------------------------------------------------------|
@@ -104,15 +111,15 @@ camera: {
 | `maxDepth`         | Maximum ray recursion depth (number of bounces)                               |
 | `samplesPerPixel`  | Number of samples per pixel for anti-aliasing                                 |
 
+---
 
-
-## Primitives
+## 🧩 Primitives
 
 The `primitives` block contains an infinite number of objects that can be rendered in the scene.  
 All objects are primitive plugins.  
 For each primitive plugin, you can define an infinite number of objects in the `primitives` block.  
 All you need to do is create a list of the same object.  
-For example, if I have the `raytracer_primitive_plane.so` plugin, I can make a list of `planes = ();` or `plane = ();`.  
+For example, if I have the `raytracer_primitive_plane.so` plugin, I can make a list of `planes = ();` or `plane = ();`.
 
 All primitives have:
 - a `position` parameter, which is the position of the object in 3D space
@@ -132,7 +139,7 @@ Parameters not defined in a primitive will use their default values.
 All builders use the set function. It takes a key and args.  
 The key is the parameter to be added, and the args are the arguments that go with the parameter.  
 The arguments are a list of strings representing the recursive value.  
-Here's an example for a sample material:  
+Here's an example for a sample material:
 ```c
 test_material = {
     r = 255;
@@ -162,7 +169,7 @@ test_material.set("texture", {"file", "textures/earth.jpg", "jpg"});
 
 
 
-### Default Materials
+### 🎨 Default Materials
 
 #### Color
 
@@ -190,6 +197,115 @@ color = {
     r = 255;
     g = "75.5%";
     b = 15.8;
+};
+```
+
+##### Texture
+
+A texture can be applied to the color material to enhance its appearance.
+
+###### Checker Texture
+
+The checker texture is a pattern that alternates between two colors in a grid-like fashion.  
+Default values are:
+```c
+color = {
+    texture = {
+        type = "checker";
+        scale = 0.0;
+        r1 = 0.0;
+        g1 = 0.0;
+        b1 = 0.0;
+        r2 = 0.0;
+        g2 = 0.0;
+        b2 = 0.0;
+    };
+};
+```
+
+Parameters details:
+
+| Parameter    | Description                                             |
+|--------------|---------------------------------------------------------|
+| `type`       | Texture type ("checker" for checkered pattern)          |
+| `scale`      | Texture scale (size of squares for the checker pattern) |
+| `r1, g1, b1` | First color of the pattern                              |
+| `r2, g2, b2` | Second color of the pattern                             |
+
+
+Example:
+```c
+color = {
+    texture = {
+        type = "checker";
+        scale = 0.32;
+        r1 = 0.2;
+        g1 = 0.3;
+        b1 = 0.1;
+        r2 = 0.9;
+        g2 = 0.9;
+        b2 = 0.9;
+    };
+};
+```
+
+###### File Texture
+
+The file texture is a texture that uses an image file to define the color of the material.  
+Default values are:
+```c
+color = {
+    texture = {
+        type = "image";
+        filename = "";
+    };
+};
+```
+
+Parameters details:
+
+| Parameter  | Description                                       |
+|------------|---------------------------------------------------|
+| `type`     | Texture type ("image" for image file)             |
+| `filename` | Path to the image file (e.g., "scenes/earth.jpg") |
+
+Example:
+```c
+color = {
+    texture = {
+        type = "image";
+        filename = "scenes/earth.jpg";
+    };
+};
+```
+
+###### Perlin Noise Texture
+
+The Perlin noise texture is a procedural texture that generates a noise pattern.  
+Default values are:
+```c
+color = {
+    texture = {
+        type = "perlin";
+        scale = 0.0;
+    };
+};
+```
+
+Parameters details:
+
+| Parameter    | Description                                             |
+|--------------|---------------------------------------------------------|
+| `type`       | Texture type ("perlin" for Perlin noise)                |
+| `scale`      | Scale of the Perlin noise texture                       |
+
+Example:
+```c
+color = {
+    texture = {
+        type = "perlin";
+        scale = 4;
+    };
 };
 ```
 
@@ -236,7 +352,29 @@ refraction = "100%";
 ```
 
 
-### Default Transformations
+#### Diffuse Light
+
+The diffuse light material is a material to define the diffuse light of the primitive.  
+Default values are:
+```c
+diffuselight = {
+    color = {
+        r = 0.0;
+        g = 0.0;
+        b = 0.0;
+    };
+};
+```
+
+Parameters details:
+
+| Parameter    | Description                                       |
+|--------------|---------------------------------------------------|
+| `color`      | RGB color of the diffuse light (0-255 or "XX%")   |
+
+
+
+### 🔁 Default Transformations
 
 #### Translation
 
@@ -273,9 +411,7 @@ The rotation transformation is a transformation to define the rotation of the pr
 Default values are:
 ```c
 rotation = {
-    x = 0.0;
-    y = 0.0;
-    z = 0.0;
+    angleY = 0.0;
 };
 ```
 
@@ -283,64 +419,19 @@ Parameters details:
 
 | Parameter    | Description                                       |
 |--------------|---------------------------------------------------|
-| `x`          | Rotation around the x-axis (in degrees)           |
-| `y`          | Rotation around the y-axis (in degrees)           |
-| `z`          | Rotation around the z-axis (in degrees)           |
+| `angleY`     | Rotation angle around the Y-axis (in degrees)     |
 
 Example:
 ```c
 rotation = {
-    x = 90.0;
-    y = 0.0;
-    z = 0.0;
+    angleY = 90.0;
 };
 ```
 
 
-### Default Primitives
+### 🧩 Default Primitives
 
-### Spheres
-
-The sphere primitive is a basic 3D object defined by its center position and radius.
-Default values are:
-```c
-spheres = (
-    {
-        position = {
-            x = 0.0;
-            y = 0.0;
-            z = 0.0;
-        };
-        r = 0.0;
-    }
-);
-```
-
-Parameters details:
-
-| Parameter    | Description                                           |
-|--------------|-------------------------------------------------------|
-| `position`   | Position of the sphere's center (x, y, z coordinates) |
-| `r`          | Radius of the sphere                                  |
-
-Example:
-```c
-spheres = (
-    {
-        position = {
-            x = 0.0;
-            y = 1.0;
-            z = 0.0;
-        };
-        r = 1.0;
-        
-        // Additional material and transformation parameters can be added here
-    }
-);
-```
-
-
-### Planes
+#### Planes
 
 The plane primitive is a flat surface defined by its normal vector and a point on the plane.
 Default values are:
@@ -395,13 +486,410 @@ planes = (
 ```
 
 
+#### Spheres
 
-## Lights
+![sphere](images/sphere.png)
+
+The sphere primitive is a basic 3D object defined by its center position and radius.
+Default values are:
+```c
+spheres = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        r = 0.0;
+    }
+);
+```
+
+Parameters details:
+
+| Parameter    | Description                                           |
+|--------------|-------------------------------------------------------|
+| `position`   | Position of the sphere's center (x, y, z coordinates) |
+| `r`          | Radius of the sphere                                  |
+
+Example:
+```c
+spheres = (
+    {
+        position = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        r = 1.0;
+        
+        // Additional material and transformation parameters can be added here
+    }
+);
+```
+
+
+### Boxes
+
+![box](images/box.png)
+
+The box primitive is a basic 3D object defined by its center position and size.
+Default values are:
+```c
+boxs = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        size = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+    }
+);
+```
+
+Parameters details:
+
+| Parameter    | Description                                        |
+|--------------|----------------------------------------------------|
+| `position`   | Position of the box's center (x, y, z coordinates) |
+| `size`       | Size of the box (width, height, depth)             |
+
+
+Example:
+```c
+box = (
+    {
+        position = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        size = {
+            x = 1.0;
+            y = 1.0;
+            z = 1.0;
+        };
+        
+        // Additional material and transformation parameters can be added here
+    }
+);
+```
+
+
+### Cylinders
+
+![cylinder](images/cylinder.png)
+
+The cylinder primitive is a basic 3D object defined by its center position, radius, height and direction.  
+Default values are:
+```c
+cylinder = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        radius = 0.0;
+        height = 0.0;
+        direction = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+    }
+);
+```
+
+Parameters details:
+
+| Parameter   | Description                                             |
+|-------------|---------------------------------------------------------|
+| `position`  | Position of the cylinder's center (x, y, z coordinates) |
+| `radius`    | Radius of the cylinder                                  |
+| `height`    | Height of the cylinder                                  |
+| `direction` | Direction vector of the cylinder (x, y, z)              |
+
+Example:
+```c
+cylinder = (
+    {
+        position = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        radius = 1.0;
+        height = 2.0;
+        direction = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        
+        // Additional material and transformation parameters can be added here
+    }
+);
+```
+
+
+### Cones
+
+![cone](images/cone.png)
+
+The cone primitive is a basic 3D object defined by its center position, radius, height and direction.  
+Default values are:
+```c
+cone = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        radius = 0.0;
+        height = 0.0;
+        direction = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+    }
+);
+```
+
+Parameters details:
+
+| Parameter   | Description                                             |
+|-------------|---------------------------------------------------------|
+| `position`  | Position of the cone's center (x, y, z coordinates)     |
+| `radius`    | Radius of the cone                                      |
+| `height`    | Height of the cone                                      |
+| `direction` | Direction vector of the cone (x, y, z)                  |
+
+Example:
+```c
+cone = (
+    {
+        position = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        radius = 1.0;
+        height = 2.0;
+        direction = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        
+        // Additional material and transformation parameters can be added here
+    }
+);
+```
+
+
+### Torus
+
+![torus](images/torus.png)
+
+The torus primitive is a basic 3D object defined by its center position, inner radius, outer radius and direction.  
+Default values are:
+```c
+torus = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        majorRadius = 0.0;
+        minorRadius = 0.0;
+        direction = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+    }
+);
+```
+
+Parameters details:
+
+| Parameter     | Description                                          |
+|---------------|------------------------------------------------------|
+| `position`    | Position of the torus's center (x, y, z coordinates) |
+| `majorRadius` | Major radius of the torus                            |
+| `minorRadius` | Minor radius of the torus                            |
+| `direction`   | Direction vector of the torus (x, y, z)              |
+
+Example:
+```c
+torus = (
+    {
+        position = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        majorRadius = 1.0;
+        minorRadius = 0.5;
+        direction = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        
+        // Additional material and transformation parameters can be added here
+    }
+);
+```
+
+
+### Tanglecube
+
+![tanglecube](images/tanglecube.png)
+
+The tanglecube primitive is a basic 3D object defined by its center position, size, power and direction.  
+Default values are:
+```c
+tanglecube = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        size = 0.0;
+        power = 1.0;
+        direction = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+    }
+);
+```
+
+Parameters details:
+
+| Parameter   | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `position`  | Position of the tanglecube's center (x, y, z coordinates) |
+| `size`      | Size of the tanglecube                                    |
+| `power`     | Power of the tanglecube                                   |
+| `direction` | Direction vector of the tanglecube (x, y, z)              |
+
+
+Example:
+```c
+tanglecube = (
+    {
+        position = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        size = 1.0;
+        power = 2.0;
+        direction = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        
+        // Additional material and transformation parameters can be added here
+    }
+);
+```
+
+
+### Triangle
+
+![triangle](images/triangle.png)
+
+The triangle primitive is a basic 3D object defined by its position and three vertex.  
+Default values are:
+```c
+triangle = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        vertex1 = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        vertex2 = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        vertex3 = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+    }
+);
+```
+
+Parameters details:
+
+| Parameter  | Description                                             |
+|------------|---------------------------------------------------------|
+| `position` | Position of the triangle's center (x, y, z coordinates) |
+| `vertex1`  | First vertex of the triangle (x, y, z coordinates)      |
+| `vertex2`  | Second vertex of the triangle (x, y, z coordinates)     |
+| `vertex3`  | Third vertex of the triangle (x, y, z coordinates)      |
+
+Example:
+```c
+triangle = (
+    {
+        position = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        vertex1 = {
+            x = 1.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        vertex2 = {
+            x = 0.0;
+            y = 1.0;
+            z = 0.0;
+        };
+        vertex3 = {
+            x = -1.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        
+        // Additional material and transformation parameters can be added here
+    }
+);
+```
+
+---
+
+## 💡 Lights
 
 The `lights` block defines the lighting configuration for the scene.  
 It includes ambient lighting settings and different types of light sources.  
 Like primitives, lights can be defined in a list.  
-For each light type, you can define multiple lights in the `lights` block.  
+For each light type, you can define multiple lights in the `lights` block.
 
 Default values for the lights block are:
 ```c
@@ -417,7 +905,7 @@ General parameters for lights:
 | `ambient` | Global ambient light multiplier (0.0-1.0). Affects the base illumination of all objects    |
 
 
-### Default Lights
+### 💡 Default Lights
 
 #### Point Lights
 
@@ -425,17 +913,16 @@ Point lights emit light in all directions from a specific point in 3D space.
 They're useful for creating local light sources like lamps or bulbs.  
 Default values are:
 ```c
-    point = (
-        {
-            position = {
-                x = 0.0;
-                y = 0.0;
-                z = 0.0;
-            };
-            intensity = "0%";
-        },
-    );
-};
+point = (
+    {
+        position = {
+            x = 0.0;
+            y = 0.0;
+            z = 0.0;
+        };
+        intensity = "0%";
+    },
+);
 ```
 
 Parameters details:
@@ -475,11 +962,6 @@ Default values are:
 ```c
 directional = (
     {
-        position = {
-            x = 0.0;
-            y = 0.0;
-            z = 0.0;
-        };
         direction = {
             x = 0.0;
             y = 0.0;
@@ -494,72 +976,6 @@ Parameters details:
 
 | Parameter   | Description                                                          |
 |-------------|----------------------------------------------------------------------|
-| `position`  | Starting position of the light in 3D space (x, y, z coordinates)     |
 | `direction` | Direction vector for light rays (x, y, z), will be normalized        |
 | `intensity` | Brightness of the light (0.0-1.0)                                    |
 
-
-
-
-
-
-
-
-## Textures (to rework)
-
-### Checker Texture
-
-```c
-color = {
-    texture = {
-        type = "checker";
-        scale = 0.32;
-        r1 = 0.2;  g1 = 0.3;  b1 = 0.1;  // First color
-        r2 = 0.9;  g2 = 0.9;  b2 = 0.9;  // Second color
-    };
-};
-```
-
-#### Texture Parameters
-
-| Parameter    | Description                                             |
-|--------------|---------------------------------------------------------|
-| `type`       | Texture type ("checker" for checkered pattern)          |
-| `scale`      | Texture scale (size of squares for the checker pattern) |
-| `r1, g1, b1` | First color of the pattern                              |
-| `r2, g2, b2` | Second color of the pattern                             |
-
-
-### File Texture
-
-```c
-color = {
-    texture = {
-        type = "image";
-        filename = "scenes/earthmap.jpg";
-    };
-};
-```
-
-#### Texture Parameters
-| Parameter    | Description                                             |
-|--------------|---------------------------------------------------------|
-| `type`       | Texture type ("image" for image file)                   |
-| `filename`   | Path to the image file (e.g., "scenes/earthmap.jpg")    |
-
-### Perlin Noise Texture
-
-```c
-color = {
-    texture = {
-        type = "perlin";
-        scale = 4;
-    };
-};
-```
-
-#### Texture Parameters
-| Parameter    | Description                                             |
-|--------------|---------------------------------------------------------|
-| `type`       | Texture type ("perlin" for Perlin noise)                |
-| `scale`      | Scale of the Perlin noise texture                       |

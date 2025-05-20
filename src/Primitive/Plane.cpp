@@ -12,14 +12,13 @@
 
 #include "Plane.hpp"
 #include "Ray.hpp"
-#include "Vector3.hpp"
 
 namespace Raytracer {
     Plane::Plane()
     {
         // DEBUG << "Plane constructor";
-        _u = Lib::Vector3(0, 0, 0);
-        _v = Lib::Vector3(0, 0, 0);
+        _u = Lib::Vector3(1, 0, 0);
+        _v = Lib::Vector3(0, 1, 0);
     }
 
     Plane::~Plane()
@@ -44,29 +43,29 @@ namespace Raytracer {
         return _v;
     }
 
-    void Plane::display(void)
+    void Plane::display(size_t level)
     {
-        // calling setBoundingBox() in this function because user
-        // can enter only the position of the plane and it should work too
-        setBoundingBox();
+        std::string indent = std::string(level * 4, ' ');
         std::cout << "Plane data:" << std::endl;
-        std::cout << "        - Position: " << _pos << std::endl;
-        std::cout << "        - Materials: (" << _materials.size() << ")" << std::endl;
+        std::cout << indent << "- Position: " << _pos << std::endl;
+        std::cout << indent << "- Materials: (" << _materials.size() << ")" << std::endl;
         for (const auto &pair: _materials) {
-            std::cout << "            - ";// << pair.first << ": ";
-            pair.second->display();
+            std::cout << indent << "    - ";
+            pair.second->display(level + 2);
         }
         if (_materials.empty())
-            std::cout << std::endl;
-        std::cout << "        - Transformations: (" << _transformations.size() << ")" << std::endl;
+            std::cout << indent << "    No materials" << std::endl;
+        std::cout << indent << "- Transformations: (" << _transformations.size() << ")" << std::endl;
         for (const auto &pair: _transformations) {
-            std::cout << "            - ";// << pair.first << ": ";
-            pair.second->display();
+            std::cout << indent << "    - ";// << pair.first << ": ";
+            pair.second->display(level + 2);
         }
-        std::cout << "        - First side (u): " << _u << std::endl;
-        std::cout << "        - Second side (v): " << _v << std::endl;
-        std::cout << "        - Normal: " << _normal << std::endl;
-        std::cout << "        - D: " << D << std::endl;
+        if (_transformations.empty())
+            std::cout << indent << "    No transformations" << std::endl;
+        std::cout << indent << "- First side: " << _u << std::endl;
+        std::cout << indent << "- Second side: " << _v << std::endl;
+        std::cout << indent << "- Normal: " << _normal << std::endl;
+        std::cout << indent << "- D: " << D << std::endl;
     }
 
     void Plane::setBoundingBox()
@@ -79,20 +78,28 @@ namespace Raytracer {
         auto bbox_diagonal1 = AABB(_pos, _pos + _u + _v);
         auto bbox_diagonal2 = AABB(_pos + _u, _pos + _v);
         _bbox = AABB(bbox_diagonal1, bbox_diagonal2);
+
+        for (auto it = _transformations.rbegin(); it != _transformations.rend(); ++it) {
+            const auto& [type, transfo] = *it;
+            transfo->newBoundingBox(_bbox);
+        }
     }
 
     bool Plane::hit(const Ray& ray, Interval rayT, Intersection& rec) const
     {
-        auto denom = dot(_normal, ray.direction());
-        // No hit if the ray is parallel to the plane.
+        Ray transformed_ray = ray;
+        for (const auto &[type, transfo] : _transformations) {
+                transfo->compute(transformed_ray);
+        }
+        auto denom = dot(_normal, transformed_ray.direction());
         if (std::fabs(denom) < 1e-8)
             return false;
-        // Return false if the hit point parameter t is outside the ray interval.
-        auto t = (D - dot(_normal, ray.origin())) / denom;
+
+        auto t = (D - dot(_normal, transformed_ray.origin())) / denom;
         if (!rayT.contains(t))
             return false;
 
-        auto intersection = ray.pointAt(t);
+        auto intersection = transformed_ray.pointAt(t);
         Lib::Vector3 planar_hitpt_vector = intersection - _pos;
         auto alpha = dot(_w, cross(planar_hitpt_vector, _v));
         auto beta = dot(_w, cross(_u, planar_hitpt_vector));
@@ -102,7 +109,12 @@ namespace Raytracer {
         rec.t = t;
         rec.p = intersection;
         rec.material = _materials;
-        rec.setFaceNormal(ray, _normal);
+        rec.setFaceNormal(transformed_ray, _normal);
+
+        for (auto it = _transformations.rbegin(); it != _transformations.rend(); ++it) {
+            const auto& [type, transfo] = *it;
+            transfo->decompute(rec);
+        }
         return true;
     }
 
@@ -119,9 +131,12 @@ namespace Raytracer {
         return true;
     }
 
-};
+    void Plane::init(void)
+    {
+        // DEBUG << "Plane init";
+        setBoundingBox();
+    }
 
-namespace Raytracer {
     PlaneBuilder::PlaneBuilder(Plane &plane) : APrimitiveBuilder(plane), _plane(plane)
     {
         // DEBUG << "PlaneBuilder constructor";
@@ -148,7 +163,6 @@ namespace Raytracer {
             float zv = std::stof(args[5]);
             _plane.getFirstSide() = Lib::Vector3(xu, yu, zu);
             _plane.getSecondSide() = Lib::Vector3(xv, yv, zv);
-            _plane.setBoundingBox();
         }
         return *this;
     }

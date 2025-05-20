@@ -102,9 +102,7 @@ $(function(){initNavTree('md_docs_2material-plugin-documentation.html',''); init
 <div class="textblock"><p><a class="anchor" id="autotoc_md31"></a> </p>
 <h1><a class="anchor" id="autotoc_md32"></a>
 Introduction</h1>
-<p>This document explains how to create material plugins for the raytracer. <br  />
- Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, <br  />
- while materials are dynamically loaded from shared libraries (.so).</p>
+<p>This document explains how to create material plugins for the raytracer. Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, while materials are dynamically loaded from shared libraries (.so).</p>
 <h1><a class="anchor" id="autotoc_md33"></a>
 Naming Conventions</h1>
 <p>Each material plugin must follow this naming convention: </p><div class="fragment"><div class="line">raytrace_material_[material_name].so</div>
@@ -128,30 +126,29 @@ Class Hierarchy</h2>
 Creating a New Material</h1>
 <h2><a class="anchor" id="autotoc_md37"></a>
 1. Material Class</h2>
-<p>Your material class must inherit from <code>AMaterial</code> and implement all required virtual methods. <br  />
- Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
+<p>Your material class must inherit from <code>AMaterial</code> and implement all required virtual methods. Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
 <div class="line">    <span class="keyword">class </span>YourMaterial final : <span class="keyword">public</span> AMaterial {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
 <div class="line">            <span class="comment">/* Constructors and destructors */</span></div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            YourMaterial();</div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            ~YourMaterial() final;</div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            std::unique_ptr&lt;IMaterialBuilder&gt; &amp;getBuilder(<span class="keywordtype">void</span>) final;</div>
-<div class="line">            </div>
-<div class="line">            </div>
-<div class="line">            </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">            <span class="comment">/* Display function */</span></div>
-<div class="line">            </div>
-<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">void</span>) final;</div>
+<div class="line"> </div>
+<div class="line">            <span class="keywordtype">void</span> display(<span class="keywordtype">size_t</span> level) final;</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">/* Methods specific to your material */</span></div>
 <div class="line"> </div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line">        protected:</div>
 <div class="line"> </div>
@@ -161,24 +158,23 @@ Creating a New Material</h1>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
 2. Builder Class</h2>
-<p>Your builder class must inherit from <code>AMaterialBuilder</code> and implement the necessary methods to configure your material. <br  />
- Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
+<p>Your builder class must inherit from <code>AMaterialBuilder</code> and implement the necessary methods to configure your material. Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
 <div class="line">    <span class="keyword">class </span>YourMaterialBuilder final : <span class="keyword">public</span> AMaterialBuilder {</div>
 <div class="line">        <span class="keyword">public</span>:</div>
 <div class="line">            <span class="comment">/* Constructors and destructors */</span></div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            YourMaterialBuilder(YourMaterial &amp;yourMaterial);</div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            ~YourMaterialBuilder() final;</div>
-<div class="line">            </div>
-<div class="line">            </div>
-<div class="line">            </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">            <span class="comment">/* Setters of the specific properties */</span></div>
-<div class="line">            </div>
+<div class="line"> </div>
 <div class="line">            IMaterialBuilder &amp;set(const std::<span class="keywordtype">string</span> &amp;name, const std::vector&lt;std::<span class="keywordtype">string</span>&gt; &amp;args) final;</div>
-<div class="line">        </div>
-<div class="line">        </div>
-<div class="line">        </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
 <div class="line">        protected:</div>
 <div class="line">            YourMaterial &amp;_yourMaterial; </div>
 <div class="line">    };</div>

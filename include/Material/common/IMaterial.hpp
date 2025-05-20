@@ -42,7 +42,7 @@ namespace Raytracer {
             /**
              * @brief Display the material
              */
-            virtual void display(void) = 0;
+            virtual void display(size_t level) = 0;
 
 
 
@@ -58,9 +58,14 @@ namespace Raytracer {
              */
             virtual bool scatter(const Ray& r_in, const Intersection& rec, Lib::Vector3 &attenuation, Ray& scattered) const = 0;
 
-        protected:
-
-        private:
+            /**
+             * @brief Get the emitted light at a specific point
+             * @param u The u texture coordinate
+             * @param v The v texture coordinate
+             * @param p The point in 3D space where to compute emission
+             * @return Lib::Vector3 The emitted color/light at the point
+             */
+            virtual Lib::Vector3 emitted(double u, double v, const Lib::Vector3& p) const = 0;
     };
 }
 

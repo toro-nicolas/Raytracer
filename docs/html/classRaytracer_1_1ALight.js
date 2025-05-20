@@ -1,6 +1,7 @@
 var classRaytracer_1_1ALight =
 [
-    [ "display", "classRaytracer_1_1ALight.html#a472a1181a582bdddb9ff224a37ad95ac", null ],
+    [ "compute", "classRaytracer_1_1ALight.html#a522c41081e561c5f9b2ab5586f785c2e", null ],
+    [ "display", "classRaytracer_1_1ALight.html#ab221007634f5fb7777414d6aff27a817", null ],
     [ "getIntensity", "classRaytracer_1_1ALight.html#af3b3ebaed01af27a035dec94d01e58f2", null ],
     [ "getIntensity", "classRaytracer_1_1ALight.html#adf9ff78e247dccc676d1e845d2e8e692", null ],
     [ "getPos", "classRaytracer_1_1ALight.html#ade433ababcadfcb589402ce84cb0510b", null ],

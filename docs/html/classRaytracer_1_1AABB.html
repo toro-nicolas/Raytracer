@@ -103,26 +103,39 @@ $(function(){initNavTree('classRaytracer_1_1AABB.html',''); initResizable(true);
   <div class="headertitle"><div class="title">AABB Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Axis-Aligned Bounding <a class="el" href="classRaytracer_1_1Box.html" title="Represents a box primitive in 3D space.">Box</a> for efficient ray intersection tests.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Ray_8hpp_source.html">Ray.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2c9e0ce9a330fdfc21fb4d27250cf278" id="r_a2c9e0ce9a330fdfc21fb4d27250cf278"><td class="memItemLeft" align="right" valign="top"><a id="a2c9e0ce9a330fdfc21fb4d27250cf278" name="a2c9e0ce9a330fdfc21fb4d27250cf278"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AABB</b> (const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;x, const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;y, const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;z)</td></tr>
+<tr class="memitem:a760fe05f4e4cdf052bc4957618cdb060" id="r_a760fe05f4e4cdf052bc4957618cdb060"><td class="memItemLeft" align="right" valign="top"><a id="a760fe05f4e4cdf052bc4957618cdb060" name="a760fe05f4e4cdf052bc4957618cdb060"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AABB</b> ()</td></tr>
+<tr class="memdesc:a760fe05f4e4cdf052bc4957618cdb060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor creates an empty bounding box. <br /></td></tr>
+<tr class="separator:a760fe05f4e4cdf052bc4957618cdb060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9e0ce9a330fdfc21fb4d27250cf278" id="r_a2c9e0ce9a330fdfc21fb4d27250cf278"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c9e0ce9a330fdfc21fb4d27250cf278">AABB</a> (const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;x, const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;y, const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;<a class="el" href="#a15a82a731cf1e1408833b4ec39c15f08">z</a>)</td></tr>
+<tr class="memdesc:a2c9e0ce9a330fdfc21fb4d27250cf278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classRaytracer_1_1AABB.html" title="Axis-Aligned Bounding Box for efficient ray intersection tests.">AABB</a> from intervals along each axis.  <br /></td></tr>
 <tr class="separator:a2c9e0ce9a330fdfc21fb4d27250cf278"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae830e764d08a17465e551fcbfb3f12c7" id="r_ae830e764d08a17465e551fcbfb3f12c7"><td class="memItemLeft" align="right" valign="top"><a id="ae830e764d08a17465e551fcbfb3f12c7" name="ae830e764d08a17465e551fcbfb3f12c7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AABB</b> (const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;a, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;b)</td></tr>
+<tr class="memitem:ae830e764d08a17465e551fcbfb3f12c7" id="r_ae830e764d08a17465e551fcbfb3f12c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae830e764d08a17465e551fcbfb3f12c7">AABB</a> (const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;a, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;b)</td></tr>
+<tr class="memdesc:ae830e764d08a17465e551fcbfb3f12c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classRaytracer_1_1AABB.html" title="Axis-Aligned Bounding Box for efficient ray intersection tests.">AABB</a> from min and max points.  <br /></td></tr>
 <tr class="separator:ae830e764d08a17465e551fcbfb3f12c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c5483de5ac052a844634f974d994d4d" id="r_a7c5483de5ac052a844634f974d994d4d"><td class="memItemLeft" align="right" valign="top"><a id="a7c5483de5ac052a844634f974d994d4d" name="a7c5483de5ac052a844634f974d994d4d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AABB</b> (const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;box0, const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;box1)</td></tr>
+<tr class="memitem:a7c5483de5ac052a844634f974d994d4d" id="r_a7c5483de5ac052a844634f974d994d4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c5483de5ac052a844634f974d994d4d">AABB</a> (const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;box0, const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;box1)</td></tr>
+<tr class="memdesc:a7c5483de5ac052a844634f974d994d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classRaytracer_1_1AABB.html" title="Axis-Aligned Bounding Box for efficient ray intersection tests.">AABB</a> that contains two other AABBs.  <br /></td></tr>
 <tr class="separator:a7c5483de5ac052a844634f974d994d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33602d6fc7af2713778bca020845729d" id="r_a33602d6fc7af2713778bca020845729d"><td class="memItemLeft" align="right" valign="top"><a id="a33602d6fc7af2713778bca020845729d" name="a33602d6fc7af2713778bca020845729d"></a>
-const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>axis_interval</b> (int n) const</td></tr>
+<tr class="memitem:ace2dc9c0f2fc7a0282e4a24eea3cacdc" id="r_ace2dc9c0f2fc7a0282e4a24eea3cacdc"><td class="memItemLeft" align="right" valign="top"><a id="ace2dc9c0f2fc7a0282e4a24eea3cacdc" name="ace2dc9c0f2fc7a0282e4a24eea3cacdc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~AABB</b> ()</td></tr>
+<tr class="memdesc:ace2dc9c0f2fc7a0282e4a24eea3cacdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:ace2dc9c0f2fc7a0282e4a24eea3cacdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33602d6fc7af2713778bca020845729d" id="r_a33602d6fc7af2713778bca020845729d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33602d6fc7af2713778bca020845729d">axis_interval</a> (int n) const</td></tr>
+<tr class="memdesc:a33602d6fc7af2713778bca020845729d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the interval for a specific axis.  <br /></td></tr>
 <tr class="separator:a33602d6fc7af2713778bca020845729d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9030b5464f7a6b1e46579a6e66684e8c" id="r_a9030b5464f7a6b1e46579a6e66684e8c"><td class="memItemLeft" align="right" valign="top"><a id="a9030b5464f7a6b1e46579a6e66684e8c" name="a9030b5464f7a6b1e46579a6e66684e8c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>hit</b> (const <a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;r, <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;ray_t) const</td></tr>
+<tr class="memitem:a9030b5464f7a6b1e46579a6e66684e8c" id="r_a9030b5464f7a6b1e46579a6e66684e8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9030b5464f7a6b1e46579a6e66684e8c">hit</a> (const <a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;r, <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;ray_t) const</td></tr>
+<tr class="memdesc:a9030b5464f7a6b1e46579a6e66684e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if a ray intersects this bounding box.  <br /></td></tr>
 <tr class="separator:a9030b5464f7a6b1e46579a6e66684e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97c8ae4600a6e04954d5294ed32dbab8" id="r_a97c8ae4600a6e04954d5294ed32dbab8"><td class="memItemLeft" align="right" valign="top"><a id="a97c8ae4600a6e04954d5294ed32dbab8" name="a97c8ae4600a6e04954d5294ed32dbab8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>longestAxis</b> () const</td></tr>
+<tr class="memitem:a97c8ae4600a6e04954d5294ed32dbab8" id="r_a97c8ae4600a6e04954d5294ed32dbab8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97c8ae4600a6e04954d5294ed32dbab8">longestAxis</a> () const</td></tr>
+<tr class="memdesc:a97c8ae4600a6e04954d5294ed32dbab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the axis with the longest extent.  <br /></td></tr>
 <tr class="separator:a97c8ae4600a6e04954d5294ed32dbab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -135,20 +148,200 @@ Data Fields</h2></td></tr>
 <tr class="separator:a1a13b0d93ad90b1d585febcff936b763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15a82a731cf1e1408833b4ec39c15f08" id="r_a15a82a731cf1e1408833b4ec39c15f08"><td class="memItemLeft" align="right" valign="top"><a id="a15a82a731cf1e1408833b4ec39c15f08" name="a15a82a731cf1e1408833b4ec39c15f08"></a>
 <a class="el" href="classRaytracer_1_1Interval.html">Interval</a>&#160;</td><td class="memItemRight" valign="bottom"><b>z</b></td></tr>
+<tr class="memdesc:a15a82a731cf1e1408833b4ec39c15f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intervals for each axis. <br /></td></tr>
 <tr class="separator:a15a82a731cf1e1408833b4ec39c15f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aa142eac8c0e0374c753cf2e279b642ba" id="r_aa142eac8c0e0374c753cf2e279b642ba"><td class="memItemLeft" align="right" valign="top"><a id="aa142eac8c0e0374c753cf2e279b642ba" name="aa142eac8c0e0374c753cf2e279b642ba"></a>
 static const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a>&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> = <a class="el" href="classRaytracer_1_1AABB.html">AABB</a>(Interval::empty, Interval::empty, Interval::empty)</td></tr>
+<tr class="memdesc:aa142eac8c0e0374c753cf2e279b642ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant representing an empty bounding box. <br /></td></tr>
 <tr class="separator:aa142eac8c0e0374c753cf2e279b642ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ea1d208d8902ef43b19da0e968f9be2" id="r_a5ea1d208d8902ef43b19da0e968f9be2"><td class="memItemLeft" align="right" valign="top"><a id="a5ea1d208d8902ef43b19da0e968f9be2" name="a5ea1d208d8902ef43b19da0e968f9be2"></a>
 static const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a>&#160;</td><td class="memItemRight" valign="bottom"><b>universe</b> = <a class="el" href="classRaytracer_1_1AABB.html">AABB</a>(Interval::universe, Interval::universe, Interval::universe)</td></tr>
+<tr class="memdesc:a5ea1d208d8902ef43b19da0e968f9be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant representing an infinite bounding box. <br /></td></tr>
 <tr class="separator:a5ea1d208d8902ef43b19da0e968f9be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Axis-Aligned Bounding <a class="el" href="classRaytracer_1_1Box.html" title="Represents a box primitive in 3D space.">Box</a> for efficient ray intersection tests. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2c9e0ce9a330fdfc21fb4d27250cf278" name="a2c9e0ce9a330fdfc21fb4d27250cf278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c9e0ce9a330fdfc21fb4d27250cf278">&#9670;&#160;</a></span>AABB() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1AABB.html">AABB</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>z</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classRaytracer_1_1AABB.html" title="Axis-Aligned Bounding Box for efficient ray intersection tests.">AABB</a> from intervals along each axis. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td><a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> along the x-axis </td></tr>
+    <tr><td class="paramname">y</td><td><a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> along the y-axis </td></tr>
+    <tr><td class="paramname">z</td><td><a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> along the z-axis </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae830e764d08a17465e551fcbfb3f12c7" name="ae830e764d08a17465e551fcbfb3f12c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae830e764d08a17465e551fcbfb3f12c7">&#9670;&#160;</a></span>AABB() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1AABB.html">AABB</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classRaytracer_1_1AABB.html" title="Axis-Aligned Bounding Box for efficient ray intersection tests.">AABB</a> from min and max points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Minimum point </td></tr>
+    <tr><td class="paramname">b</td><td>Maximum point </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c5483de5ac052a844634f974d994d4d" name="a7c5483de5ac052a844634f974d994d4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c5483de5ac052a844634f974d994d4d">&#9670;&#160;</a></span>AABB() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRaytracer_1_1AABB.html">AABB</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>box0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>box1</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classRaytracer_1_1AABB.html" title="Axis-Aligned Bounding Box for efficient ray intersection tests.">AABB</a> that contains two other AABBs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">box0</td><td>First bounding box </td></tr>
+    <tr><td class="paramname">box1</td><td>Second bounding box </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a33602d6fc7af2713778bca020845729d" name="a33602d6fc7af2713778bca020845729d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33602d6fc7af2713778bca020845729d">&#9670;&#160;</a></span>axis_interval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp; axis_interval </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the interval for a specific axis. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Axis index (0=x, 1=y, 2=z) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The interval along the specified axis </dd></dl>
+
+</div>
+</div>
+<a id="a9030b5464f7a6b1e46579a6e66684e8c" name="a9030b5464f7a6b1e46579a6e66684e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9030b5464f7a6b1e46579a6e66684e8c">&#9670;&#160;</a></span>hit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classRaytracer_1_1Interval.html">Interval</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ray_t</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test if a ray intersects this bounding box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>The ray to test </td></tr>
+    <tr><td class="paramname">ray_t</td><td><a class="el" href="classRaytracer_1_1Interval.html" title="A class representing a range between two values.">Interval</a> of valid hit distances (modified if hit found) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the ray hits the bounding box </dd></dl>
+
+</div>
+</div>
+<a id="a97c8ae4600a6e04954d5294ed32dbab8" name="a97c8ae4600a6e04954d5294ed32dbab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97c8ae4600a6e04954d5294ed32dbab8">&#9670;&#160;</a></span>longestAxis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int longestAxis </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the axis with the longest extent. </p>
+<dl class="section return"><dt>Returns</dt><dd>Axis index (0=x, 1=y, 2=z) </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/Rendering/<a class="el" href="Ray_8hpp_source.html">Ray.hpp</a></li>
-<li>src/Rendering/<b>AABB.cpp</b></li>
+<li>src/Rendering/<a class="el" href="AABB_8cpp.html">AABB.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

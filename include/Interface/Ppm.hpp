@@ -14,7 +14,6 @@
     #define PPM_HPP_
 
     #include "AInterface.hpp"
-    #include <fstream>
 
 namespace Raytracer {
     /**
@@ -50,6 +49,7 @@ namespace Raytracer {
              * @brief Render the image in PPM format
              */
             void render() override;
+
 
 
         private:

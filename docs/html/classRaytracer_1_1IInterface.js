@@ -1,5 +1,6 @@
 var classRaytracer_1_1IInterface =
 [
+    [ "~IInterface", "classRaytracer_1_1IInterface.html#ae6e7fa3bf9887c39c7ec35c6021c93d9", null ],
     [ "render", "classRaytracer_1_1IInterface.html#acd51a987d3c34c9ab68a588f03908067", null ],
     [ "resize", "classRaytracer_1_1IInterface.html#ace8eda2cd6d034ed6335dbaaa8662f30", null ],
     [ "setResolution", "classRaytracer_1_1IInterface.html#a7eb9ecfebc0574e50e8c450fee66f2ff", null ],

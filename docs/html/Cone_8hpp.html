@@ -121,22 +121,22 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9122d857fb70271dd95fad692df6b0c5" id="r_a9122d857fb70271dd95fad692df6b0c5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classRaytracer_1_1Cone.html">Cone</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9122d857fb70271dd95fad692df6b0c5">createPrimitive</a> (void)</td></tr>
-<tr class="memdesc:a9122d857fb70271dd95fad692df6b0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classRaytracer_1_1Cone.html" title="Represents a cone primitive in 3D space.">Cone</a> object.  <br /></td></tr>
-<tr class="separator:a9122d857fb70271dd95fad692df6b0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc182d6d547bcd2bf561ddb7ac33bec" id="r_accc182d6d547bcd2bf561ddb7ac33bec"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classRaytracer_1_1Box.html">Box</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Box_8hpp.html#accc182d6d547bcd2bf561ddb7ac33bec">createPrimitive</a> (void)</td></tr>
+<tr class="memdesc:accc182d6d547bcd2bf561ddb7ac33bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classRaytracer_1_1Box.html" title="Represents a box primitive in 3D space.">Box</a> object.  <br /></td></tr>
+<tr class="separator:accc182d6d547bcd2bf561ddb7ac33bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The Cone class declaration. </p>
 <dl class="section author"><dt>Author</dt><dd>Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a9122d857fb70271dd95fad692df6b0c5" name="a9122d857fb70271dd95fad692df6b0c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9122d857fb70271dd95fad692df6b0c5">&#9670;&#160;</a></span>createPrimitive()</h2>
+<a id="accc182d6d547bcd2bf561ddb7ac33bec" name="accc182d6d547bcd2bf561ddb7ac33bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc182d6d547bcd2bf561ddb7ac33bec">&#9670;&#160;</a></span>createPrimitive()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; Sphere &gt; createPrimitive </td>
+          <td class="memname">std::shared_ptr&lt; Triangle &gt; createPrimitive </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -144,17 +144,29 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new Cone object. </p>
+<p>Create a Box object. </p>
+<p>Create a Triangle object.</p>
+<p>Create a Torus object.</p>
+<p>Create a TangleCube object.</p>
 <p>Create a Sphere object.</p>
 <p>Create a new Plane object.</p>
-<p>Create a new Cylinder object.</p>
-<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;Cone&gt; A shared pointer to the new Cone object</dd>
+<p>Create a Cylinder object.</p>
+<p>Create a Cone object.</p>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;Box&gt; A shared pointer to the created Box object</dd>
+<dd>
+std::shared_ptr&lt;Cone&gt; A shared pointer to the created Cone object</dd>
 <dd>
 std::shared_ptr&lt;Cylinder&gt; A shared pointer to the created Cylinder object</dd>
 <dd>
 std::shared_ptr&lt;Plane&gt; A shared pointer to the created Plane object</dd>
 <dd>
-std::shared_ptr&lt;Sphere&gt; A shared pointer to the created Sphere object </dd></dl>
+std::shared_ptr&lt;Sphere&gt; A shared pointer to the created Sphere object</dd>
+<dd>
+std::shared_ptr&lt;TangleCube&gt; A shared pointer to the created TangleCube object</dd>
+<dd>
+std::shared_ptr&lt;Torus&gt; A shared pointer to the created Torus object</dd>
+<dd>
+std::shared_ptr&lt;Triangle&gt; A shared pointer to the created Triangle object </dd></dl>
 
 </div>
 </div>

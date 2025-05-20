@@ -19,8 +19,8 @@ namespace Raytracer {
         _rotation = Lib::Vector3();
         lookAt = Lib::Vector3(0, 2, 0);
         upVector = Lib::Vector3(0, 1, 0);
-        std::cout << *this << std::endl;
         createViewport();
+        _backgroundColor = Lib::Vector3(0, 0, 0);
     }
 
     Camera::~Camera()
@@ -86,6 +86,19 @@ namespace Raytracer {
     void Camera::setFov(const double &fov)
     {
         _fov = fov;
+    }
+
+    Lib::Vector3 &Camera::getBackgroundColor()
+    {
+        return _backgroundColor;
+    }
+    const Lib::Vector3 &Camera::getBackgroundColor() const
+    {
+        return _backgroundColor;
+    }
+    void Camera::setBackgroundColor(const Lib::Vector3 &backgroundColor)
+    {
+        _backgroundColor = backgroundColor;
     }
 
     const double &Camera::getDefocusAngle() const
@@ -215,15 +228,16 @@ namespace Raytracer {
         os << UNDERLINE << "CAMERA:" << RESET << std::endl;
         os << "- Resolution: " << camera.getResolution()[0] << "x" << camera.getResolution()[1] << std::endl;
         os << "- Position: " << camera.getPosition() << std::endl;
+        os << "- Initial look at: " << camera.getInitialLookAt() << std::endl;
         os << "- Rotation: " << camera.getRotation() << std::endl;
+        os << "- Look at: " << camera.lookAt << std::endl;
         os << "- Field of view: " << camera.getFov() << std::endl;
         os << "- Defocus angle: " << camera.getDefocusAngle() << std::endl;
         os << "- Focus distance: " << camera.getFocusDistance() << std::endl;
-        os << "- Initial look at: " << camera.getInitialLookAt() << std::endl;
-        os << "- Look at: " << camera.lookAt << std::endl;
         os << "- Max depth: " << camera.getMaxDepth() << std::endl;
         os << "- Samples per pixel: " << camera.getSamplesPerPixels() << std::endl;
         os << "- Pixels sample scale: " << camera.getPixelsSampleScale() << std::endl;
+        os << "- Background color: " << camera.getBackgroundColor() << std::endl;
         return os;
     }
 }

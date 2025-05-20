@@ -34,6 +34,10 @@ namespace Raytracer {
              */
             Color(uint8_t r = 0, uint8_t g = 0, uint8_t b = 0);
 
+            /**
+             * @brief Construct a new Color object with a texture
+             * @param texture The texture to use for this color material
+             */
             Color(std::shared_ptr<Texture> texture);
 
             /**
@@ -47,7 +51,14 @@ namespace Raytracer {
              */
             std::unique_ptr<IMaterialBuilder> &getBuilder(void) final;
 
+
+
             /* Getters and setters */
+
+            /**
+             * @brief Get the texture used by this color material
+             * @return Reference to the shared pointer containing the texture
+             */
             std::shared_ptr<Texture> &getTexture(void);
 
 
@@ -57,7 +68,7 @@ namespace Raytracer {
             /**
              * @brief Display the material
              */
-            void display(void) final;
+            void display(size_t level) final;
 
 
 
@@ -101,7 +112,6 @@ namespace Raytracer {
         private:
             Lib::Vector3 _color; ///< Color value (RGB)
             std::shared_ptr<Texture> _texture; ///< Texture for the color
-            
     };
 
 
@@ -138,7 +148,14 @@ namespace Raytracer {
              */
             IMaterialBuilder &set(const std::string &name, const std::vector<std::string> &args) final;
 
+            /**
+             * @brief Set the color of the material
+             * @param color The new color value (RGB)
+             * @return Reference to the Color builder being configured
+             */
             IMaterialBuilder &setTexture(const std::string &texture_name, const std::vector<std::string> &args);
+
+
 
         protected:
             Color &_color; ///< Reference to the material being configured

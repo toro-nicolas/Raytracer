@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['random_5fdouble_0',['random_double',['../Lib_8hpp.html#a98b7c682bb6ace85fb747cd2f14db72b',1,'Lib::random_double()'],['../Lib_8hpp.html#ae8857dcf75600277c0cbc79a687090ab',1,'Lib::random_double(double min, double max)']]],
-  ['ray_1',['Ray',['../classRaytracer_1_1Ray.html#afaba01e3891425193109e5b1da616302',1,'Raytracer::Ray::Ray(const Lib::Vector3 &amp;origin, const Lib::Vector3 &amp;direction, double t)'],['../classRaytracer_1_1Ray.html#a266f4cb31e4f30c1835194cd64d2429c',1,'Raytracer::Ray::Ray(const Ray &amp;other)']]],
-  ['reflect_2',['reflect',['../classLib_1_1Vector3.html#a2c5938f8691cff5133475b0d165420cd',1,'Lib::Vector3::reflect()'],['../Vector3_8hpp.html#a2e4712c9e6210892e84963b18afda0fb',1,'Lib::reflect()']]],
-  ['reflectance_3',['reflectance',['../classRaytracer_1_1Refraction.html#a8204557c15c320438e0235504b3e3c53',1,'Raytracer::Refraction']]],
-  ['reflection_4',['Reflection',['../classRaytracer_1_1Reflection.html#ad4c84e708827e5238ada9636f27a7f90',1,'Raytracer::Reflection']]],
-  ['reflectionbuilder_5',['ReflectionBuilder',['../classRaytracer_1_1ReflectionBuilder.html#a8d06ece738d17cd9bf594a07892f8c01',1,'Raytracer::ReflectionBuilder']]],
-  ['refraction_6',['Refraction',['../classRaytracer_1_1Refraction.html#a306fdebe177c7c293f814e55a68d1d30',1,'Raytracer::Refraction']]],
-  ['refractionbuilder_7',['RefractionBuilder',['../classRaytracer_1_1RefractionBuilder.html#a669bd72341cbb4fb3b377cc33ebf6d59',1,'Raytracer::RefractionBuilder']]],
-  ['render_8',['render',['../classRaytracer_1_1IInterface.html#acd51a987d3c34c9ab68a588f03908067',1,'Raytracer::IInterface::render()'],['../classRaytracer_1_1Ppm.html#aaa0c696f75f0e8d45ce5d0e31ff36c19',1,'Raytracer::Ppm::render()'],['../classRaytracer_1_1Sfml.html#aaa0c696f75f0e8d45ce5d0e31ff36c19',1,'Raytracer::Sfml::render()'],['../classRaytracer_1_1Rendering.html#a6765cdcebe5c8445969d5f76345df457',1,'Raytracer::Rendering::render(void)']]],
-  ['rendering_9',['Rendering',['../classRaytracer_1_1Rendering.html#ab5e6ea9f6cd8922d501d7aa3b91b8d78',1,'Raytracer::Rendering']]],
-  ['resize_10',['resize',['../classRaytracer_1_1IInterface.html#ace8eda2cd6d034ed6335dbaaa8662f30',1,'Raytracer::IInterface::resize()'],['../classRaytracer_1_1Ppm.html#a19d54429706b96f02a1ceca36ed64798',1,'Raytracer::Ppm::resize()'],['../classRaytracer_1_1Sfml.html#a19d54429706b96f02a1ceca36ed64798',1,'Raytracer::Sfml::resize()']]],
-  ['run_11',['run',['../classRaytracer_1_1Core.html#a05e0ffe612d44e6d7f3a9ae5b9df56a2',1,'Raytracer::Core']]]
+  ['pause_0',['pause',['../classGraphics_1_1Sound.html#a7167f5c196fc5e167bfabde1a730e81d',1,'Graphics::Sound']]],
+  ['perlin_1',['Perlin',['../classRaytracer_1_1Perlin.html#a358aa4ae94a50869bc2947099d97ca13',1,'Raytracer::Perlin']]],
+  ['pixeldata_2',['pixelData',['../classRaytracer_1_1RtwImage.html#aba578749a8eeccbcdd8ae4942d2b031f',1,'Raytracer::RtwImage']]],
+  ['plane_3',['Plane',['../classRaytracer_1_1Plane.html#ae2159c976aa9b03f37f1f8854346d9aa',1,'Raytracer::Plane']]],
+  ['planebuilder_4',['PlaneBuilder',['../classRaytracer_1_1PlaneBuilder.html#a327cc556067fbaa85bc7c825bf79ba03',1,'Raytracer::PlaneBuilder']]],
+  ['play_5',['play',['../classGraphics_1_1Sound.html#a6d58098c6cf63c241ed03bc797256bb1',1,'Graphics::Sound']]],
+  ['pluginloader_6',['PluginLoader',['../classRaytracer_1_1PluginLoader.html#ad0c507141996b436ed19a5aa58ca2d36',1,'Raytracer::PluginLoader::PluginLoader()'],['../classRaytracer_1_1PluginLoader.html#a387e2ee274a1a53b52c7067c46eadbb0',1,'Raytracer::PluginLoader::PluginLoader(const std::filesystem::path &amp;libToLoad)']]],
+  ['point_7',['Point',['../classRaytracer_1_1Point.html#ae08c5f0c5b4c75a3e0f33dada5f2fcba',1,'Raytracer::Point']]],
+  ['point_8',['point',['../classLib_1_1Logs_1_1Debug.html#ae940bb29914a87f58c394c19f01380a7',1,'Lib::Logs::Debug']]],
+  ['pointat_9',['pointAt',['../classRaytracer_1_1Ray.html#a3288a8303de043b3478c69da808d49b6',1,'Raytracer::Ray']]],
+  ['pointbuilder_10',['PointBuilder',['../classRaytracer_1_1PointBuilder.html#a48d496181a0019a15d2033f5bc2febd1',1,'Raytracer::PointBuilder']]],
+  ['ppm_11',['Ppm',['../classRaytracer_1_1Ppm.html#a57dfa3f1f3ca49d364fb971b26bc90d8',1,'Raytracer::Ppm']]]
 ];

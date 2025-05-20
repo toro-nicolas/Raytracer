@@ -45,7 +45,7 @@ namespace Raytracer {
             /**
              * @brief Display the primitive
              */
-            void display(void) final;
+            void display(size_t level) final;
 
 
             /* Radius function */
@@ -68,6 +68,10 @@ namespace Raytracer {
              */
             void setRadius(const float &radius);
 
+            /**
+             * @brief Set the center of the sphere
+             * @param center The new center ray
+             */
             void setCenter(const Ray &center);
 
             /**
@@ -82,7 +86,9 @@ namespace Raytracer {
             Ray &getCenter(void);
 
 
-            ////////////////////////////////////// INTERSECTION //////////////////////////////////////
+
+            /* Rendering function */
+
             /**
              * @brief Check if the ray intersects with the sphere
              * @param ray The ray to check for intersection
@@ -93,10 +99,30 @@ namespace Raytracer {
              */
             bool hit(const Ray& ray, Interval ray_t, Intersection& rec) const override;
 
+
+
+            /* Initialization function */
+
+            /**
+             * @brief Initialize the sphere
+             */
+            void init(void) final;
+
+
+
             bool centerSet; ///< Flag to indicate if the center is set
         private:
             float _radius; ///< The radius of the sphere
-            Ray _center;
+            Ray _center; ///< The center of the sphere
+
+
+
+            /**
+             * @brief Get the UV coordinates of a point on the sphere
+             * @param p The point on the sphere
+             * @param u The u coordinate
+             * @param v The v coordinate
+             */
             void getSphereUV(const Lib::Vector3& p, double& u, double& v) const;
     };
 

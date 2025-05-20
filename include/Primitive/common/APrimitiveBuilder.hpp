@@ -1,12 +1,12 @@
 /*
 ** EPITECH PROJECT, 2025
-** Project
+** Raytracer
 ** File description:
-** The APrimitiveBuilder.hpp
+** The APrimitiveBuilder class declaration
 */
 /**
  * @file APrimitiveBuilder.hpp
- * @brief The APrimitiveBuilder.hpp
+ * @brief The APrimitiveBuilder class declaration
  * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
 

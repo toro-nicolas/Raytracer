@@ -15,42 +15,44 @@
 namespace Raytracer {
     Ambient::Ambient()
     {
-        // DEBUG << "Ambient constructor";
+        _intensity = 0.5;
     }
 
     Ambient::~Ambient()
     {
-        // DEBUG << "Ambient destructor";
     }
 
     std::unique_ptr<ILightBuilder> &Ambient::getBuilder(void)
     {
-        // DEBUG << "Ambient getBuilder";
         if (!_builder)
             _builder = std::make_unique<AmbientBuilder>(*this);
         return _builder;
     }
 
-    void Ambient::display(void)
+    void Ambient::display(size_t level)
     {
-        std::cout << "Ambient data:" << std::endl;
-        //std::cout << "        - Position: " << _pos << std::endl;
-        std::cout << "        - Intensity: " << _intensity << std::endl;
+        std::string indent(level * 4, ' ');
+        std::cout << "Ambient Light:" << std::endl;
+        std::cout << indent << "- Intensity: " << _intensity * 100 << "%" << std::endl;
+    }
+
+    Lib::Vector3 Ambient::compute(UNUSED const Lib::Vector3& point, UNUSED const Lib::Vector3& normal,
+                                UNUSED const Lib::Vector3& view_dir) const
+    {
+        // Ambient light is uniform in all directions and doesn't depend on position
+        return Lib::Vector3(1.0, 1.0, 1.0) * _intensity;
     }
 
     AmbientBuilder::AmbientBuilder(Ambient &ambient) : ALightBuilder(ambient), _ambient(ambient)
     {
-        // DEBUG << "AmbientBuilder constructor";
     }
 
     AmbientBuilder::~AmbientBuilder()
     {
-        // DEBUG << "AmbientBuilder destructor";
     }
 
     ILightBuilder &AmbientBuilder::set(UNUSED const std::string &name, UNUSED const std::vector<std::string> &args)
     {
-        DEBUG << "AmbientBuilder set " << name;
         return *this;
     }
 

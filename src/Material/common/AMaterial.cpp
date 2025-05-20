@@ -15,14 +15,20 @@
 using namespace Lib;
 
 namespace Raytracer {
-    void AMaterial::display(void)
+    void AMaterial::display(size_t level)
     {
-        std::cout << "Material data: No data" << std::endl;
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "Material data:" << std::endl;
+        std::cout << indent << "No data" << std::endl;
     }
 
     bool AMaterial::scatter(UNUSED const Ray& r_in, UNUSED const Intersection& rec,
         UNUSED Lib::Vector3 &attenuation, UNUSED Ray& scattered) const
     {
         return false;
+    }
+    Lib::Vector3 AMaterial::emitted(UNUSED double u, UNUSED double v, UNUSED const Lib::Vector3& p) const
+    {
+        return Lib::Vector3(0,0,0);
     }
 }

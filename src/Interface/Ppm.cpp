@@ -11,8 +11,6 @@
  */
 
 #include "Ppm.hpp"
-#include "Lib.hpp"
-#include <ios>
 
 namespace Raytracer {
     Ppm::Ppm(void)

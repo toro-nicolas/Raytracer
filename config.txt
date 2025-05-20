@@ -8,4 +8,4 @@ scene_loader=raytracer_scene_loader_libconfig.so
 interface=raytracer_interface_sfml.so
 
 #The folder to store the raytracer screenshots
-screenshots_folder=screenshots
+screenshots_folder=/home/nicolastoro/Pictures/raytracer/

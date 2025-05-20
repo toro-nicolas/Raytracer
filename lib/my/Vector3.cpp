@@ -1,9 +1,15 @@
 /*
 ** EPITECH PROJECT, 2025
-** Vector3.cpp
+** Raytracer
 ** File description:
-** Vector3 in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/lib/my
+** The Vector3 class implementation
 */
+/**
+ * @file Vector3.cpp
+ * @brief The Vector3 class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
+
 #include "Lib.hpp"
 #include "Vector3.hpp"
 
@@ -137,6 +143,14 @@ namespace Lib {
         }
         return index == 0 ? x : (index == 1 ? y : z);
     }
+    bool Vector3::operator==(const Vector3 &other) const
+    {
+        return (x == other.x && y == other.y && z == other.z);
+    }
+    bool Vector3::operator!=(const Vector3 &other) const
+    {
+        return !(*this == other);
+    }
 
     double Vector3::dot(const Vector3 &other) const
     {
@@ -195,10 +209,6 @@ namespace Lib {
         auto s = 1e-8;
         return (std::fabs(x) < s) && (std::fabs(y) < s) && (std::fabs(z) < s);
     }
-}
-
-// utility functions
-namespace Lib {
 
     // Fonctions globales
     double dot(const Vector3 &v1, const Vector3 &v2)

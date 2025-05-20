@@ -1,9 +1,14 @@
 /*
 ** EPITECH PROJECT, 2025
-** Noise.cpp
+** Raytracer
 ** File description:
-** Noise in ~/Documents/EPITECH/TEK2/OOP/BOOP400_raytracer/src/Texture
+** The Noise class implementation
 */
+/**
+ * @file Noise.cpp
+ * @brief The Noise class implementation
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
+ */
 
 #include "Noise.hpp"
 
@@ -21,8 +26,10 @@ namespace Raytracer {
         return Lib::Vector3(.5, .5, .5) * (1 + std::sin(_scale * p.z + 10 * _noise.turb(p, 7)));
     }
 
-    void Noise::display(void) const
+    void Noise::display(size_t level) const
     {
-        std::cout << "Noise" << std::endl;
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "Noise texture:" << std::endl;
+        std::cout << indent << "- Scale: " << _scale << std::endl;
     }
 }

@@ -101,28 +101,122 @@ $(function(){initNavTree('classRaytracer_1_1Texture.html',''); initResizable(tru
   <div class="headertitle"><div class="title">Texture Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for all texture types.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Texture_8hpp_source.html">Texture.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Texture:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classRaytracer_1_1Texture.png" usemap="#Texture_map" alt=""/>
   <map id="Texture_map" name="Texture_map">
-<area href="classRaytracer_1_1Checker.html" alt="Checker" shape="rect" coords="0,56,71,80"/>
-<area href="classRaytracer_1_1Image.html" alt="Image" shape="rect" coords="81,56,152,80"/>
-<area href="classRaytracer_1_1Noise.html" alt="Noise" shape="rect" coords="162,56,233,80"/>
-<area href="classRaytracer_1_1SolidColor.html" alt="SolidColor" shape="rect" coords="243,56,314,80"/>
+<area href="classRaytracer_1_1Checker.html" title="A checkered pattern texture alternating between two textures." alt="Checker" shape="rect" coords="0,56,71,80"/>
+<area href="classRaytracer_1_1Image.html" title="A texture that wraps an image file." alt="Image" shape="rect" coords="81,56,152,80"/>
+<area href="classRaytracer_1_1Noise.html" title="A texture that generates procedural Perlin noise." alt="Noise" shape="rect" coords="162,56,233,80"/>
+<area href="classRaytracer_1_1SolidColor.html" title="A texture that provides a single solid color." alt="SolidColor" shape="rect" coords="243,56,314,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1be763da7e78af97979325dd34088d98" id="r_a1be763da7e78af97979325dd34088d98"><td class="memItemLeft" align="right" valign="top"><a id="a1be763da7e78af97979325dd34088d98" name="a1be763da7e78af97979325dd34088d98"></a>
-virtual <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> (double u, double v, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;p) const =0</td></tr>
+<tr class="memitem:a73780c73148cca57467b17d4dd0b5ca7" id="r_a73780c73148cca57467b17d4dd0b5ca7"><td class="memItemLeft" align="right" valign="top"><a id="a73780c73148cca57467b17d4dd0b5ca7" name="a73780c73148cca57467b17d4dd0b5ca7"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Texture</b> ()=default</td></tr>
+<tr class="memdesc:a73780c73148cca57467b17d4dd0b5ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for the <a class="el" href="classRaytracer_1_1Texture.html" title="Abstract base class for all texture types.">Texture</a> class. <br /></td></tr>
+<tr class="separator:a73780c73148cca57467b17d4dd0b5ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be763da7e78af97979325dd34088d98" id="r_a1be763da7e78af97979325dd34088d98"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be763da7e78af97979325dd34088d98">value</a> (double u, double v, const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;p) const =0</td></tr>
+<tr class="memdesc:a1be763da7e78af97979325dd34088d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color value at specified texture coordinates and position.  <br /></td></tr>
 <tr class="separator:a1be763da7e78af97979325dd34088d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c590bf98219f6482d3786fcf7d09c04" id="r_a4c590bf98219f6482d3786fcf7d09c04"><td class="memItemLeft" align="right" valign="top"><a id="a4c590bf98219f6482d3786fcf7d09c04" name="a4c590bf98219f6482d3786fcf7d09c04"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> () const =0</td></tr>
-<tr class="separator:a4c590bf98219f6482d3786fcf7d09c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae838bc426a70e885c15f43d940527ca7" id="r_ae838bc426a70e885c15f43d940527ca7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae838bc426a70e885c15f43d940527ca7">display</a> (size_t level) const =0</td></tr>
+<tr class="memdesc:ae838bc426a70e885c15f43d940527ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display information about the texture.  <br /></td></tr>
+<tr class="separator:ae838bc426a70e885c15f43d940527ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for all texture types. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae838bc426a70e885c15f43d940527ca7" name="ae838bc426a70e885c15f43d940527ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae838bc426a70e885c15f43d940527ca7">&#9670;&#160;</a></span>display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void display </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Display information about the texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>The indentation level for display formatting </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classRaytracer_1_1Checker.html#a984d0999a9963ca4b77a01c61c2a9f01">Checker</a>, <a class="el" href="classRaytracer_1_1Image.html#a984d0999a9963ca4b77a01c61c2a9f01">Image</a>, <a class="el" href="classRaytracer_1_1Noise.html#a984d0999a9963ca4b77a01c61c2a9f01">Noise</a>, and <a class="el" href="classRaytracer_1_1SolidColor.html#a984d0999a9963ca4b77a01c61c2a9f01">SolidColor</a>.</p>
+
+</div>
+</div>
+<a id="a1be763da7e78af97979325dd34088d98" name="a1be763da7e78af97979325dd34088d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be763da7e78af97979325dd34088d98">&#9670;&#160;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> value </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the color value at specified texture coordinates and position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>The U texture coordinate [0.0-1.0] </td></tr>
+    <tr><td class="paramname">v</td><td>The V texture coordinate [0.0-1.0] </td></tr>
+    <tr><td class="paramname">p</td><td>The 3D position where the texture is sampled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classLib_1_1Vector3.html" title="A class representing a 3D vector.">Lib::Vector3</a> The color at the specified coordinates </dd></dl>
+
+<p>Implemented in <a class="el" href="classRaytracer_1_1Checker.html#a51a8c7d87cb78a0be4b81849abeeccda">Checker</a>, <a class="el" href="classRaytracer_1_1Image.html#a51a8c7d87cb78a0be4b81849abeeccda">Image</a>, <a class="el" href="classRaytracer_1_1Noise.html#a51a8c7d87cb78a0be4b81849abeeccda">Noise</a>, and <a class="el" href="classRaytracer_1_1SolidColor.html#a51a8c7d87cb78a0be4b81849abeeccda">SolidColor</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/Texture/common/<a class="el" href="Texture_8hpp_source.html">Texture.hpp</a></li>
 </ul>

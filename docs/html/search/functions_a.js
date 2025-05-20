@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['newlib_0',['newLib',['../classRaytracer_1_1PluginLoader.html#a4e34eab65390367a171a4dcc9cb11dca',1,'Raytracer::PluginLoader']]],
-  ['noise_1',['noise',['../classRaytracer_1_1Perlin.html#a136bbac9de046695cb3e2a5f50a47886',1,'Raytracer::Perlin']]]
+  ['moverect_0',['moveRect',['../classGraphics_1_1Object.html#ae3b740bc56b36be7116db328b4d99c18',1,'Graphics::Object']]],
+  ['mute_1',['mute',['../classGraphics_1_1Sound.html#a01896f6e0b7e9bd71abfbfc574eb9e64',1,'Graphics::Sound']]]
 ];

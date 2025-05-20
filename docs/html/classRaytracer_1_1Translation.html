@@ -130,9 +130,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad49fd78f66181d9b3e4061621f04a1e0" id="r_ad49fd78f66181d9b3e4061621f04a1e0"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1ITransformationBuilder.html">ITransformationBuilder</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad49fd78f66181d9b3e4061621f04a1e0">getBuilder</a> (void) final</td></tr>
 <tr class="memdesc:ad49fd78f66181d9b3e4061621f04a1e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the builder of the transformation.  <br /></td></tr>
 <tr class="separator:ad49fd78f66181d9b3e4061621f04a1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f45be05262bbe31383e9af13efc0751" id="r_a8f45be05262bbe31383e9af13efc0751"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f45be05262bbe31383e9af13efc0751">display</a> (void) final</td></tr>
-<tr class="memdesc:a8f45be05262bbe31383e9af13efc0751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the transformation.  <br /></td></tr>
-<tr class="separator:a8f45be05262bbe31383e9af13efc0751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa263105a99fa02a3cd6d40049b78df36" id="r_aa263105a99fa02a3cd6d40049b78df36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa263105a99fa02a3cd6d40049b78df36">display</a> (size_t level) final</td></tr>
+<tr class="memdesc:aa263105a99fa02a3cd6d40049b78df36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the transformation.  <br /></td></tr>
+<tr class="separator:aa263105a99fa02a3cd6d40049b78df36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42d84699a3637ba85f08eb2b80ee68f" id="r_ad42d84699a3637ba85f08eb2b80ee68f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad42d84699a3637ba85f08eb2b80ee68f">compute</a> (<a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;ray) final</td></tr>
+<tr class="memdesc:ad42d84699a3637ba85f08eb2b80ee68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the transformation on a ray.  <br /></td></tr>
+<tr class="separator:ad42d84699a3637ba85f08eb2b80ee68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a83b5fa2672486e49961ff3a1d51f65" id="r_a0a83b5fa2672486e49961ff3a1d51f65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a83b5fa2672486e49961ff3a1d51f65">decompute</a> (<a class="el" href="classRaytracer_1_1Intersection.html">Intersection</a> &amp;rec) final</td></tr>
+<tr class="memdesc:a0a83b5fa2672486e49961ff3a1d51f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse the transformation computation on an intersection.  <br /></td></tr>
+<tr class="separator:a0a83b5fa2672486e49961ff3a1d51f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b9ad8ff3055cbb713df70ed9f1b971" id="r_a30b9ad8ff3055cbb713df70ed9f1b971"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30b9ad8ff3055cbb713df70ed9f1b971">newBoundingBox</a> (<a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;bbox) final</td></tr>
+<tr class="memdesc:a30b9ad8ff3055cbb713df70ed9f1b971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply transformation to a bounding box.  <br /></td></tr>
+<tr class="separator:a30b9ad8ff3055cbb713df70ed9f1b971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classRaytracer_1_1ATransformation"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classRaytracer_1_1ATransformation')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classRaytracer_1_1ATransformation.html">ATransformation</a></td></tr>
+<tr class="memitem:a83bc94ff2df23a38f00f76e94e651655 inherit pub_methods_classRaytracer_1_1ATransformation" id="r_a83bc94ff2df23a38f00f76e94e651655"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRaytracer_1_1ATransformation.html#a83bc94ff2df23a38f00f76e94e651655">getOffset</a> (void) override</td></tr>
+<tr class="memdesc:a83bc94ff2df23a38f00f76e94e651655 inherit pub_methods_classRaytracer_1_1ATransformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the offset vector of the transformation.  <br /></td></tr>
+<tr class="separator:a83bc94ff2df23a38f00f76e94e651655 inherit pub_methods_classRaytracer_1_1ATransformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081d83f13e143c6a30faf68075b1f809 inherit pub_methods_classRaytracer_1_1ATransformation" id="r_a081d83f13e143c6a30faf68075b1f809"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRaytracer_1_1ATransformation.html#a081d83f13e143c6a30faf68075b1f809">getOffset</a> (void) const override</td></tr>
+<tr class="memdesc:a081d83f13e143c6a30faf68075b1f809 inherit pub_methods_classRaytracer_1_1ATransformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the offset vector of the transformation (const version)  <br /></td></tr>
+<tr class="separator:a081d83f13e143c6a30faf68075b1f809 inherit pub_methods_classRaytracer_1_1ATransformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c9778195953b0ca74d24e8091958d90 inherit pub_methods_classRaytracer_1_1ATransformation" id="r_a8c9778195953b0ca74d24e8091958d90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRaytracer_1_1ATransformation.html#a8c9778195953b0ca74d24e8091958d90">setOffset</a> (const <a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a> &amp;offset) override</td></tr>
+<tr class="memdesc:a8c9778195953b0ca74d24e8091958d90 inherit pub_methods_classRaytracer_1_1ATransformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the offset vector of the transformation.  <br /></td></tr>
+<tr class="separator:a8c9778195953b0ca74d24e8091958d90 inherit pub_methods_classRaytracer_1_1ATransformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classRaytracer_1_1ITransformation"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classRaytracer_1_1ITransformation')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classRaytracer_1_1ITransformation.html">ITransformation</a></td></tr>
 <tr class="memitem:aa62353ed6f0e4335b46828c0d9766dd2 inherit pub_methods_classRaytracer_1_1ITransformation" id="r_aa62353ed6f0e4335b46828c0d9766dd2"><td class="memItemLeft" align="right" valign="top">
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ITransformation</b> ()=default</td></tr>
@@ -142,6 +161,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ITransformation</
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classRaytracer_1_1ATransformation"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classRaytracer_1_1ATransformation')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classRaytracer_1_1ATransformation.html">ATransformation</a></td></tr>
+<tr class="memitem:a153238c6fbbb4f9c0dbdf2497045c9a0 inherit pro_attribs_classRaytracer_1_1ATransformation" id="r_a153238c6fbbb4f9c0dbdf2497045c9a0"><td class="memItemLeft" align="right" valign="top">
+<a class="el" href="classLib_1_1Vector3.html">Lib::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_offset</b></td></tr>
+<tr class="memdesc:a153238c6fbbb4f9c0dbdf2497045c9a0 inherit pro_attribs_classRaytracer_1_1ATransformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset vector for the transformation. <br /></td></tr>
+<tr class="separator:a153238c6fbbb4f9c0dbdf2497045c9a0 inherit pro_attribs_classRaytracer_1_1ATransformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae63f4ec561aaaf686e6d435559ba225d inherit pro_attribs_classRaytracer_1_1ATransformation" id="r_ae63f4ec561aaaf686e6d435559ba225d"><td class="memItemLeft" align="right" valign="top">
 std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1ITransformationBuilder.html">ITransformationBuilder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_builder</b></td></tr>
 <tr class="memdesc:ae63f4ec561aaaf686e6d435559ba225d inherit pro_attribs_classRaytracer_1_1ATransformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the transformation builder. <br /></td></tr>
@@ -150,8 +173,78 @@ std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1ITransformationBuilder
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a translation transformation in 3D space. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8f45be05262bbe31383e9af13efc0751" name="a8f45be05262bbe31383e9af13efc0751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f45be05262bbe31383e9af13efc0751">&#9670;&#160;</a></span>display()</h2>
+<a id="ad42d84699a3637ba85f08eb2b80ee68f" name="ad42d84699a3637ba85f08eb2b80ee68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad42d84699a3637ba85f08eb2b80ee68f">&#9670;&#160;</a></span>compute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRaytracer_1_1Ray.html">Ray</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>ray</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the transformation on a ray. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>The ray to transform </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classRaytracer_1_1ATransformation.html#abb6fb6b32b6f88bd57b296cb038a2a62">ATransformation</a>.</p>
+
+</div>
+</div>
+<a id="a0a83b5fa2672486e49961ff3a1d51f65" name="a0a83b5fa2672486e49961ff3a1d51f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a83b5fa2672486e49961ff3a1d51f65">&#9670;&#160;</a></span>decompute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decompute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRaytracer_1_1Intersection.html">Intersection</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rec</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reverse the transformation computation on an intersection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rec</td><td>The intersection record to modify </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classRaytracer_1_1ATransformation.html#a3372d3839c02279d15747b73e0ef74d4">ATransformation</a>.</p>
+
+</div>
+</div>
+<a id="aa263105a99fa02a3cd6d40049b78df36" name="aa263105a99fa02a3cd6d40049b78df36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa263105a99fa02a3cd6d40049b78df36">&#9670;&#160;</a></span>display()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,7 +255,7 @@ std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1ITransformationBuilder
         <tr>
           <td class="memname">void display </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>level</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -175,7 +268,7 @@ std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1ITransformationBuilder
 
 <p>Display the transformation. </p>
 
-<p>Reimplemented from <a class="el" href="classRaytracer_1_1ATransformation.html#a472a1181a582bdddb9ff224a37ad95ac">ATransformation</a>.</p>
+<p>Reimplemented from <a class="el" href="classRaytracer_1_1ATransformation.html#ab221007634f5fb7777414d6aff27a817">ATransformation</a>.</p>
 
 </div>
 </div>
@@ -206,6 +299,41 @@ std::unique_ptr&lt; <a class="el" href="classRaytracer_1_1ITransformationBuilder
 <dl class="section return"><dt>Returns</dt><dd>A reference to a unique pointer to the transformation builder </dd></dl>
 
 <p>Implements <a class="el" href="classRaytracer_1_1ITransformation.html#afb2a5ecc8a6e22c6a39fd92beaaac4ab">ITransformation</a>.</p>
+
+</div>
+</div>
+<a id="a30b9ad8ff3055cbb713df70ed9f1b971" name="a30b9ad8ff3055cbb713df70ed9f1b971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b9ad8ff3055cbb713df70ed9f1b971">&#9670;&#160;</a></span>newBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void newBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRaytracer_1_1AABB.html">AABB</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>bbox</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply transformation to a bounding box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bbox</td><td>The bounding box to transform </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classRaytracer_1_1ATransformation.html#a50d021c55b4ac076470ace0e24210394">ATransformation</a>.</p>
 
 </div>
 </div>

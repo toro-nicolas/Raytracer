@@ -15,7 +15,6 @@
 
     #include "APrimitive.hpp"
     #include "APrimitiveBuilder.hpp"
-#include "Vector3.hpp"
 
 namespace Raytracer {
     /**
@@ -41,7 +40,20 @@ namespace Raytracer {
              * @return A reference to a unique pointer to the primitive builder
              */
             std::unique_ptr<IPrimitiveBuilder> &getBuilder(void) final;
+
+
+            /* Getter functions */
+
+            /**
+             * @brief Get the first side of the plane
+             * @return Reference to the first side vector
+             */
             Lib::Vector3 &getFirstSide(void);
+
+            /**
+             * @brief Get the second side of the plane
+             * @return Reference to the second side vector
+             */
             Lib::Vector3 &getSecondSide(void);
 
 
@@ -50,16 +62,44 @@ namespace Raytracer {
             /**
              * @brief Display the primitive
              */
-            void display(void) final;
+            void display(size_t level) final;
 
 
 
-            /* Intersection function */
+            /* Rendering function */
 
-            virtual void setBoundingBox();
+            /**
+             * @brief Set the bounding box of the primitive
+             */
+            void setBoundingBox();
+
+            /**
+             * @brief Check if the ray intersects with the primitive
+             * @param r The ray to check
+             * @param ray_t The interval of the ray
+             * @param rec The intersection record
+             * @return true if the ray intersects, false otherwise
+             */
             bool hit(const Ray &r, Interval ray_t, Intersection &rec) const override;
-            virtual bool isInterior(double a, double b, Intersection& rec) const;
 
+            /**
+             * @brief Check if the intersection point is inside the plane
+             * @param a The first side of the plane
+             * @param b The second side of the plane
+             * @param rec The intersection record
+             * @return true if the point is inside, false otherwise
+             */
+            bool isInterior(double a, double b, Intersection& rec) const;
+
+
+
+            /* Initialization function */
+
+            /**
+             * @brief Initialize the primitive
+             * @details This function initializes the primitive and its children
+             */
+            void init(void) final;
 
 
 

@@ -7,7 +7,7 @@
 /**
  * @file Reflection.cpp
  * @brief Reflection class declaration
- * @author Gianni TUERO
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
 
 #include "Reflection.hpp"
@@ -47,10 +47,11 @@ namespace Raytracer {
         _fuze = fuze;
     }
 
-    void Reflection::display(void)
+    void Reflection::display(size_t level)
     {
-        std::cout << "Reflection data:" << std::endl;
-        std::cout << "                - Fuze: " << 100 - (_fuze * 100)  << "%" << std::endl;
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "Reflection Material:" << std::endl;
+        std::cout << indent << " - Fuze: " << 100 - (_fuze * 100)  << "%" << std::endl;
     }
 
     bool Reflection::scatter(const Ray& r_in, const Intersection& rec, UNUSED Lib::Vector3 &attenuation, Ray& scattered) const

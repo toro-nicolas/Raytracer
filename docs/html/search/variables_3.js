@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['firstpixel_0',['firstPixel',['../classRaytracer_1_1Camera.html#aa2118d95efe3fd29011a1edd4fe197f6',1,'Raytracer::Camera']]]
+  ['empty_0',['empty',['../classRaytracer_1_1Interval.html#ac03b5ef6e05201cc95e74231136a3783',1,'Raytracer::Interval::empty'],['../classRaytracer_1_1AABB.html#aa142eac8c0e0374c753cf2e279b642ba',1,'Raytracer::AABB::empty']]]
 ];

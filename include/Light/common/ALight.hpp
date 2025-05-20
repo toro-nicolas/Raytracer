@@ -27,7 +27,7 @@ namespace Raytracer {
             /**
              * @brief Display the light
              */
-            void display(void) override;
+            void display(size_t level) override;
 
             /* Setters and getters */
 
@@ -66,6 +66,12 @@ namespace Raytracer {
              * @param intensity The new intensity of the light
              */
             void setIntensity(double intensity) override;
+
+            /**
+             * @brief Default implementation of compute for lights
+             */
+            virtual Lib::Vector3 compute(const Lib::Vector3& point, const Lib::Vector3& normal,
+                                       const Lib::Vector3& view_dir) const override;
 
 
 

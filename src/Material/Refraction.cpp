@@ -7,13 +7,12 @@
 /**
  * @file Refraction.cpp
  * @brief Refraction class declaration
- * @author Gianni TUERO
+ * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
 
 #include "Refraction.hpp"
 
 namespace Raytracer {
-
     Refraction::Refraction()
     {
         // DEBUG << "Refraction constructor";
@@ -47,10 +46,11 @@ namespace Raytracer {
         _fuze = fuze;
     }
 
-    void Refraction::display(void)
+    void Refraction::display(size_t level)
     {
-        std::cout << "Refraction data:" << std::endl;
-        std::cout << "                - Fuze: " << (_fuze / 2) * 100  << "%" << std::endl;
+        std::string indent = std::string(level * 4, ' ');
+        std::cout << "Refraction Material:" << std::endl;
+        std::cout << indent << "- Fuze: " << (_fuze / 2) * 100  << "%" << std::endl;
     }
 
     double Refraction::reflectance(double cosine, double ref_idx)

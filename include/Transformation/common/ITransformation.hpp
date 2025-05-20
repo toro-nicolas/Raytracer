@@ -13,7 +13,7 @@
 #ifndef ITRANSFORMATION_HPP
     #define ITRANSFORMATION_HPP
 
-    #include "Lib.hpp"
+    #include "Ray.hpp"
 
 namespace Raytracer {
     class ITransformationBuilder; ///< Forward declaration of the ITransformationBuilder class
@@ -39,12 +39,56 @@ namespace Raytracer {
 
 
 
+            /* Getters and setters */
+
+            /**
+             * @brief Get the offset vector of the transformation
+             * @return A reference to the offset vector
+             */
+            virtual Lib::Vector3 &getOffset(void) = 0;
+
+            /**
+             * @brief Get the offset vector of the transformation (const version)
+             * @return A const reference to the offset vector
+             */
+            virtual const Lib::Vector3 &getOffset(void) const = 0;
+
+            /**
+             * @brief Set the offset vector of the transformation
+             * @param offset The new offset vector
+             */
+            virtual void setOffset(const Lib::Vector3 &offset) = 0;
+
+
+
             /* Display function */
 
             /**
              * @brief Display the primitive
              */
-            virtual void display(void) = 0;
+            virtual void display(size_t level) = 0;
+
+
+
+            /* Rendering function */
+
+            /**
+             * @brief Compute the transformation on a ray
+             * @param ray The ray to transform
+             */
+            virtual void compute(Ray &ray) = 0;
+
+            /**
+             * @brief Reverse the transformation computation on an intersection
+             * @param intersection The intersection record to modify
+             */
+            virtual void decompute(Intersection &intersection) = 0;
+
+            /**
+             * @brief Apply transformation to a bounding box
+             * @param bbox The bounding box to transform
+             */
+            virtual void newBoundingBox(AABB &bbox) = 0;
     };
 
 }

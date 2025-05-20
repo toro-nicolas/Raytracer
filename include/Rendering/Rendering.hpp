@@ -9,23 +9,15 @@
  * @brief The Rendering class declaration
  * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
-//TODO: Refaire la doc de ce fichier quand il sera vraiment fini parce que la c'est le bordel
 
 #ifndef RENDERING_HPP
     #define RENDERING_HPP
 
-#include "Camera.hpp"
-#include "HittableList.hpp"
-#include "IInterface.hpp"
-#include "ILight.hpp"
-#include "IPrimitive.hpp"
-#include "Ray.hpp"
-#include "Vector3.hpp"
-#include <vector>
-#include <memory>
-#include <thread>
-#include <atomic>
-#include <mutex>
+    #include "Camera.hpp"
+    #include "IInterface.hpp"
+    #include "ILight.hpp"
+    #include "IPrimitive.hpp"
+    #include "HittableList.hpp"
 
 namespace Raytracer {
 
@@ -35,11 +27,14 @@ namespace Raytracer {
  */
 class Rendering {
     public:
+        /* Constructors and destructors */
+
         /**
         * @brief Construct a new Rendering object
         * @param camera The camera used for rendering
         * @param primitives The list of primitives in the scene
         * @param lights The list of lights in the scene
+        * @param interface The output interface for the rendered image
         */
         Rendering(const Camera& camera,
                 std::vector<std::shared_ptr<IPrimitive>>& primitives,
@@ -51,16 +46,19 @@ class Rendering {
         */
         ~Rendering();
 
+
+
+        /* Rendering functions */
+
         /**
         * @brief Render the scene to the provided interface
-        * @param interface The output interface (e.g., PPM)
         */
         void render(void);
 
     private:
         /**
-         * @brief Render all the line with id interval
-         * @param id The number of line interval to render
+         * @brief Render all the lines within a specific interval for multi-threading
+         * @param id The thread ID determining which lines to render
          */
         void thread_rendering(int id);
 
@@ -75,51 +73,24 @@ class Rendering {
         /**
         * @brief Compute the color for a given ray
         * @param ray The ray to compute the color for
+        * @param max_depth The maximum number of ray bounces to consider
         * @return The computed color
         */
         Lib::Vector3 rayColor(const Ray& ray, int max_depth);
 
-        // /**
-        // * @brief Check if the ray intersects with any object in the scene
-        // * @param ray The ray to check for intersections
-        // * @param ray_t The interval for the ray
-        // * @param rec The intersection details if an intersection occurs
-        // * @return True if an intersection occurs, false otherwise
-        // */
-        // bool worldHit(const Ray& ray, Interval ray_t, Intersection& rec);
 
-        /**
-        * @brief Compute the color for a ray-intersection
-        * @param ray The ray that caused the intersection
-        * @param intersection The intersection details
-        * @param depth The current recursion depth (for reflections/refractions)
-        * @return The computed color
-        */
-        Lib::Vector3 computeColor(const Ray& ray, const Intersection& intersection, int depth = 0);
 
-        /**
-        * @brief Calculate the lighting at an intersection point
-        * @param intersection The intersection details
-        * @param ray The ray that caused the intersection
-        * @return The computed lighting color
-        */
-        Lib::Vector3 calculateLighting(const Intersection& intersection, const Ray& ray);
-
-        const Camera& _camera;
-        std::vector<std::shared_ptr<IPrimitive>>& _primitives;
-        std::vector<std::shared_ptr<ILight>>& _lights;
-        std::shared_ptr<IInterface> _interface;
-        unsigned int _nb_thread;
-        std::atomic<unsigned int> _nb_running_thread;
-        std::vector<std::thread> _list_thread;
-        std::atomic<int> _lines_rendered;
-
-        const std::chrono::milliseconds _framerate;
-        std::shared_ptr<HittableList> _world;
+        const Camera& _camera; ///< Reference to the camera used for rendering
+        std::vector<std::shared_ptr<IPrimitive>>& _primitives; ///< Reference to scene primitives
+        std::vector<std::shared_ptr<ILight>>& _lights; ///< Reference to scene lights
+        std::shared_ptr<IInterface> _interface; ///< Output interface for the rendered image
+        unsigned int _nb_thread; ///< Number of rendering threads
+        std::atomic<unsigned int> _nb_running_thread; ///< Number of currently running threads
+        std::vector<std::thread> _list_thread; ///< List of rendering threads
+        std::atomic<int> _lines_rendered; ///< Number of lines rendered so far
+        const std::chrono::milliseconds _framerate; ///< Target framerate for rendering
+        std::shared_ptr<HittableList> _world; ///< Scene hittable list
     };
-
-
-
-} // namespace Raytracer
+}
 
 #endif // RENDERING_HPP

@@ -99,46 +99,55 @@ $(function(){initNavTree('Texture_8hpp_source.html',''); initResizable(true); })
   <div class="headertitle"><div class="title">Texture.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<a href="Texture_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">** EPITECH PROJECT, 2025</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">** Texture.hpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">** Raytracer</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">** File description:</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">** Texture declaration</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">** The Texture class declaration</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef TEXTURE_HPP</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">    #define TEXTURE_HPP</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Lib_8hpp.html">Lib.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>Raytracer {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classRaytracer_1_1Texture.html">   17</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classRaytracer_1_1Texture.html">Texture</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="comment">// Texture();</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keyword">virtual</span> <a class="code hl_class" href="classRaytracer_1_1Texture.html">~Texture</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keyword">virtual</span> <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a> value(<span class="keywordtype">double</span> u, <span class="keywordtype">double</span> v, <span class="keyword">const</span> <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a>&amp; p) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> display() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef TEXTURE_HPP</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    #define TEXTURE_HPP</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="Lib_8hpp.html">Lib.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>Raytracer {</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classRaytracer_1_1Texture.html">   24</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classRaytracer_1_1Texture.html">Texture</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="comment">/* Constructors and destructors */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classRaytracer_1_1Texture.html#a73780c73148cca57467b17d4dd0b5ca7">   31</a></span>            <span class="keyword">virtual</span> <a class="code hl_function" href="classRaytracer_1_1Texture.html#a73780c73148cca57467b17d4dd0b5ca7">~Texture</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="comment">/* Getters and setters */</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classRaytracer_1_1Texture.html#a1be763da7e78af97979325dd34088d98">   44</a></span>            <span class="keyword">virtual</span> <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a> <a class="code hl_function" href="classRaytracer_1_1Texture.html#a1be763da7e78af97979325dd34088d98">value</a>(<span class="keywordtype">double</span> u, <span class="keywordtype">double</span> v, <span class="keyword">const</span> <a class="code hl_class" href="classLib_1_1Vector3.html">Lib::Vector3</a>&amp; p) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="comment">/* Display function */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classRaytracer_1_1Texture.html#ae838bc426a70e885c15f43d940527ca7">   54</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classRaytracer_1_1Texture.html#ae838bc426a70e885c15f43d940527ca7">display</a>(<span class="keywordtype">size_t</span> level) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// TEXTURE_HPP</span></div>
-<div class="ttc" id="aLib_8hpp_html"><div class="ttname"><a href="Lib_8hpp.html">Lib.hpp</a></div><div class="ttdoc">Lib declaration.</div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">// TEXTURE_HPP</span></div>
+<div class="ttc" id="aLib_8hpp_html"><div class="ttname"><a href="Lib_8hpp.html">Lib.hpp</a></div><div class="ttdoc">The Lib declaration.</div></div>
 <div class="ttc" id="aclassLib_1_1Vector3_html"><div class="ttname"><a href="classLib_1_1Vector3.html">Lib::Vector3</a></div><div class="ttdoc">A class representing a 3D vector.</div><div class="ttdef"><b>Definition</b> Vector3.hpp:26</div></div>
-<div class="ttc" id="aclassRaytracer_1_1Texture_html"><div class="ttname"><a href="classRaytracer_1_1Texture.html">Raytracer::Texture</a></div><div class="ttdef"><b>Definition</b> Texture.hpp:17</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Texture_html"><div class="ttname"><a href="classRaytracer_1_1Texture.html">Raytracer::Texture</a></div><div class="ttdoc">Abstract base class for all texture types.</div><div class="ttdef"><b>Definition</b> Texture.hpp:24</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Texture_html_a1be763da7e78af97979325dd34088d98"><div class="ttname"><a href="classRaytracer_1_1Texture.html#a1be763da7e78af97979325dd34088d98">Raytracer::Texture::value</a></div><div class="ttdeci">virtual Lib::Vector3 value(double u, double v, const Lib::Vector3 &amp;p) const =0</div><div class="ttdoc">Get the color value at specified texture coordinates and position.</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Texture_html_a73780c73148cca57467b17d4dd0b5ca7"><div class="ttname"><a href="classRaytracer_1_1Texture.html#a73780c73148cca57467b17d4dd0b5ca7">Raytracer::Texture::~Texture</a></div><div class="ttdeci">virtual ~Texture()=default</div><div class="ttdoc">Virtual destructor for the Texture class.</div></div>
+<div class="ttc" id="aclassRaytracer_1_1Texture_html_ae838bc426a70e885c15f43d940527ca7"><div class="ttname"><a href="classRaytracer_1_1Texture.html#ae838bc426a70e885c15f43d940527ca7">Raytracer::Texture::display</a></div><div class="ttdeci">virtual void display(size_t level) const =0</div><div class="ttdoc">Display information about the texture.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_303e027e1a2f67cb6e8ffd9064280aa9.html">Texture</a></li><li class="navelem"><a class="el" href="dir_155943e017921b11dd23245528c1a97a.html">common</a></li><li class="navelem"><b>Texture.hpp</b></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_303e027e1a2f67cb6e8ffd9064280aa9.html">Texture</a></li><li class="navelem"><a class="el" href="dir_155943e017921b11dd23245528c1a97a.html">common</a></li><li class="navelem"><a class="el" href="Texture_8hpp.html">Texture.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

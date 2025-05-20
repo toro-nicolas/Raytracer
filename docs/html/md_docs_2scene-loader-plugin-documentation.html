@@ -99,30 +99,30 @@ $(function(){initNavTree('md_docs_2scene-loader-plugin-documentation.html',''); 
   <div class="headertitle"><div class="title">Scene Loader Plugins Documentation for Raytracer</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md95"></a> </p>
-<h1><a class="anchor" id="autotoc_md96"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md102"></a> </p>
+<h1><a class="anchor" id="autotoc_md103"></a>
 Introduction</h1>
 <p>This document explains how to create scene loader plugins for the raytracer. <br  />
  Our raytracer system is designed with a modular architecture where the core and rendering components are in the main binary, <br  />
  while scene loaders are dynamically loaded from shared libraries (.so).</p>
-<h1><a class="anchor" id="autotoc_md97"></a>
+<h1><a class="anchor" id="autotoc_md104"></a>
 Naming Conventions</h1>
 <p>Each scene loader plugin must follow this naming convention: </p><div class="fragment"><div class="line">raytrace_scene_loader_[scene_loader_name].so</div>
 </div><!-- fragment --><p> For example, for a libconfig scene loader: <code>raytrace_scene_loader_libconfig.so</code></p>
-<h1><a class="anchor" id="autotoc_md98"></a>
+<h1><a class="anchor" id="autotoc_md105"></a>
 Plugin Architecture</h1>
 <p>To create a new scene loader plugin, you need to implement two main classes:</p><ol type="1">
 <li>A scene loader class that inherits from <code>ASceneLoader</code></li>
 <li>A loader logic to parse scene files and populate the scene data (cameras, primitives, lights)</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md99"></a>
+<h2><a class="anchor" id="autotoc_md106"></a>
 Class Hierarchy</h2>
 <div class="fragment"><div class="line">ISceneLoader (Interface)</div>
 <div class="line">└── ASceneLoader (Abstract class)</div>
 <div class="line">    └── YourSceneLoader (Concrete implementation)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md100"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md107"></a>
 Creating a New Scene Loader</h1>
-<h2><a class="anchor" id="autotoc_md101"></a>
+<h2><a class="anchor" id="autotoc_md108"></a>
 1. Scene Loader Class</h2>
 <p>Your scene loader class must inherit from <code>ASceneLoader</code> and implement all required virtual methods. <br  />
  Example: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>Raytracer {</div>
@@ -150,14 +150,14 @@ Creating a New Scene Loader</h1>
 <div class="line">            <span class="comment">/* Methods specific to your scene loader */</span></div>
 <div class="line">    };</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md102"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md109"></a>
 2. Export Function</h2>
 <p>Each plugin must export a creation function named <code>createSceneLoader</code> with the following signature: </p><div class="fragment"><div class="line"> </div>
 <div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> std::unique_ptr&lt;ISceneLoader&gt; createSceneLoader();</div>
 </div><!-- fragment --><p> This function will be called by the raytracer core to instantiate your scene loader.</p>
-<h1><a class="anchor" id="autotoc_md103"></a>
+<h1><a class="anchor" id="autotoc_md110"></a>
 Implementation Details</h1>
-<h2><a class="anchor" id="autotoc_md104"></a>
+<h2><a class="anchor" id="autotoc_md111"></a>
 The ISceneLoader Class</h2>
 <p>This interface defines the basic functionalities that any scene loader must implement:</p><ul>
 <li>Loading a scene from a file (<code>loadScene</code>)</li>
@@ -166,7 +166,7 @@ The ISceneLoader Class</h2>
 <li>Primitives management (<code>getPrimitives</code>)</li>
 <li>Information display (<code>display</code>)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md105"></a>
+<h2><a class="anchor" id="autotoc_md112"></a>
 The ASceneLoader Class</h2>
 <p>This abstract class implements common functionalities shared by all scene loaders:</p><ul>
 <li>Storage and access to cameras (<code>_cameras</code>)</li>
@@ -178,7 +178,7 @@ The ASceneLoader Class</h2>
 <li>The <code>loadScene()</code> method</li>
 <li>Properties and methods specific to your scene loader</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md106"></a>
+<h1><a class="anchor" id="autotoc_md113"></a>
 How to Compile a Scene Loader Plugin</h1>
 <p>To compile your scene loader plugin as a shared library (.so), use this command: </p><div class="fragment"><div class="line">g++ -std=c++20 -Wall -Wextra -Werror -fPIC -shared \</div>
 <div class="line">    -I./include/Light/common \</div>
@@ -193,10 +193,10 @@ How to Compile a Scene Loader Plugin</h1>
 <div class="line">    -L./plugins -l:raytracer_scene_loader.so \</div>
 <div class="line">    -o plugins/raytracer_scene_loader_&lt;name&gt;.so \</div>
 <div class="line">    src/Scene-loader/&lt;name&gt;.cpp</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md107"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md114"></a>
 Plugin Loading</h1>
 <p>The raytracer core will select the <code>.so</code> precised in the configuration file with the <code>scene_loader</code> key. It will then load the plugin using the plugin loader and call the <code>createSceneLoader()</code> function to instantiate the scene loader.</p>
-<h1><a class="anchor" id="autotoc_md108"></a>
+<h1><a class="anchor" id="autotoc_md115"></a>
 Summary of Steps to Create a New Scene Loader Plugin</h1>
 <ol type="1">
 <li>Create a class that inherits from <code>ASceneLoader</code></li>

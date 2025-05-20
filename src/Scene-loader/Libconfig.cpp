@@ -61,7 +61,7 @@ namespace Raytracer {
                 } else if (type == "primitives" && setting.getType() == libconfig::Setting::TypeGroup) {
                     _setPrimitive(setting);
                 } else if (type == "lights" && setting.getType() == libconfig::Setting::TypeGroup) {
-                    _setLight(setting);
+                    _setLight(setting, true);
                 }
             }
         } catch (const std::exception &e) {
@@ -161,6 +161,19 @@ namespace Raytracer {
                     _getValue<double>(setting, "z"));
                 _camera->setInitialLookAt(lookAt);
             }},
+            {"backgroundColor",  [this](const libconfig::Setting &setting) {
+                Lib::Vector3 backgroundColor;
+                backgroundColor.x = _getValue<double>(setting, "r");
+                backgroundColor.y = _getValue<double>(setting, "g");
+                backgroundColor.z = _getValue<double>(setting, "b");
+                // Normalize RGB values from 0-255 to 0-1 range
+                backgroundColor.x /= 255.0;
+                backgroundColor.y /= 255.0;
+                backgroundColor.z /= 255.0;
+                DEBUG_CONCAT << "Setting background color: "
+                    << "R: " << backgroundColor.x << ", G: " << backgroundColor.y << ", B: " << backgroundColor.z;
+                _camera->setBackgroundColor(backgroundColor);
+            }},
         };
         std::unordered_map<std::string, std::function<void(const libconfig::Setting &setting)>> attributs_handlers = {
             {"fieldOfView", [this](const libconfig::Setting &setting) {
@@ -236,7 +249,7 @@ namespace Raytracer {
                                 _configureObject(material_ptr, parameter, parameter_name);
                             }
                             primitive_ptr->getBuilder()->setMaterial(parameter_name, material_ptr);
-                        } /* else if (_factory.isTypeRegistered<ITransformation>(parameter_name)) {
+                        } else if (_factory.isTypeRegistered<ITransformation>(parameter_name)) {
                             std::shared_ptr<ITransformation> transformation_ptr = _factory.create<ITransformation>(parameter_name);
                             if (parameter.getType() == libconfig::Setting::TypeGroup
                             || parameter.getType() == libconfig::Setting::TypeList
@@ -246,8 +259,8 @@ namespace Raytracer {
                             } else {
                                 _configureObject(transformation_ptr, parameter, parameter_name);
                             }
-                            primitive_ptr->getBuilder()->setTransformation(parameter_name, transformation_ptr); */
-                        else {
+                            primitive_ptr->getBuilder()->setTransformation(parameter_name, transformation_ptr);
+                        } else {
                             DEBUG_CONCAT << "On est sur un autre paramètre: " << parameter_name;
                             _configureObject(primitive_ptr, parameter, parameter_name);
                         }
@@ -264,14 +277,27 @@ namespace Raytracer {
         }
     }
 
-    void Libconfig::_setLight(const libconfig::Setting &setting)
+    void Libconfig::_setLight(const libconfig::Setting &setting, bool imported)
     {
         DEBUG << "Libconfig _setLight";
 
         for (const auto &light_type : setting) {
             std::string light_type_name = light_type.getName();
+            if (light_type_name == "ambient" && imported) {
+                WARNING << "Ambient light is not allowed in imported scenes";
+                continue;
+            }
             if (light_type_name == "ambient") {
-                double ambient = _getValue<double>(light_type, "ambient");
+                double ambient = 0.0;
+                if (light_type.getType() == libconfig::Setting::TypeString) {
+                    std::string ambient_str = _getValue<std::string>(setting, "ambient");
+                    if (ambient_str.back() == '%') {
+                        ambient_str.pop_back();
+                        ambient = std::stod(ambient_str) / 100.0;
+                    }
+                } else {
+                    ambient = _getValue<double>(setting, "ambient");
+                }
                 try {
                     std::shared_ptr<ILight> light_ptr = _factory.create<ILight>("ambient");
                     light_ptr->getBuilder()->setIntensity(ambient);
@@ -303,8 +329,16 @@ namespace Raytracer {
                                 _getValue<double>(parameter, "z"));
                             light_ptr->getBuilder()->setPos(position);
                         } else if (parameter_name == "intensity") {
-                            float intensity;
-                            light.lookupValue("intensity", intensity);
+                            double intensity = 0.0;
+                            if (parameter.getType() == libconfig::Setting::TypeString) {
+                                std::string intensity_str = _getValue<std::string>(light, "intensity");
+                                if (intensity_str.back() == '%') {
+                                    intensity_str.pop_back();
+                                    intensity = std::stod(intensity_str) / 100.0;
+                                }
+                            } else {
+                                intensity = _getValue<double>(light, "intensity");
+                            }
                             light_ptr->getBuilder()->setIntensity(intensity);
                         } else {
                             _configureObject(light_ptr, parameter, parameter_name);
@@ -358,8 +392,11 @@ namespace Raytracer {
                 } else if (type == "primitives" && setting.getType() == libconfig::Setting::TypeGroup) {
                     _setPrimitive(setting);
                 } else if (type == "lights" && setting.getType() == libconfig::Setting::TypeGroup) {
-                    _setLight(setting);
+                    _setLight(setting, false);
                 }
+            }
+            for (const auto &primitive : _primitives) {
+                primitive->init();
             }
         } catch (const std::exception &e) {
             throw Lib::Exceptions::Critical("Error loading scene: " + std::string(e.what()));

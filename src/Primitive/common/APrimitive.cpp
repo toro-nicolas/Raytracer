@@ -15,22 +15,25 @@
 using namespace Lib;
 
 namespace Raytracer {
-    void APrimitive::display(void)
+    void APrimitive::display(size_t level)
     {
+        std::string indent(level * 4, ' ');
         std::cout << "Primitive data:" << std::endl;
-        std::cout << "        - Position: " << _pos << std::endl;
-        std::cout << "        - Materials: (" << _materials.size() << ")" << std::endl;
+        std::cout << indent << "- Position: " << _pos << std::endl;
+        std::cout << indent << "- Materials: (" << _materials.size() << ")" << std::endl;
         for (const auto &pair: _materials) {
-            std::cout << "            - ";// << pair.first << ": ";
-            pair.second->display();
+            std::cout << indent <<"    - ";// << pair.first << ": ";
+            pair.second->display(level + 2);
         }
         if (_materials.empty())
-            std::cout << std::endl;
-        std::cout << "        - Transformations: (" << _transformations.size() << ")" << std::endl;
+            std::cout << indent << "    No materials" << std::endl;
+        std::cout << indent << "- Transformations: (" << _transformations.size() << ")" << std::endl;
         for (const auto &pair: _transformations) {
-            std::cout << "            - ";// << pair.first << ": ";
-            pair.second->display();
+            std::cout << indent << "    - ";// << pair.first << ": ";
+            pair.second->display(level + 2);
         }
+        if (_transformations.empty())
+            std::cout << indent << "    No transformations" << std::endl;
     }
 
     Lib::Vector3& APrimitive::getPos(void)
@@ -109,4 +112,15 @@ namespace Raytracer {
     {
         return _bbox;
     }
+
+    std::vector<std::shared_ptr<IPrimitive>> APrimitive::getChildren(void)
+    {
+        return {};
+    }
+
+    void APrimitive::init(void)
+    {
+        // This function is intentionally left empty.
+    }
+
 }

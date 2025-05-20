@@ -14,7 +14,6 @@
     #define APRIMITIVE_HPP
 
     #include "IPrimitive.hpp"
-    #include "Ray.hpp"
 
 namespace Raytracer {
     /**
@@ -28,7 +27,7 @@ namespace Raytracer {
             /**
              * @brief Display the primitive
              */
-            void display(void) override;
+            void display(size_t level) override;
 
 
 
@@ -97,12 +96,52 @@ namespace Raytracer {
              * @param transformation A reference to the transformation to set
              */
             void setTransformation(const std::string &name, std::shared_ptr<ITransformation> &transformation) override;
-            // double intersect(const Ray& ray) const override;
 
+
+
+            /* Rendering function */
+
+            /**
+             * @brief Check if the ray intersects with the primitive
+             * @param ray The ray to check
+             * @param ray_t The interval of the ray
+             * @param rec The intersection record
+             * @return true if the ray intersects, false otherwise
+             */
             bool hit(const Ray& ray, Interval ray_t, Intersection& rec) const override;
 
+            /**
+             * @brief Get the bounding box of the primitive
+             * @return A reference to the bounding box of the primitive
+             */
             AABB &boundingBox() override;
+
+            /**
+             * @brief Get the bounding box of the primitive (const version)
+             * @return A const reference to the bounding box of the primitive
+             */
             const AABB &boundingBox() const override;
+
+
+
+            /* Child functions */
+
+            /**
+             * @brief Get the children of the primitive
+             * @return A reference to the children of the primitive
+             */
+            std::vector<std::shared_ptr<IPrimitive>> getChildren(void) override;
+
+
+
+            /* Initialization function */
+
+            /**
+             * @brief Initialize the primitive
+             * @details This function initializes the primitive and its children
+             */
+            void init(void) override;
+
 
 
         protected:

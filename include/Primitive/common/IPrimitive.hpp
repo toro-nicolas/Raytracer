@@ -4,7 +4,6 @@
 ** File description:
 ** The IPrimitive class declaration
 */
-
 /**
  * @file IPrimitive.hpp
  * @brief The IPrimitive class declaration
@@ -15,14 +14,12 @@
     #define IPRIMITIVE_HPP
 
     #include "Lib.hpp"
+    #include "Ray.hpp"
     #include "IMaterial.hpp"
     #include "ITransformation.hpp"
-    #include "Ray.hpp"
 
 namespace Raytracer {
     class IPrimitiveBuilder; ///< Forward declaration of the IPrimitiveBuilder class
-
-
 
     /**
      * @class IPrimitive
@@ -47,8 +44,9 @@ namespace Raytracer {
 
             /**
              * @brief Display the primitive
+             * @param level Indentation level for display
              */
-            virtual void display(void) = 0;
+            virtual void display(size_t level) = 0;
 
 
 
@@ -56,19 +54,19 @@ namespace Raytracer {
 
             /**
              * @brief Get the position of the primitive
-             * @return Reference to the position vector
+             * @return A reference to the position of the primitive
              */
             virtual Lib::Vector3 &getPos(void) = 0;
 
             /**
              * @brief Get the position of the primitive (const version)
-             * @return Const reference to the position vector
+             * @return A const reference to the position of the primitive
              */
             virtual const Lib::Vector3 &getPos(void) const = 0;
 
             /**
              * @brief Set the position of the primitive
-             * @param pos New position vector
+             * @param pos The new position of the primitive
              */
             virtual void setPos(const Lib::Vector3 &pos) = 0;
 
@@ -78,20 +76,20 @@ namespace Raytracer {
 
             /**
              * @brief Get the materials of the primitive
-             * @return Reference to the materials
+             * @return A reference to the materials of the primitive
              */
             virtual std::vector<std::pair<std::string, std::shared_ptr<IMaterial>>> &getMaterials(void) = 0;
 
             /**
-             * @brief Get the material of the primitive (const version)
-             * @return Const reference to the materials
+             * @brief Get the materials of the primitive (const version)
+             * @return A const reference to the materials of the primitive
              */
             virtual const std::vector<std::pair<std::string, std::shared_ptr<IMaterial>>> &getMaterials(void) const = 0;
 
             /**
-             * @brief Set a material of the primitive
+             * @brief Set a material for the primitive
              * @param name The name of the material
-             * @param material The material to set
+             * @param material A reference to the material to set
              */
             virtual void setMaterial(const std::string &name, std::shared_ptr<IMaterial> &material) = 0;
 
@@ -101,24 +99,55 @@ namespace Raytracer {
 
             /**
              * @brief Get the transformations of the primitive
-             * @return Reference to the transformations
+             * @return A reference to the transformations of the primitive
              */
             virtual std::vector<std::pair<std::string, std::shared_ptr<ITransformation>>> &getTransformations(void) = 0;
 
             /**
-             * @brief Get the transformation of the primitive (const version)
-             * @return Const reference to the transformations
+             * @brief Get the transformations of the primitive (const version)
+             * @return A const reference to the transformations of the primitive
              */
             virtual const std::vector<std::pair<std::string, std::shared_ptr<ITransformation>>> &getTransformations(void) const = 0;
 
             /**
-             * @brief Set a transformation of the primitive
+             * @brief Set a transformation for the primitive
              * @param name The name of the transformation
-             * @param transformation The transformation to set
+             * @param transformation A reference to the transformation to set
              */
             virtual void setTransformation(const std::string &name, std::shared_ptr<ITransformation> &transformation) = 0;
-    };
 
+
+
+            /* Rendering function */
+
+            /**
+             * @brief Check if the ray intersects with the primitive
+             * @param ray The ray to check
+             * @param ray_t The interval of the ray
+             * @param rec The intersection record
+             * @return true if the ray intersects, false otherwise
+             */
+            virtual bool hit(const Ray& ray, Interval ray_t, Intersection& rec) const = 0;
+
+
+
+            /* Child functions */
+
+            /**
+             * @brief Get the child primitives of this primitive
+             * @return Vector of child primitives
+             */
+            virtual std::vector<std::shared_ptr<IPrimitive>> getChildren(void) = 0;
+
+
+
+            /* Initialization function */
+
+            /**
+             * @brief Initialize the primitive
+             */
+            virtual void init(void) = 0;
+    };
 }
 
-#endif // IPRIMITIVE_HPP
+#endif /* IPRIMITIVE_HPP */

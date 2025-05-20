@@ -10,17 +10,13 @@
  * @author Gianni TUERO, Lou PELLEGRINO, Nicolas TORO and Olivier POUECH
  */
 
-#include "IMaterialBuilder.hpp"
 #include "Color.hpp"
-#include "Lib.hpp"
-
 #include "Checker.hpp"
 #include "Image.hpp"
 #include "Noise.hpp"
 #include "SolidColor.hpp"
 
 namespace Raytracer {
-
     Color::Color(uint8_t r, uint8_t g, uint8_t b)
     {
         // DEBUG << "Color constructor";
@@ -58,18 +54,20 @@ namespace Raytracer {
         return _texture;
     }
 
-    void Color::display(void)
+    void Color::display(size_t level)
     {
+        std::string indent = std::string(level * 4, ' ');
         std::cout << "Color data:" << std::endl;
-        std::cout << "                - R: " << 255 * getColor().x << std::endl;
-        std::cout << "                - G: " << 255 * getColor().y << std::endl;
-        std::cout << "                - B: " << 255 * getColor().z << std::endl;
+        std::cout << indent << "- R: " << 255 * _color.x << std::endl;
+        std::cout << indent << "- G: " << 255 * _color.y << std::endl;
+        std::cout << indent << "- B: " << 255 * _color.z << std::endl;
         if (_texture != nullptr) {
-            std::cout << "                - Texture: " << std::endl;
-            _texture->display();
+            std::cout << indent << "- Texture: " << std::endl;
+            std::cout << indent << "    - ";
+            _texture->display(level + 2);
         }
     }
-
+    
     bool Color::scatter(UNUSED const Ray& r_in, const Intersection& rec, Lib::Vector3 &attenuation, Ray& scattered) const
     {
         auto scatter_direction = rec.normal + Lib::random_unit_vector();
